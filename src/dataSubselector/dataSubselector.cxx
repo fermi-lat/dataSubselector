@@ -3,7 +3,7 @@
  * @brief Filter FT1 data.
  * @author J. Chiang
  *
- *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.2 2004/06/10 17:55:33 jchiang Exp $
+ *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.3 2004/06/12 00:05:12 jchiang Exp $
  */
 
 #include "facilities/Util.h"
@@ -20,7 +20,7 @@
  * @class DataFilter
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.2 2004/06/10 17:55:33 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.3 2004/06/12 00:05:12 jchiang Exp $
  */
 
 class DataFilter : public st_app::StApp {
@@ -93,35 +93,7 @@ void DataFilter::run() {
       if (cuts.withinCoordLimits(ra, dec)) {
          for (std::vector<std::string>::const_iterator name 
                  = columnNames.begin(); name != columnNames.end(); ++name) {
-            try {
-               double value;
-               input[*name].get(value);
-               output[*name].set(value);
-            } catch (tip::TipException &) {
-// Here we must rely on our knowledge that the only vectors in FT1 are
-// calib_version and conversion_point (would be nice if one could type
-// check here rather than having to know calib_version comprises shorts
-// and conversion_point floats).
-               if (*name == "calib_version") {
-                  tip::Table::Vector<short> calibVersion_in = input[*name];
-                  tip::Table::Vector<short> calibVersion_out = output[*name];
-                  int npts = calibVersion_in.getNumElements();
-                  for (int i = 0; i < npts; i++) {
-                     short ivalue = calibVersion_in[i];
-                     calibVersion_out[i] = ivalue;
-                  }
-               } else if (*name == "conversion_point") {
-                  tip::Table::Vector<float> cp_in = input[*name];
-                  tip::Table::Vector<float> cp_out= output[*name];
-                  int npts = cp_in.getNumElements();
-                  for (int i = 0; i < npts; i++) {
-                     short ivalue = cp_in[i];
-                     cp_out[i] = ivalue;
-                  }
-               } else {
-                  throw;
-               }
-            }
+            output = input;
          }
          ++outputIt;
          npts++;

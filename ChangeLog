@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Aug 16 17:02:40 PDT 2004
+dataSubselector/src/dataSubselector
+
+Modified Files:
+	dataSubselector.cxx 
+Log Message:
+write GTI extension; refactor application a bit to handle multiple extensions more gracefully
+    *
+------------------------------------------------------------
 User: jchiang  Mon Aug 16 17:02:39 PDT 2004
 dataSubselector/src
 

@@ -3,7 +3,7 @@
  * @brief Filter FT1 data.
  * @author J. Chiang
  *
- *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.11 2005/02/01 00:06:04 jchiang Exp $
+ *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.12 2005/03/08 03:42:32 jchiang Exp $
  */
 
 #include "facilities/Util.h"
@@ -13,6 +13,8 @@
 #include "st_app/AppParGroup.h"
 #include "st_app/StApp.h"
 #include "st_app/StAppFactory.h"
+
+#include "st_facilities/FitsUtil.h"
 
 #include "tip/IFileSvc.h"
 #include "tip/Table.h"
@@ -25,7 +27,7 @@ using dataSubselector::CutController;
  * @class DataFilter
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.11 2005/02/01 00:06:04 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.12 2005/03/08 03:42:32 jchiang Exp $
  */
 
 class DataFilter : public st_app::StApp {
@@ -96,6 +98,8 @@ void DataFilter::run() {
       std::cout << "Done." << std::endl;
    }
    CutController::delete_instance();
+
+   st_facilities::FitsUtil::writeChecksums(m_outputFile);
 }
 
 void DataFilter::copyTable(const std::string & extension,

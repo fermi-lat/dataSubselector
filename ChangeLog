@@ -1,4 +1,16 @@
 ------------------------------------------------------------
+User: tstephen  Fri Dec 12 12:51:49 PST 2003
+dataSubselector/doc
+
+Added Files:
+	dataSubselector.usage 
+Removed Files:
+	U2.usage 
+Log Message:
+Minor updates to requriements file and filenames to
+be more consistant (U2 replaced by dataSubselector).
+    *
+------------------------------------------------------------
 User: tstephen  Fri Dec 12 12:51:48 PST 2003
 dataSubselector/src
 

@@ -3,9 +3,10 @@
  * @brief Handle data selections and DSS keyword management.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Cuts.cxx,v 1.17 2004/12/08 06:11:12 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Cuts.cxx,v 1.18 2004/12/08 20:40:23 jchiang Exp $
  */
 
+#include <cctype>
 #include <cstdlib>
 
 #include <algorithm>

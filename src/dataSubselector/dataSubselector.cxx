@@ -3,7 +3,7 @@
  * @brief Filter FT1 data.
  * @author J. Chiang
  *
- *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.7 2004/12/05 22:21:36 jchiang Exp $
+ *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.8 2004/12/08 20:40:24 jchiang Exp $
  */
 
 #include "facilities/Util.h"
@@ -25,7 +25,7 @@ using dataSubselector::CutController;
  * @class DataFilter
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.7 2004/12/05 22:21:36 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.8 2004/12/08 20:40:24 jchiang Exp $
  */
 
 class DataFilter : public st_app::StApp {
@@ -77,7 +77,8 @@ void DataFilter::run() {
    std::string outputFile = m_pars["output_file"];
    m_outputFile = outputFile;
    facilities::Util::expandEnvVar(&m_outputFile);
-   if (!m_pars["clobber"] && st_facilities::Util::fileExists(m_outputFile)) {
+   bool clobber = m_pars["clobber"];
+   if (!clobber && st_facilities::Util::fileExists(m_outputFile)) {
       std::cout << "Output file, " << outputFile << ", already exists, "
                 << "and you have specified 'clobber' as 'no'.\n"
                 << "Please provide a different file name." << std::endl;

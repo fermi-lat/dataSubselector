@@ -3,7 +3,7 @@
  * @brief Tests program for Cuts class.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/test/test.cxx,v 1.8 2004/12/04 07:26:34 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/test/test.cxx,v 1.9 2004/12/08 20:40:25 jchiang Exp $
  */ 
 
 #ifdef TRAP_FPE
@@ -85,6 +85,7 @@ void DssTests::compareGtis() {
    CPPUNIT_ASSERT(!(gti1 != gti2));
 
    gti1.insertInterval(0, 10.);
+
    CPPUNIT_ASSERT(gti1 != gti2);
 }
 
@@ -212,6 +213,7 @@ void DssTests::compareCuts() {
 }
 
 int main() {
+
    CppUnit::TextTestRunner runner;
    
    runner.addTest(DssTests::suite());

@@ -3,12 +3,14 @@
  * @brief Tests program for Cuts class.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/test/test.cxx,v 1.10 2004/12/08 21:38:13 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/test/test.cxx,v 1.11 2005/04/04 17:50:59 jchiang Exp $
  */ 
 
 #ifdef TRAP_FPE
 #include <fenv.h>
 #endif
+
+#include <cmath>
 
 #include <iostream>
 #include <stdexcept>
@@ -63,7 +65,7 @@ private:
 
 };
 
-#define ASSERT_EQUALS(X, Y) CPPUNIT_ASSERT(fabs( (X - Y)/Y ) < 1e-4)
+#define ASSERT_EQUALS(X, Y) CPPUNIT_ASSERT(std::fabs( (X - Y)/Y ) < 1e-4)
 
 void DssTests::setUp() {
    char * root_path = ::getenv("DATASUBSELECTORROOT");

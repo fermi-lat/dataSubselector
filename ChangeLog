@@ -1,4 +1,40 @@
 ------------------------------------------------------------
+TAG
+Tag name: v3r1, operation: add
+Package: dataSubselector
+User: jchiang  Fri Jan 14 18:27:18 2005
+Files:
+  dataSubselector/.cvsignore  1.2
+  dataSubselector/ChangeLog  1.165
+  dataSubselector/Data/input_events.fits  1.3
+  dataSubselector/cmt/.cvsignore  1.2
+  dataSubselector/cmt/requirements  1.28
+  dataSubselector/dataSubselector/CutBase.h  1.1
+  dataSubselector/dataSubselector/RangeCut.h  1.1
+  dataSubselector/dataSubselector/Cuts.h  1.21
+  dataSubselector/dataSubselector/Gti.h  1.4
+  dataSubselector/dataSubselector/SkyConeCut.h  1.1
+  dataSubselector/dataSubselector/GtiCut.h  1.1
+  dataSubselector/doc/.cvsignore  1.1
+  dataSubselector/doc/release.notes  1.15
+  dataSubselector/pfiles/dataSubselector.par  1.6
+  dataSubselector/src/RangeCut.cxx  1.5
+  dataSubselector/src/Gti.cxx  1.3
+  dataSubselector/src/SConstruct  1.5
+  dataSubselector/src/mainpage.h  1.3
+  dataSubselector/src/CutBase.cxx  1.1
+  dataSubselector/src/GtiCut.cxx  1.3
+  dataSubselector/src/Cuts.cxx  1.20
+  dataSubselector/src/SkyConeCut.cxx  1.5
+  dataSubselector/src/buildBase  1.3
+  dataSubselector/src/dataSubselector/dataSubselector.cxx  1.10
+  dataSubselector/src/dataSubselector/CutController.h  1.1
+  dataSubselector/src/dataSubselector/CutController.cxx  1.1
+  dataSubselector/src/test/test.cxx  1.10
+  dataSubselector/src/viewCuts/viewCuts.cxx  1.5
+
+    *
+------------------------------------------------------------
 User: jchiang  Fri Jan 14 18:26:33 PST 2005
 dataSubselector/src/viewCuts
 

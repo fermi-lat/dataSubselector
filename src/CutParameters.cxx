@@ -5,10 +5,10 @@
  * 
  * @author Tom Stephens
  * @date Created:  17 Oct 2003
- * @date Last Modified:  $Date: 2004/06/06 18:59:55 $
- * @version $Revision: 1.1.1.1 $
+ * @date Last Modified:  $Date: 2004/06/09 19:02:50 $
+ * @version $Revision: 1.1 $
  * 
- * $Header: /nfs/slac/g/glast/ground/cvs/users/jchiang/dataFilter/src/CutParameters.cxx,v 1.1.1.1 2004/06/06 18:59:55 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/CutParameters.cxx,v 1.1 2004/06/09 19:02:50 jchiang Exp $
  */
 
 #include <cmath>
@@ -44,6 +44,12 @@ CutParameters::CutParameters(st_app::AppParGroup & pars) :
       m_RA = -1;
       std::cout << "resetting default RA" << std::endl;
    }
+   m_lonMin = pars["lonMin"];
+   m_lonMax = pars["lonMax"];
+   m_latMin = pars["latMin"];
+   m_latMax = pars["latMax"];
+   std::string coordSys = pars["coordSys"];
+   m_coordSys = coordSys;
    m_tmin = pars["tmin"];
    m_tmax = pars["tmax"];
    m_emin = pars["emin"];

@@ -2,7 +2,7 @@
  * @file CutParameters.h
  * @brief Header file for the CutParameters class
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/users/jchiang/dataFilter/dataFilter/CutParameters.h,v 1.1.1.1 2004/06/06 18:59:52 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/CutParameters.h,v 1.1 2004/06/09 19:02:49 jchiang Exp $
  */
  
 #ifndef dataFilter_CUTPARAMETERS_H
@@ -11,6 +11,8 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+
+#include "astro/SkyDir.h"
 
 #include "tip/Table.h"
 #include "tip/Header.h"
@@ -31,9 +33,9 @@ namespace st_app {
  * @author Tom Stephens
  * @date Created:  17 Oct 2003
  * @date Last Modified:  25 Nov 2003
- * @version $Revision: 1.1.1.1 $
+ * @version $Revision: 1.1 $
  * 
- * $Header: /nfs/slac/g/glast/ground/cvs/users/jchiang/dataFilter/dataFilter/CutParameters.h,v 1.1.1.1 2004/06/06 18:59:52 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/CutParameters.h,v 1.1 2004/06/09 19:02:49 jchiang Exp $
  */
 
 class CutParameters {
@@ -49,12 +51,29 @@ public:
    const std::string & fitsQueryString() const {return m_query;}
 
    const std::string & headerString() const {return m_headerString;}
+
+   bool withinCoordLimits(double ra, double dec) {
+      if (m_coordSys == "GAL") {
+         astro::SkyDir dir(ra, dec);
+         return m_lonMin <= dir.l() && dir.l() <= m_lonMax && 
+            m_latMin <= dir.b() && dir.b() <= m_latMax;
+      } else {
+         return m_lonMin <= ra && ra <= m_lonMax && 
+            m_latMin <= dec && dec <= m_latMax;
+      }
+      return false;
+   }
   
 private:
    
    float m_RA;
    float m_Dec;
    float m_radius;
+   float m_lonMin;
+   float m_lonMax;
+   float m_latMin;
+   float m_latMax;
+   std::string m_coordSys;
    double m_tmin;
    double m_tmax;
    float m_emin;

@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Thu Dec  2 10:26:39 PST 2004
+dataSubselector/dataSubselector
+
+Modified Files:
+	Cuts.h 
+Log Message:
+initial working version of Cuts class; add test code
+    *
+------------------------------------------------------------
 User: jchiang  Thu Dec  2 10:26:38 PST 2004
 dataSubselector/Data
 

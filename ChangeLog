@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Mar  7 19:42:32 PST 2005
+dataSubselector/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+disable banner method; tagging v3r2p1
+    *
+------------------------------------------------------------
 TAG
 Tag name: v3r2, operation: add
 Package: dataSubselector

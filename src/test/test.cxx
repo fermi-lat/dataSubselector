@@ -3,7 +3,7 @@
  * @brief Tests program for Cuts class.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/test/test.cxx,v 1.7 2004/12/03 22:55:41 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/test/test.cxx,v 1.8 2004/12/04 07:26:34 jchiang Exp $
  */ 
 
 #ifdef TRAP_FPE
@@ -20,6 +20,7 @@
 #include "st_facilities/Util.h"
 
 #include "tip/IFileSvc.h"
+#include "tip/Table.h"
 
 #include "dataSubselector/Cuts.h"
 #include "dataSubselector/Gti.h"
@@ -158,7 +159,7 @@ void DssTests::compareCuts() {
    my_cuts.addRangeCut("RA", "deg", 83, 93);
    my_cuts.addSkyConeCut(83., 22., 20);
    my_cuts.addRangeCut("CALIB_VERSION", "dimensionless", 1, 1,
-                       dataSubselector::Cuts::CLOSED, 1);
+                       dataSubselector::RangeCut::CLOSED, 1);
       
    long npts(0);
    long npts2(0);

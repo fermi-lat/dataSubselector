@@ -3,13 +3,14 @@
  * @brief Manage the cuts specified in the par file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/CutController.h,v 1.1 2004/12/04 17:17:08 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/CutController.h,v 1.2 2004/12/05 22:21:36 jchiang Exp $
  */
 
 #ifndef dataSubselector_CutController_h
 #define dataSubselector_CutController_h
 
 #include <string>
+
 #include "dataSubselector/Cuts.h"
 
 namespace st_app {
@@ -24,6 +25,10 @@ namespace dataSubselector {
 
 /**
  * @class CutController
+ * @brief Controller interface between application and CutBase hierarchy.
+ * @author J. Chiang
+ *
+ * $Header$
  */
 
 class CutController {

@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Thu Dec  2 12:39:50 PST 2004
+dataSubselector/src
+
+Modified Files:
+	Cuts.cxx 
+Log Message:
+replace TableCut with GtiCut
+    *
+------------------------------------------------------------
+User: jchiang  Thu Dec  2 12:39:50 PST 2004
 dataSubselector/dataSubselector
 
 Modified Files:

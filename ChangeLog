@@ -1,5 +1,15 @@
 ------------------------------------------------------------
 User: tstephen  Tue Dec 23 13:09:25 PST 2003
+dataSubselector/cmt
+
+Modified Files:
+	requirements .cvsignore 
+Log Message:
+Fixed the maximium probablility photon is a gamma ray cut
+and added units to the prompts.
+    *
+------------------------------------------------------------
+User: tstephen  Tue Dec 23 13:09:25 PST 2003
 dataSubselector/src
 
 Modified Files:

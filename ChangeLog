@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Dec  8 12:40:23 PST 2004
+dataSubselector/include
+
+Removed Files:
+	cutParameters.h dataSubselector.h 
+Log Message:
+remove old code; separate header files for CutBase hierarchy
+    *
+------------------------------------------------------------
 User: jchiang  Wed Dec  8 12:40:22 PST 2004
 dataSubselector/doc
 

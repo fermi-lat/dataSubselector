@@ -3,7 +3,7 @@
  * @brief Handle data selections and DSS keyword management.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Cuts.cxx,v 1.19 2004/12/08 21:38:13 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Cuts.cxx,v 1.20 2004/12/16 01:13:27 jchiang Exp $
  */
 
 #include <cctype>
@@ -78,6 +78,8 @@ Cuts::Cuts(const std::string & eventFile, const std::string & extname,
       header[key2.str()].get(unit);
       key3 << "DSVAL" << keynum;
       header[key3.str()].get(value);
+      ::toUpper(value);
+
       if (value == "TABLE") {
          key4 << "DSREF" << keynum;
          header[key4.str()].get(ref);

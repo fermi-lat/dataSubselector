@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Sun Dec  5 14:21:36 PST 2004
+dataSubselector/dataSubselector
+
+Modified Files:
+	CutController.h Cuts.h 
+Log Message:
+add introspection
+    *
+------------------------------------------------------------
 TAG
 Tag name: v2r3, operation: add
 Package: dataSubselector

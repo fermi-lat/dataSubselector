@@ -3,7 +3,7 @@
  * @brief Cut on a column value in a given range of values.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/RangeCut.cxx,v 1.5 2004/12/08 20:40:23 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/RangeCut.cxx,v 1.6 2005/01/18 22:05:53 jchiang Exp $
  */
 
 #include <iostream>
@@ -92,6 +92,7 @@ void RangeCut::getKeyValues(std::string & type, std::string & unit,
                             std::string & value, std::string & ref) const {
    (void)(ref);
    std::ostringstream val;
+   val.precision(20);
    if (m_type == MINONLY) {
       val << m_min << ":";
    } else if (m_type == MAXONLY) {

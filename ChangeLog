@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Thu Sep 23 22:46:09 PDT 2004
+dataSubselector/pfiles
+
+Modified Files:
+	dataSubselector.par 
+Log Message:
+change all float data members to doubles since hoops does not let one assign to floats
+    *
+------------------------------------------------------------
+User: jchiang  Thu Sep 23 22:46:09 PDT 2004
 dataSubselector/dataSubselector
 
 Modified Files:

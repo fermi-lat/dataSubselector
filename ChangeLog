@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Jan 18 14:05:54 PST 2005
+dataSubselector/src
+
+Modified Files:
+	RangeCut.cxx 
+Log Message:
+#include <sstream>
+    *
+------------------------------------------------------------
 TAG
 Tag name: v3r1, operation: add
 Package: dataSubselector

@@ -3,7 +3,7 @@
  * @brief Filter FT1 data.
  * @author J. Chiang
  *
- *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.10 2005/01/15 02:26:33 jchiang Exp $
+ *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.11 2005/02/01 00:06:04 jchiang Exp $
  */
 
 #include "facilities/Util.h"
@@ -25,7 +25,7 @@ using dataSubselector::CutController;
  * @class DataFilter
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.10 2005/01/15 02:26:33 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.11 2005/02/01 00:06:04 jchiang Exp $
  */
 
 class DataFilter : public st_app::StApp {
@@ -55,6 +55,8 @@ public:
 
    virtual void run();
 
+   virtual void banner() const {}
+
 private:
 
    st_app::AppParGroup & m_pars;
@@ -67,7 +69,7 @@ private:
 
 };
 
-st_app::StAppFactory<DataFilter> myAppFactory;
+st_app::StAppFactory<DataFilter> myAppFactory("gtselect");
 
 void DataFilter::run() {
    std::string inputFile = m_pars["input_file"];

@@ -4,7 +4,7 @@
  * accept() method.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Gti.cxx,v 1.1 2004/12/03 22:55:40 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Gti.cxx,v 1.2 2004/12/07 05:11:29 jchiang Exp $
  */
 
 #include "st_facilities/Util.h"
@@ -40,7 +40,6 @@ Gti::Gti(const tip::Table & gtiTable) : evtbin::Gti() {
 }
 
 bool Gti::accept(double time) const {
-//   evtbin::Gti::ConstIterator it;
    for (ConstIterator it = begin(); it != end(); ++it) {
       if (it->first <= time && time <= it->second) {
          return true;

@@ -5,10 +5,10 @@
  * 
  * @author Tom Stephens
  * @date Created:  17 Oct 2003
- * @date Last Modified:  $Date: 2003/12/03 17:01:22 $
- * @version $Revision: 1.1 $
+ * @date Last Modified:  $Date: 2003/12/16 15:01:01 $
+ * @version $Revision: 1.2 $
  * 
- * $Id: cutParameters.cxx,v 1.1 2003/12/03 17:01:22 tstephen Exp $
+ * $Id: cutParameters.cxx,v 1.2 2003/12/16 15:01:01 tstephen Exp $
  */
 #include "../include/cutParameters.h"
 
@@ -309,8 +309,8 @@ char *cutParameters::getFilterExpression(){
     } else {
       first=false;
     }
-    sprintf(m_query,"%sVERALL_QUALITY<= %f",m_query,m_gammaProbMax);
-    sprintf(m_headerString,"%sVERALL_QUALITY<=%f",m_headerString,m_gammaProbMax);
+    sprintf(m_query,"%sIMGAMMAPROB<= %f",m_query,m_gammaProbMax);
+    sprintf(m_headerString,"%sIMGAMMAPROB<=%f",m_headerString,m_gammaProbMax);
   }
   if(m_zmin){ // minimum ZENITH_ANGLE
     if(!first){

@@ -3,7 +3,7 @@
  * @brief Handle data selections and DSS keyword management.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Cuts.cxx,v 1.10 2004/12/04 03:23:32 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Cuts.cxx,v 1.11 2004/12/04 07:26:34 jchiang Exp $
  */
 
 #include <cstdlib>
@@ -20,11 +20,6 @@
 #include "dataSubselector/Cuts.h"
 
 namespace {
-   void toLower(std::string & name) {
-      for (std::string::iterator it = name.begin(); it != name.end(); ++it) {
-         *it = std::tolower(*it);
-      }
-   }
    void toUpper(std::string & name) {
       for (std::string::iterator it = name.begin(); it != name.end(); ++it) {
          *it = std::toupper(*it);

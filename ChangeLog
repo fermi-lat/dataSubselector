@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: tstephen  Wed Dec  3 09:01:23 PST 2003
+dataSubselector/src
+
+Added Files:
+	mainpage.h U2.cxx cutParameters.cxx 
+Log Message:
+First import of the dataSubselector (U2) tool.
+    *
+------------------------------------------------------------
 User: tstephen  Wed Dec  3 09:00:47 PST 2003
 dataSubselector/src
 

@@ -3,7 +3,7 @@
  * @brief Handle data selections and DSS keyword management.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Cuts.cxx,v 1.18 2004/12/08 20:40:23 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Cuts.cxx,v 1.19 2004/12/08 21:38:13 jchiang Exp $
  */
 
 #include <cctype>
@@ -38,8 +38,6 @@ namespace {
 
 namespace dataSubselector {
 
-#include "fitsio.h"
-
 Cuts::Cuts(const std::string & eventFile, const std::string & extname,
            bool check_columns) {
    const tip::Extension * ext(0);
@@ -57,17 +55,17 @@ Cuts::Cuts(const std::string & eventFile, const std::string & extname,
       const tip::Table * table 
          = dynamic_cast<tip::Table *>(const_cast<tip::Extension *>(ext));
       colnames = table->getValidFields();
-// FITS column names are in CAPS, not lowercase, so undo the damage
-// wrought by tip:
+// FITS column names are in CAPS, not lowercase, so undo what tip has wrought
       for (unsigned int i = 0; i < colnames.size(); i++) {
          ::toUpper(colnames[i]);
       }
    }
 
    const tip::Header & header = ext->getHeader();
+// The .get(...) method does not work for unsigned int arguments, so
+// we are force to use a double as a temporary variable:
    double nkeys_value;
    header["NDSKEYS"].get(nkeys_value);
-// This is incredibly lame....one might as well use CCFits.
    unsigned int nkeys = static_cast<unsigned int>(nkeys_value);
 
    std::string type, unit, value, ref("");

@@ -3,7 +3,7 @@
  * @brief Acceptance cone selection.
  * @author J. Chiang
  *
- * $Header$
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/SkyConeCut.cxx,v 1.2 2004/12/04 17:17:08 jchiang Exp $
  */
 
 #include <stdexcept>
@@ -16,7 +16,8 @@ namespace dataSubselector {
 
 Cuts::SkyConeCut::SkyConeCut(const std::string & type,
                              const std::string & unit, 
-                             const std::string & value) {
+                             const std::string & value) 
+   : Cuts::CutBase("SkyCone") {
    if (unit.find("deg") != 0) {
       throw std::runtime_error("dataSubselector::Cuts::SkyConeCut:\n" +
                                std::string("Unsupported unit: ") + unit);

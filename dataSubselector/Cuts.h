@@ -4,12 +4,13 @@
  * dataSubselector.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.9 2004/12/03 22:55:39 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.10 2004/12/03 23:37:00 jchiang Exp $
  */
 
 #ifndef dataSubselector_Cuts_h
 #define dataSubselector_Cuts_h
 
+#include <iostream>
 #include <map>
 #include <string>
 #include <vector>
@@ -29,7 +30,7 @@ namespace dataSubselector {
  * dataSubselector.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.9 2004/12/03 22:55:39 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.10 2004/12/03 23:37:00 jchiang Exp $
  */
 
 class Cuts {
@@ -67,6 +68,8 @@ public:
 
    bool operator==(const Cuts & rhs) const;
 
+   void writeCuts(std::ostream & stream) const;
+
 private:
 
    std::vector<CutBase *> m_cuts;
@@ -76,13 +79,17 @@ private:
       CutBase() {}
       virtual ~CutBase() {}
       virtual bool accept(tip::ConstTableRecord & row) const = 0;
-      virtual bool accept(const std::map<std::string, double> & params) 
-         const=0;
-      virtual void writeDssKeywords(tip::Header & header, 
-                                    unsigned int keynum) const = 0;
+      virtual bool accept(const std::map<std::string, double> &params) const=0;
       virtual bool operator==(const CutBase & rhs) const = 0;
       virtual CutBase * clone() const = 0;
+      virtual void writeCut(std::ostream & stream, unsigned int keynum) const;
+      virtual void writeDssKeywords(tip::Header & header, 
+                                    unsigned int keynum) const;
    protected:
+      virtual void 
+      getKeyValues(std::string & type, std::string & unit,
+                   std::string & value, std::string & ref) const = 0;
+   private:
       void writeDssKeywords(tip::Header & header, unsigned int keynum,
                             const std::string & type,
                             const std::string & unit,
@@ -101,10 +108,11 @@ private:
       virtual ~RangeCut() {}
       virtual bool accept(tip::ConstTableRecord & row) const;
       virtual bool accept(const std::map<std::string, double> & params) const;
-      virtual void writeDssKeywords(tip::Header & header, 
-                                    unsigned int keynum) const;
       virtual bool operator==(const CutBase & rhs) const;
       virtual CutBase * clone() const {return new RangeCut(*this);}
+   protected:
+      virtual void getKeyValues(std::string & type, std::string & unit,
+                                std::string & value, std::string & ref) const;
    private:
       std::string m_keyword;
       std::string m_unit;
@@ -123,10 +131,11 @@ private:
       virtual ~GtiCut() {}
       virtual bool accept(tip::ConstTableRecord & row) const;
       virtual bool accept(const std::map<std::string, double> & params) const;
-      virtual void writeDssKeywords(tip::Header & header, 
-                                    unsigned int keynum) const;
       virtual bool operator==(const CutBase & rhs) const;
       virtual CutBase * clone() const {return new GtiCut(*this);}
+   protected:
+      virtual void getKeyValues(std::string & type, std::string & unit,
+                                std::string & value, std::string & ref) const;
    private:
       const Gti m_gti;
       bool accept(double value) const;
@@ -146,10 +155,11 @@ private:
       virtual ~SkyConeCut() {}
       virtual bool accept(tip::ConstTableRecord & row) const;
       virtual bool accept(const std::map<std::string, double> & params) const;
-      virtual void writeDssKeywords(tip::Header & header, 
-                                    unsigned int keynum) const;
       virtual bool operator==(const CutBase & rhs) const;
       virtual CutBase * clone() const {return new SkyConeCut(*this);}
+   protected:
+      virtual void getKeyValues(std::string & type, std::string & unit,
+                                std::string & value, std::string & ref) const;
    private:
       double m_ra;
       double m_dec;

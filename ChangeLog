@@ -1,4 +1,15 @@
 ------------------------------------------------------------
+User: jchiang  Fri Dec  3 11:06:42 PST 2004
+dataSubselector/src
+
+Modified Files:
+	Cuts.cxx 
+Added Files:
+	SConstruct buildBase 
+Log Message:
+add FITS constructor for Cuts
+    *
+------------------------------------------------------------
 User: jchiang  Fri Dec  3 11:06:40 PST 2004
 dataSubselector/doc
 

@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Wed Apr  6 13:33:04 PDT 2005
+dataSubselector/src
+
+Modified Files:
+	Gti.cxx 
+Log Message:
+have ONTIME and TELAPSE reflect GTI contents; tagging v3r3p2
+    *
+------------------------------------------------------------
+User: jchiang  Wed Apr  6 13:33:04 PDT 2005
 dataSubselector/doc
 
 Modified Files:

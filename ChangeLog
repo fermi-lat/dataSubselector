@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Mon Dec  6 21:11:29 PST 2004
+dataSubselector/src/viewCuts
+
+Modified Files:
+	viewCuts.cxx 
+Log Message:
+refactor GTI extension writing; allow checking of column names to be disabled
+    *
+------------------------------------------------------------
+User: jchiang  Mon Dec  6 21:11:29 PST 2004
 dataSubselector/src
 
 Modified Files:

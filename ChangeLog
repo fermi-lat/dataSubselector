@@ -1,5 +1,17 @@
 ------------------------------------------------------------
 User: jchiang  Sat Dec  4 09:17:08 PST 2004
+dataSubselector/src
+
+Modified Files:
+	CutParameters.cxx Cuts.cxx GtiCut.cxx RangeCut.cxx SConstruct 
+	SkyConeCut.cxx 
+Added Files:
+	CutController.cxx 
+Log Message:
+add CutController
+    *
+------------------------------------------------------------
+User: jchiang  Sat Dec  4 09:17:08 PST 2004
 dataSubselector/pfiles
 
 Modified Files:

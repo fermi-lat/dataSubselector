@@ -3,7 +3,7 @@
  * @brief Tests program for Cuts class.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/test/test.cxx,v 1.4 2004/12/03 19:06:42 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/test/test.cxx,v 1.5 2004/12/03 19:16:16 jchiang Exp $
  */ 
 
 #ifdef TRAP_FPE
@@ -29,6 +29,7 @@ class DssTests : public CppUnit::TestFixture {
 
    CPPUNIT_TEST(compareCuts);
    CPPUNIT_TEST(cutsConstructor);
+   CPPUNIT_TEST(test_SkyCone);
 
    CPPUNIT_TEST_SUITE_END();
 
@@ -38,8 +39,10 @@ public:
    void tearDown();
    void compareCuts();
    void cutsConstructor();
+   void test_SkyCone();
 
 private:
+
    std::string m_infile;
    std::string m_outfile;
    std::string m_outfile2;
@@ -89,6 +92,19 @@ void DssTests::cutsConstructor() {
    params["TIME"] = 100.;
    CPPUNIT_ASSERT(my_cuts.accept(params));
    params["TIME"] = 9e4;
+   CPPUNIT_ASSERT(!my_cuts.accept(params));
+}
+
+void DssTests::test_SkyCone() {
+   dataSubselector::Cuts my_cuts(m_outfile);
+   
+   std::map<std::string, double> params;
+
+   params["RA"] = 85;
+   params["DEC"] = 22;
+   CPPUNIT_ASSERT(my_cuts.accept(params));
+
+   params["DEC"] = -40;
    CPPUNIT_ASSERT(!my_cuts.accept(params));
 }
 

@@ -3,7 +3,7 @@
  * @brief Handle data selections and DSS keyword management.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Cuts.cxx,v 1.5 2004/12/03 06:42:30 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Cuts.cxx,v 1.6 2004/12/03 19:06:41 jchiang Exp $
  */
 
 #include <cstdlib>
@@ -238,6 +238,37 @@ void Cuts::GtiCut::writeDssKeywords(tip::Header & header,
    std::string table_name;
    table_header["EXTNAME"].get(table_name);
    CutBase::writeDssKeywords(header, keynum, "TIME", "s", "TABLE", ":GTI");
+}
+
+Cuts::SkyConeCut::SkyConeCut(const std::string & type,
+                             const std::string & unit, 
+                             const std::string & value) {
+   if (unit.find("deg") != 0) {
+      throw std::runtime_error("dataSubselector::Cuts::SkyConeCut:\n" +
+                               std::string("Unsupported unit: ") + unit);
+   }
+   std::vector<std::string> coordSys;
+   getArgs(type, coordSys);
+   std::vector<std::string> coords;
+   getArgs(value, coords);
+   double lon = std::atof(coords.at(0).c_str());
+   double lat = std::atof(coords.at(1).c_str());
+   m_radius = std::atof(coords.at(2).c_str());
+   if (coordSys.at(0) == "RA") {
+      m_coneCenter = astro::SkyDir(lon, lat, astro::SkyDir::EQUATORIAL);
+   } else if (coordSys.at(0) == "GLON") {
+      m_coneCenter = astro::SkyDir(lon, lat, astro::SkyDir::GALACTIC);
+   } else {
+      throw std::runtime_error("dataSubselector::Cuts::SkyConeCut:\n" +
+                               std::string("Unsupported type: ") + type);
+   }
+}
+
+void Cuts::SkyConeCut::getArgs(const std::string & value, 
+                               std::vector<std::string> & args) const {
+   std::vector<std::string> tokens;
+   facilities::Util::stringTokenize(value, "()", tokens);
+   facilities::Util::stringTokenize(tokens.at(1), ",", args);
 }
 
 bool Cuts::SkyConeCut::accept(tip::ConstTableRecord & row) const {

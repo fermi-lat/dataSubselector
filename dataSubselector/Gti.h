@@ -4,7 +4,7 @@
  * an accept() method.
  * @author J. Chiang
  *
- * $Header$
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Gti.h,v 1.1 2004/12/03 22:55:39 jchiang Exp $
  */
 
 #ifndef dataSubselector_Gti_h
@@ -30,7 +30,6 @@ public:
    Gti(const tip::Table & gtiTable);
 
    bool accept(double time) const;
-
 };
 
 } // namespace dataSubselector

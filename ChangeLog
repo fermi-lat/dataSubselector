@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: jchiang  Tue Apr  5 13:34:16 PDT 2005
+dataSubselector/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+include <cmath> for fabs
+
+    *
+------------------------------------------------------------
 TAG
 Tag name: v3r3p1, operation: add
 Package: dataSubselector

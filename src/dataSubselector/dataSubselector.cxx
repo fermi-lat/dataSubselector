@@ -3,7 +3,7 @@
  * @brief Filter FT1 data.
  * @author J. Chiang
  *
- *  $Header: /nfs/slac/g/glast/ground/cvs/users/jchiang/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.1.1.1 2004/06/06 18:59:56 jchiang Exp $
+ *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.1 2004/06/09 18:58:20 jchiang Exp $
  */
 
 #include "facilities/Util.h"
@@ -20,7 +20,7 @@
  * @class DataFilter
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/users/jchiang/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.1.1.1 2004/06/06 18:59:56 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.1 2004/06/09 18:58:20 jchiang Exp $
  */
 
 class DataFilter : public st_app::StApp {
@@ -134,4 +134,5 @@ void DataFilter::run() {
 
    delete inputTable;
    delete outputTable;
+   std::cout << "Done." << std::endl;
 }

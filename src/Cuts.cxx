@@ -3,7 +3,7 @@
  * @brief Handle data selections and DSS keyword management.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Cuts.cxx,v 1.2 2004/12/02 18:26:39 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Cuts.cxx,v 1.3 2004/12/02 20:39:50 jchiang Exp $
  */
 
 #include <sstream>
@@ -22,6 +22,14 @@ bool Cuts::accept(tip::ConstTableRecord & row) const {
    bool ok(true);
    for (unsigned int i = 0; i < m_cuts.size(); i++) {
       ok = ok && m_cuts[i]->accept(row);
+   }
+   return ok;
+}
+
+bool Cuts::accept(const std::map<std::string, double> & params) const {
+   bool ok(true);
+   for (unsigned int i = 0; i < m_cuts.size(); i++) {
+      ok = ok && m_cuts[i]->accept(params);
    }
    return ok;
 }
@@ -73,6 +81,19 @@ void Cuts::CutBase::writeDssKeywords(tip::Header & header,
 bool Cuts::RangeCut::accept(tip::ConstTableRecord & row) const {
    double value;
    row[m_keyword].get(value);
+   return accept(value);
+}
+
+bool Cuts::
+RangeCut::accept(const std::map<std::string, double> & params) const {
+   std::map<std::string, double>::const_iterator it;
+   if ( (it = params.find(m_keyword)) != params.end()) {
+      return accept(it->second);
+   }
+   return true;
+}
+
+bool Cuts::RangeCut::accept(double value) const {
    if (m_type == Cuts::MINONLY) {
       return m_min <= value;
    } else if (m_type == Cuts::MAXONLY) {
@@ -97,6 +118,18 @@ void Cuts::RangeCut::writeDssKeywords(tip::Header & header,
 bool Cuts::GtiCut::accept(tip::ConstTableRecord & row) const {
    double time;
    row["TIME"].get(time);
+   return accept(time);
+}
+
+bool Cuts::GtiCut::accept(const std::map<std::string, double> & params) const {
+   std::map<std::string, double>::const_iterator it;
+   if ( (it = params.find("TIME")) != params.end()) {
+      return accept(it->second);
+   }
+   return true;
+}
+
+bool Cuts::GtiCut::accept(double time) const {
    tip::Table::ConstIterator it = m_table.begin();
    tip::ConstTableRecord & interval = *it;
    for ( ; it != m_table.end(); ++it) {
@@ -122,6 +155,21 @@ bool Cuts::SkyConeCut::accept(tip::ConstTableRecord & row) const {
    double ra, dec;
    row["RA"].get(ra);
    row["DEC"].get(dec);
+   return accept(ra, dec);
+}
+
+bool Cuts::
+SkyConeCut::accept(const std::map<std::string, double> & params) const {
+   std::map<std::string, double>::const_iterator ra;
+   std::map<std::string, double>::const_iterator dec;
+   if ( (ra = params.find("RA")) != params.end() &&
+        (dec = params.find("DEC")) != params.end() ) {
+      return accept(ra->second, dec->second);
+   }
+   return true;
+}
+
+bool Cuts::SkyConeCut::accept(double ra, double dec) const {
    double separation = m_coneCenter.difference(astro::SkyDir(ra, dec));
    return separation*180./M_PI <= m_radius;
 }

@@ -1,5 +1,15 @@
 ------------------------------------------------------------
 User: jchiang  Wed Dec  8 13:38:13 PST 2004
+dataSubselector/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+#include <cctypes>; use temporary variable for m_pars["clobber"]; ambiguate tip version
+
+    *
+------------------------------------------------------------
+User: jchiang  Wed Dec  8 13:38:13 PST 2004
 dataSubselector/src/dataSubselector
 
 Modified Files:

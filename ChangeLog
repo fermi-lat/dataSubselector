@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Thu Dec  2 10:26:39 PST 2004
+dataSubselector/src/test
+
+Added Files:
+	test.cxx 
+Log Message:
+initial working version of Cuts class; add test code
+    *
+------------------------------------------------------------
+User: jchiang  Thu Dec  2 10:26:39 PST 2004
 dataSubselector/src
 
 Modified Files:

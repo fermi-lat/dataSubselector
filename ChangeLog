@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Fri Dec  3 11:06:40 PST 2004
+dataSubselector/doc
+
+Modified Files:
+	release.notes 
+Log Message:
+add FITS constructor for Cuts
+    *
+------------------------------------------------------------
 User: jchiang  Fri Dec  3 11:06:39 PST 2004
 dataSubselector/dataSubselector
 

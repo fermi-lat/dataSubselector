@@ -3,14 +3,25 @@
  * @brief Handle data selections and DSS keyword management.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Cuts.cxx,v 1.3 2004/12/02 20:39:50 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Cuts.cxx,v 1.4 2004/12/02 21:29:52 jchiang Exp $
  */
 
 #include <sstream>
 
+#include "tip/IFileSvc.h"
+
 #include "dataSubselector/Cuts.h"
 
 namespace dataSubselector {
+
+Cuts::Cuts(const std::string & eventFile, const std::string & extension) {
+   const tip::Table * table =
+      tip::IFileSvc::instance().readTable(eventFile, extension);
+   const tip::Header & header = table->getHeader();
+   unsigned int nkeys;
+   header["NDSKEYS"].get(nkeys);
+// more to come...   
+}
 
 Cuts::~Cuts() {
    for (unsigned int i = 0; i < m_cuts.size(); i++) {
@@ -53,6 +64,7 @@ unsigned int Cuts::addSkyConeCut(double ra, double dec, double radius) {
 }
 
 void Cuts::writeDssKeywords(tip::Header & header) const {
+   header["NDSKEYS"].set(m_cuts.size());
    for (unsigned int i = 0; i < m_cuts.size(); i++) {
       m_cuts[i]->writeDssKeywords(header, i + 1);
    }

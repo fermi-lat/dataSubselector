@@ -1,5 +1,5 @@
 /**
- * @file U2.h
+ * @file dataSubselector.h
  * @brief  Header file for dataSubselection Tool main code
  * 
  * This file contains the includes, defines and global variables 
@@ -7,7 +7,7 @@
  *
  * @author Tom Stephens
  * @date Created:  17 Oct 2003
- * @date Last Modified: $Date: 2003/12/03 15:03:38 $
+ * @date Last Modified: $Date: 2003/12/03 17:01:23 $
  */
 
 // system includes

@@ -1,7 +1,7 @@
 /**
  * @file CutController.cxx
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/CutController.cxx,v 1.1 2004/12/04 17:17:08 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/CutController.cxx,v 1.2 2004/12/05 22:21:36 jchiang Exp $
  */
 
 #include "facilities/Util.h"
@@ -67,16 +67,16 @@ void CutController::addRangeCut(const std::string & colname,
                                 const std::string & unit,
                                 double minVal, double maxVal, 
                                 unsigned int indx) {
-   Cuts::RangeType type;
+   RangeCut::IntervalType type;
    if (minVal == 0 && maxVal == 0) {
       return;
    }
    if (minVal != 0 && maxVal != 0) {
-      type = Cuts::CLOSED;
+      type = RangeCut::CLOSED;
    } else if (minVal != 0 && maxVal == 0) {
-      type = Cuts::MINONLY;
+      type = RangeCut::MINONLY;
    } else if (minVal == 0 && maxVal != 0) {
-      type = Cuts::MAXONLY;
+      type = RangeCut::MAXONLY;
    }
    std::vector<std::string> tokens;
    facilities::Util::stringTokenize(colname, "[]", tokens);

@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: tstephen  Fri Jan  2 13:09:24 PST 2004
+dataSubselector/include
+
+Modified Files:
+	cutParameters.h 
+Log Message:
+Internal changes to clean up the C++.
+    *
+------------------------------------------------------------
+User: tstephen  Fri Jan  2 13:09:24 PST 2004
 dataSubselector/cmt
 
 Modified Files:

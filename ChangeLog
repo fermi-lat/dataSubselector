@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Fri Dec  3 23:26:33 PST 2004
+dataSubselector/dataSubselector
+
+Modified Files:
+	Cuts.h 
+Log Message:
+handle cuts on vector quantities; refactor interface
+    *
+------------------------------------------------------------
+User: jchiang  Fri Dec  3 23:26:33 PST 2004
 dataSubselector/cmt
 
 Modified Files:

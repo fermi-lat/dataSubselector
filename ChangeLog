@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Fri Dec  3 23:26:34 PST 2004
+dataSubselector/src/viewCuts
+
+Modified Files:
+	viewCuts.cxx 
+Log Message:
+handle cuts on vector quantities; refactor interface
+    *
+------------------------------------------------------------
+User: jchiang  Fri Dec  3 23:26:34 PST 2004
 dataSubselector/src/test
 
 Modified Files:

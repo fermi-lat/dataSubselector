@@ -1,4 +1,15 @@
 ------------------------------------------------------------
+User: jchiang  Fri Dec  3 14:55:41 PST 2004
+dataSubselector/src
+
+Modified Files:
+	Cuts.cxx SConstruct 
+Added Files:
+	Gti.cxx 
+Log Message:
+add Gti class; update tests
+    *
+------------------------------------------------------------
 User: jchiang  Fri Dec  3 14:55:39 PST 2004
 dataSubselector/dataSubselector
 

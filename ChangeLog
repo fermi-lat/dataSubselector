@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Fri Dec  3 12:08:52 PST 2004
+dataSubselector/src
+
+Modified Files:
+	Cuts.cxx 
+Log Message:
+implement SkyConeCut constructor for use with FITS files
+    *
+------------------------------------------------------------
 User: jchiang  Fri Dec  3 12:08:51 PST 2004
 dataSubselector/dataSubselector
 

@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: tstephen  Fri Jan  2 13:09:24 PST 2004
+dataSubselector/src
+
+Modified Files:
+	cutParameters.cxx dataSubselector.cxx 
+Log Message:
+Internal changes to clean up the C++.
+    *
+------------------------------------------------------------
 User: tstephen  Tue Dec 23 13:09:25 PST 2003
 dataSubselector/cmt
 

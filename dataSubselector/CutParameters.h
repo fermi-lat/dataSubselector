@@ -2,7 +2,7 @@
  * @file CutParameters.h
  * @brief Header file for the CutParameters class
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/CutParameters.h,v 1.3 2004/06/14 08:32:21 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/CutParameters.h,v 1.4 2004/08/17 00:02:37 jchiang Exp $
  */
  
 #ifndef dataFilter_CUTPARAMETERS_H
@@ -30,9 +30,9 @@ namespace st_app {
  * @author Tom Stephens
  * @date Created:  17 Oct 2003
  * @date Last Modified:  25 Nov 2003
- * @version $Revision: 1.3 $
+ * @version $Revision: 1.4 $
  * 
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/CutParameters.h,v 1.3 2004/06/14 08:32:21 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/CutParameters.h,v 1.4 2004/08/17 00:02:37 jchiang Exp $
  */
 
 class CutParameters {
@@ -53,26 +53,46 @@ public:
 
 private:
    
-   float m_RA;
-   float m_Dec;
-   float m_radius;
-   float m_lonMin;
-   float m_lonMax;
-   float m_latMin;
-   float m_latMax;
+//    float m_RA;
+//    float m_Dec;
+//    float m_radius;
+//    float m_lonMin;
+//    float m_lonMax;
+//    float m_latMin;
+//    float m_latMax;
+//    std::string m_coordSys;
+//    double m_tmin;
+//    double m_tmax;
+//    float m_emin;
+//    float m_emax;
+//    float m_phimin;
+//    float m_phimax;
+//    float m_thetamin;
+//    float m_thetamax;
+//    float m_gammaProbMin;
+//    float m_gammaProbMax;
+//    float m_zmin;
+//    float m_zmax;
+   double m_RA;
+   double m_Dec;
+   double m_radius;
+   double m_lonMin;
+   double m_lonMax;
+   double m_latMin;
+   double m_latMax;
    std::string m_coordSys;
    double m_tmin;
    double m_tmax;
-   float m_emin;
-   float m_emax;
-   float m_phimin;
-   float m_phimax;
-   float m_thetamin;
-   float m_thetamax;
-   float m_gammaProbMin;
-   float m_gammaProbMax;
-   float m_zmin;
-   float m_zmax;
+   double m_emin;
+   double m_emax;
+   double m_phimin;
+   double m_phimax;
+   double m_thetamin;
+   double m_thetamax;
+   double m_gammaProbMin;
+   double m_gammaProbMax;
+   double m_zmin;
+   double m_zmax;
    short m_convLayerMin;
    short m_convLayerMax;
 

@@ -1,4 +1,18 @@
 ------------------------------------------------------------
+User: jchiang  Wed Dec  8 12:40:24 PST 2004
+dataSubselector/src
+
+Modified Files:
+	CutController.cxx Cuts.cxx GtiCut.cxx RangeCut.cxx 
+	SkyConeCut.cxx mainpage.h 
+Added Files:
+	CutBase.cxx 
+Removed Files:
+	CutParameters.cxx 
+Log Message:
+remove old code; separate header files for CutBase hierarchy
+    *
+------------------------------------------------------------
 User: jchiang  Wed Dec  8 12:40:23 PST 2004
 dataSubselector/include
 

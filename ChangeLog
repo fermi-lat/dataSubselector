@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Aug 16 17:02:38 PDT 2004
+dataSubselector/pfiles
+
+Modified Files:
+	dataSubselector.par 
+Log Message:
+write GTI extension; refactor application a bit to handle multiple extensions more gracefully
+    *
+------------------------------------------------------------
 User: jchiang  Mon Aug 16 17:02:37 PDT 2004
 dataSubselector/dataSubselector
 

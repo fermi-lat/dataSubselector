@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Thu Dec  2 22:42:29 PST 2004
+dataSubselector/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+use cppunit; start work on Cuts constructor for FITS files
+    *
+------------------------------------------------------------
 User: jchiang  Thu Dec  2 18:43:17 PST 2004
 dataSubselector/Data
 

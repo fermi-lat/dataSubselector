@@ -1,5 +1,17 @@
 ------------------------------------------------------------
 User: tstephen  Fri Dec 12 12:51:49 PST 2003
+dataSubselector/include
+
+Added Files:
+	dataSubselector.h 
+Removed Files:
+	U2.h 
+Log Message:
+Minor updates to requriements file and filenames to
+be more consistant (U2 replaced by dataSubselector).
+    *
+------------------------------------------------------------
+User: tstephen  Fri Dec 12 12:51:49 PST 2003
 dataSubselector/cmt
 
 Modified Files:

@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Mon Apr  4 10:50:57 PDT 2005
+dataSubselector/dataSubselector
+
+Modified Files:
+	Gti.h RangeCut.h 
+Log Message:
+update GTIs to incoporate time range cuts; tagging v3r3
+    *
+------------------------------------------------------------
+User: jchiang  Mon Apr  4 10:50:57 PDT 2005
 dataSubselector/cmt
 
 Modified Files:

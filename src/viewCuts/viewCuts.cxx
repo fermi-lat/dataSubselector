@@ -3,7 +3,7 @@
  * @brief Simple app to print the DSS keywords in an event extension.
  * @author J. Chiang
  *
- * $Header$
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/viewCuts/viewCuts.cxx,v 1.3 2004/12/04 17:17:09 jchiang Exp $
  */
 
 #include <iostream>
@@ -11,12 +11,18 @@
 
 int main(int iargc, char * argv[]) {
    try {
-      if (iargc == 2) {
+      if (iargc == 2 || iargc == 3) {
          std::string file(argv[1]);
-         dataSubselector::Cuts cuts(file);
+         std::string extname;
+         if (iargc == 3) {
+            extname = argv[2];
+         } else {
+            extname = "EVENTS";
+         }
+         dataSubselector::Cuts cuts(file, extname, false);
          cuts.writeCuts(std::cout);
       } else {
-         std::cout << "usage: viewCuts <filename>" << std::endl;
+         std::cout << "usage: viewCuts <filename> [<extname>]" << std::endl;
       }
    } catch (std::exception & eObj) {
       std::cout << eObj.what() << std::endl;

@@ -1,4 +1,18 @@
 ------------------------------------------------------------
+User: tstephen  Fri Dec 12 12:51:48 PST 2003
+dataSubselector/src
+
+Modified Files:
+	mainpage.h 
+Added Files:
+	dataSubselector.cxx 
+Removed Files:
+	U2.cxx 
+Log Message:
+Minor updates to requriements file and filenames to
+be more consistant (U2 replaced by dataSubselector).
+    *
+------------------------------------------------------------
 User: jchiang  Wed Dec 10 19:13:50 PST 2003
 dataSubselector/cmt
 

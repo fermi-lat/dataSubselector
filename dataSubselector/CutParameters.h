@@ -2,7 +2,7 @@
  * @file CutParameters.h
  * @brief Header file for the CutParameters class
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/CutParameters.h,v 1.1 2004/06/09 19:02:49 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/CutParameters.h,v 1.2 2004/06/12 00:05:12 jchiang Exp $
  */
  
 #ifndef dataFilter_CUTPARAMETERS_H
@@ -17,9 +17,6 @@
 #include "tip/Table.h"
 #include "tip/Header.h"
 
-// flag for debug printing
-#define DEBUG 0
-
 namespace st_app {
    class AppParGroup;
 }
@@ -33,9 +30,9 @@ namespace st_app {
  * @author Tom Stephens
  * @date Created:  17 Oct 2003
  * @date Last Modified:  25 Nov 2003
- * @version $Revision: 1.1 $
+ * @version $Revision: 1.2 $
  * 
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/CutParameters.h,v 1.1 2004/06/09 19:02:49 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/CutParameters.h,v 1.2 2004/06/12 00:05:12 jchiang Exp $
  */
 
 class CutParameters {

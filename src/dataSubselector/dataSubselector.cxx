@@ -3,7 +3,7 @@
  * @brief Filter FT1 data.
  * @author J. Chiang
  *
- *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.4 2004/06/28 14:40:50 jchiang Exp $
+ *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.5 2004/08/17 00:02:40 jchiang Exp $
  */
 
 #include "facilities/Util.h"
@@ -14,13 +14,16 @@
 
 #include "tip/IFileSvc.h"
 
-#include "dataSubselector/CutParameters.h"
+//#include "dataSubselector/CutParameters.h"
+#include "dataSubselector/CutController.h"
+
+using dataSubselector::CutController;
 
 /**
  * @class DataFilter
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.4 2004/06/28 14:40:50 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.5 2004/08/17 00:02:40 jchiang Exp $
  */
 
 class DataFilter : public st_app::StApp {
@@ -57,7 +60,9 @@ private:
    std::string m_inputFile;
    std::string m_outputFile;
 
-   void copyTable(const std::string & extension, CutParameters * cuts=0) const;
+//   void copyTable(const std::string & extension, CutParameters * cuts=0) const;
+   void copyTable(const std::string & extension,
+                  CutController * cutController=0) const;
 
 };
 
@@ -74,21 +79,26 @@ void DataFilter::run() {
 
    tip::IFileSvc::instance().createFile(m_outputFile, m_inputFile);
 
-   CutParameters cuts(m_pars);
-   copyTable("events", &cuts);
+//    CutParameters cuts(m_pars);
+//    copyTable("events", &cuts);
+   CutController * cuts = CutController::instance(m_pars, m_inputFile);
+   copyTable("EVENTS", cuts);
    copyTable("gti");
    std::cout << "Done." << std::endl;
 }
 
 void DataFilter::copyTable(const std::string & extension,
-                           CutParameters * cuts) const {
-   std::string queryString("");
-   if (cuts) {
-      queryString = cuts->fitsQueryString();
-   }
+                           CutController * cuts) const {
+//                           CutParameters * cuts) const {
+//    std::string queryString("");
+//    if (cuts) {
+//       queryString = cuts->fitsQueryString();
+//    }
+//    tip::Table * inputTable 
+//       = tip::IFileSvc::instance().editTable(m_inputFile, extension, 
+//                                             queryString);
    tip::Table * inputTable 
-      = tip::IFileSvc::instance().editTable(m_inputFile, extension, 
-                                            queryString);
+      = tip::IFileSvc::instance().editTable(m_inputFile, extension);
    
    tip::Table * outputTable 
       = tip::IFileSvc::instance().editTable(m_outputFile, extension);
@@ -104,7 +114,7 @@ void DataFilter::copyTable(const std::string & extension,
    long npts(0);
 
    for (; inputIt != inputTable->end(); ++inputIt) {
-      if (!cuts || cuts->acceptRow(input)) {
+      if (!cuts || cuts->accept(input)) {
          output = input;
          ++outputIt;
          npts++;
@@ -114,7 +124,8 @@ void DataFilter::copyTable(const std::string & extension,
    outputTable->setNumRecords(npts);
 
    if (cuts) {
-      cuts->addDataSubspaceKeywords(outputTable);
+//      cuts->addDataSubspaceKeywords(outputTable);
+      cuts->writeDssKeywords(outputTable->getHeader());
    }
 
    delete inputTable;

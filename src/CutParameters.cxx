@@ -2,7 +2,7 @@
  * @file CutParameters.cxx
  * @brief  Method definitions for the CutParameters class
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/CutParameters.cxx,v 1.3 2004/08/17 00:02:39 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/CutParameters.cxx,v 1.4 2004/12/04 07:26:34 jchiang Exp $
  */
 
 #include <cmath>
@@ -10,8 +10,6 @@
 #include "st_app/AppParGroup.h"
 
 #include "dataSubselector/CutParameters.h"
-// #include "dataSubselector/Cuts.h"
-// namespace dataSubselector {
 
 CutParameters::CutParameters(st_app::AppParGroup & pars) : 
    m_query(""),  m_headerString("") {
@@ -188,5 +186,3 @@ void CutParameters::addDataSubspaceKeywords(tip::Table * table) {
    // update the NDSKEYS keyword with the new value
    header["NDSKEYS"].set(nKeys);
 }
-
-//}

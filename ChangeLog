@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Fri Dec  3 15:37:01 PST 2004
+dataSubselector/src
+
+Modified Files:
+	Cuts.cxx 
+Log Message:
+add clone methods and copy constructor
+    *
+------------------------------------------------------------
 User: jchiang  Fri Dec  3 15:37:00 PST 2004
 dataSubselector/dataSubselector
 

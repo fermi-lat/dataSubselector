@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Dec  6 15:30:42 PST 2004
+dataSubselector/dataSubselector
+
+Modified Files:
+	Cuts.h 
+Log Message:
+remove unnecessary scoping
+    *
+------------------------------------------------------------
 User: jchiang  Mon Dec  6 15:25:28 PST 2004
 dataSubselector/src
 

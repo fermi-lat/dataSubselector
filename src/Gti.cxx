@@ -4,7 +4,7 @@
  * accept() method.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Gti.cxx,v 1.3 2004/12/08 06:11:12 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Gti.cxx,v 1.4 2005/04/04 17:50:58 jchiang Exp $
  */
 
 #include "st_facilities/Util.h"
@@ -76,7 +76,7 @@ void Gti::writeExtension(const std::string & filename) const {
    std::auto_ptr<tip::Table> 
       gtiTable(tip::IFileSvc::instance().editTable(filename, "GTI"));
 
-// Assume that setting the number of records to zero erases the current
+// Assume that setting the number of records to zero erases the existing
 // data.
    gtiTable->setNumRecords(0);
 
@@ -84,10 +84,25 @@ void Gti::writeExtension(const std::string & filename) const {
    tip::Table::Iterator it = gtiTable->begin();
    tip::Table::Record & row = *it;
    Gti::ConstIterator interval = begin();
+   double ontime(0);
+   double tstart, tstop;
+   tstart = interval->first;
+   tstop = interval->second;
    for ( ; it != gtiTable->end(); ++it, ++interval) {
       row["START"].set(interval->first);
       row["STOP"].set(interval->second);
+      ontime += interval->second - interval->first;
+      if (interval->first < tstart) {
+         tstart = interval->first;
+      }
+      if (interval->second > tstop) {
+         tstop = interval->second;
+      }
    }
+   double telapse(tstop - tstart);
+   tip::Header & header = gtiTable->getHeader();
+   header["ONTIME"].set(ontime);
+   header["TELAPSE"].set(telapse);
 }
 
 Gti Gti::applyTimeRangeCut(double start, double stop) const {

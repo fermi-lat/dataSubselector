@@ -3,7 +3,7 @@
  * @brief Handle data selections and DSS keyword management.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Cuts.cxx,v 1.7 2004/12/03 20:08:51 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Cuts.cxx,v 1.8 2004/12/03 22:55:40 jchiang Exp $
  */
 
 #include <cstdlib>
@@ -75,6 +75,13 @@ Cuts::Cuts(const std::string & eventFile, const std::string & extension) {
          }
          throw std::runtime_error(message.str());
       }
+   }
+}
+
+Cuts::Cuts(const Cuts & rhs) {
+   m_cuts.reserve(rhs.size());
+   for (unsigned int i = 0; i < rhs.size(); i++) {
+      m_cuts.push_back(rhs.m_cuts[i]->clone());
    }
 }
 

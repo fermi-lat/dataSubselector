@@ -3,7 +3,7 @@
  * @brief Tests program for Cuts class.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/test/test.cxx,v 1.9 2004/12/08 20:40:25 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/test/test.cxx,v 1.10 2004/12/08 21:38:13 jchiang Exp $
  */ 
 
 #ifdef TRAP_FPE
@@ -30,6 +30,7 @@ class DssTests : public CppUnit::TestFixture {
    CPPUNIT_TEST_SUITE(DssTests);
 
    CPPUNIT_TEST(compareGtis);
+   CPPUNIT_TEST(updateGti);
    CPPUNIT_TEST(compareCuts);
    CPPUNIT_TEST(cutsConstructor);
    CPPUNIT_TEST(test_SkyCone);
@@ -41,6 +42,7 @@ public:
    void setUp();
    void tearDown();
    void compareGtis();
+   void updateGti();
    void compareCuts();
    void cutsConstructor();
    void test_SkyCone();
@@ -58,7 +60,10 @@ private:
    tip::Table::ConstIterator m_inputIt;
    tip::Table::Iterator m_outputIt;
    tip::Table::Iterator m_output2It;
+
 };
+
+#define ASSERT_EQUALS(X, Y) CPPUNIT_ASSERT(fabs( (X - Y)/Y ) < 1e-4)
 
 void DssTests::setUp() {
    char * root_path = ::getenv("DATASUBSELECTORROOT");
@@ -87,6 +92,22 @@ void DssTests::compareGtis() {
    gti1.insertInterval(0, 10.);
 
    CPPUNIT_ASSERT(gti1 != gti2);
+}
+
+void DssTests::updateGti() {
+   dataSubselector::Gti gti;
+   gti.insertInterval(0, 1000.);
+   gti.insertInterval(1500, 2000.);
+   dataSubselector::Gti new_gti = gti.applyTimeRangeCut(500., 1750.);
+
+   double expected_values[2][2] = {{500, 1000}, {1500, 1750}};
+   std::vector< std::pair<double, double> >::const_iterator interval;
+   int i(0);
+   for (interval = new_gti.begin();
+        interval != new_gti.end(); ++interval, i++) {
+      ASSERT_EQUALS(interval->first, expected_values[i][0]);
+      ASSERT_EQUALS(interval->second, expected_values[i][1]);
+   }
 }
 
 void DssTests::cutsConstructor() {

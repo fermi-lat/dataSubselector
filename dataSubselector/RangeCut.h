@@ -3,7 +3,7 @@
  * @brief Cuts based on a valid a range of column values.
  * @author J. Chiang
  *
- * $Header$
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/RangeCut.h,v 1.1 2004/12/08 20:40:21 jchiang Exp $
  */
 
 #ifndef dataSubselector_RangeCut_h
@@ -18,7 +18,7 @@ namespace dataSubselector {
  * @brief Cut on FITS binary table column values.
  * @author J. Chiang
  *
- * $Header$
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/RangeCut.h,v 1.1 2004/12/08 20:40:21 jchiang Exp $
  */
 
 class RangeCut : public CutBase {
@@ -58,6 +58,11 @@ public:
 
    /// @brief The maximum value of the accepted range.
    double maxVal() const {return m_max;}
+
+   /// @brief The interval type.
+   IntervalType intervalType() const {
+      return m_type;
+   }
 
 protected:
 

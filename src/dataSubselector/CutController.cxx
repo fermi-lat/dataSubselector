@@ -1,7 +1,7 @@
 /**
  * @file CutController.cxx
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/CutController.cxx,v 1.3 2004/12/08 20:40:23 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/CutController.cxx,v 1.1 2005/01/15 02:26:33 jchiang Exp $
  */
 
 #include "facilities/Util.h"
@@ -10,6 +10,7 @@
 #include "astro/SkyDir.h"
 
 #include "dataSubselector/CutController.h"
+#include "dataSubselector/Gti.h"
 
 namespace dataSubselector {
 
@@ -54,6 +55,7 @@ CutController::CutController(st_app::AppParGroup & pars,
    if (pars["erescut"]) {
       addRangeCut("CALIB_VERSION[3]", "dimensionless", 1, 1, 3);
    }
+   updateGti(eventFile);
 }
 
 bool CutController::accept(tip::ConstTableRecord & row) const {
@@ -95,6 +97,26 @@ bool CutController::withinCoordLimits(double ra, double dec) const {
               latMin <= dec && dec <= latMax);
    }
    return false;
+}
+
+void CutController::updateGti(const std::string & eventFile) const {
+   Gti gti(eventFile);
+   for (unsigned int i = 0; i < m_cuts.size(); i++) {
+      if (m_cuts[i].type() == "range") {
+         const RangeCut & my_cut = 
+            dynamic_cast<RangeCut &>(const_cast<CutBase &>(m_cuts[i]));
+         if (my_cut.colname() == "TIME") {
+            if (my_cut.intervalType() == RangeCut::CLOSED) {
+               gti = gti.applyTimeRangeCut(my_cut.minVal(), my_cut.maxVal());
+            } else if (my_cut.intervalType() == RangeCut::MINONLY) {
+               gti = gti.applyTimeRangeCut(my_cut.minVal(), gti.maxValue());
+            } else if (my_cut.intervalType() == RangeCut::MAXONLY) {
+               gti = gti.applyTimeRangeCut(gti.minValue(), my_cut.maxVal());
+            }
+         }
+      }
+   }
+   gti.writeExtension(eventFile);
 }
       
 } // namespace dataSubselector

@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Thu Dec  2 13:29:52 PST 2004
+dataSubselector/src
+
+Modified Files:
+	Cuts.cxx 
+Log Message:
+be able to filter without requiring a tip::TableRecord
+    *
+------------------------------------------------------------
 User: jchiang  Thu Dec  2 13:29:51 PST 2004
 dataSubselector/dataSubselector
 

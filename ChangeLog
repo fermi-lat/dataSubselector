@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: tstephen  Tue Dec 16 07:01:01 PST 2003
+dataSubselector/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+Added hoops/pil functionality.
+    *
+------------------------------------------------------------
+User: tstephen  Tue Dec 16 07:01:01 PST 2003
 dataSubselector/src
 
 Modified Files:

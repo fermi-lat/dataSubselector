@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Jun 14 01:32:21 PDT 2004
+dataSubselector/dataSubselector
+
+Modified Files:
+	CutParameters.h 
+Log Message:
+remove debug flag
+    *
+------------------------------------------------------------
 User: jchiang  Fri Jun 11 17:05:12 PDT 2004
 dataSubselector/src/dataSubselector
 

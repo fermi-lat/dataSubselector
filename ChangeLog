@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Apr  4 14:09:08 PDT 2005
+dataSubselector/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+update checksum keywords in output file; tagging v3r3p1
+    *
+------------------------------------------------------------
 TAG
 Tag name: v3r3, operation: add
 Package: dataSubselector

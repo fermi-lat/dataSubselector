@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Mon Apr  4 14:09:09 PDT 2005
+dataSubselector/src/dataSubselector
+
+Modified Files:
+	dataSubselector.cxx 
+Log Message:
+update checksum keywords in output file; tagging v3r3p1
+    *
+------------------------------------------------------------
+User: jchiang  Mon Apr  4 14:09:09 PDT 2005
 dataSubselector/doc
 
 Modified Files:

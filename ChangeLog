@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Fri Dec  3 23:26:34 PST 2004
+dataSubselector/src
+
+Modified Files:
+	CutParameters.cxx Cuts.cxx RangeCut.cxx SConstruct 
+Log Message:
+handle cuts on vector quantities; refactor interface
+    *
+------------------------------------------------------------
+User: jchiang  Fri Dec  3 23:26:34 PST 2004
 dataSubselector/doc
 
 Modified Files:

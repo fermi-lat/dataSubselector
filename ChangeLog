@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Wed Dec  8 12:40:25 PST 2004
+dataSubselector/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+remove old code; separate header files for CutBase hierarchy
+    *
+------------------------------------------------------------
+User: jchiang  Wed Dec  8 12:40:25 PST 2004
 dataSubselector/src/dataSubselector
 
 Modified Files:

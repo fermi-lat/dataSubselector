@@ -3,10 +3,11 @@
  * @brief Acceptance cone selection.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/SkyConeCut.cxx,v 1.4 2004/12/08 00:32:53 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/SkyConeCut.cxx,v 1.5 2004/12/08 20:40:23 jchiang Exp $
  */
 
 #include <iostream>
+#include <sstream>
 #include <stdexcept>
 
 #include "facilities/Util.h"

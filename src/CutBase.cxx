@@ -3,8 +3,10 @@
  * @brief Implementation for CutBase methods.
  * @author J. Chiang
  *
- * $Header$
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/CutBase.cxx,v 1.1 2004/12/08 20:40:23 jchiang Exp $
  */
+
+#include <sstream>
 
 #include "tip/Header.h"
 

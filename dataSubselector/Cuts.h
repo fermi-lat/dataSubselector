@@ -4,7 +4,7 @@
  * dataSubselector.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.15 2004/12/06 23:25:21 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.16 2004/12/06 23:30:41 jchiang Exp $
  */
 
 #ifndef dataSubselector_Cuts_h
@@ -30,7 +30,7 @@ namespace dataSubselector {
  * dataSubselector.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.15 2004/12/06 23:25:21 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.16 2004/12/06 23:30:41 jchiang Exp $
  */
 
 class Cuts {
@@ -41,7 +41,8 @@ public:
 
    Cuts() {}
 
-   Cuts(const std::string & eventFile, const std::string & extension="EVENTS");
+   Cuts(const std::string & eventFile, const std::string & extension="EVENTS",
+        bool check_columns=true);
 
    Cuts(const Cuts & rhs);
 

@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: jchiang  Wed Jun  9 11:58:20 PDT 2004
+dataSubselector/src
+
+Removed Files:
+      Tag: v1r1p3
+	cutParameters.cxx dataSubselector.cxx 
+Log Message:
+convert to use tip and st_app
+    *
+------------------------------------------------------------
 User: jchiang  Wed Jun  9 11:58:19 PDT 2004
 dataSubselector/doc
 

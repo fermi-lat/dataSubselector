@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Sat Dec  4 09:17:09 PST 2004
+dataSubselector/src/viewCuts
+
+Modified Files:
+	viewCuts.cxx 
+Log Message:
+add CutController
+    *
+------------------------------------------------------------
+User: jchiang  Sat Dec  4 09:17:09 PST 2004
 dataSubselector/src/dataSubselector
 
 Modified Files:

@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Fri Dec  3 14:55:42 PST 2004
+dataSubselector/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+add Gti class; update tests
+    *
+------------------------------------------------------------
 User: jchiang  Fri Dec  3 14:55:41 PST 2004
 dataSubselector/src
 

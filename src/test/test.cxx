@@ -3,7 +3,7 @@
  * @brief Tests program for Cuts class.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/test/test.cxx,v 1.3 2004/12/03 06:42:30 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/test/test.cxx,v 1.4 2004/12/03 19:06:42 jchiang Exp $
  */ 
 
 #ifdef TRAP_FPE
@@ -16,6 +16,7 @@
 #include <cppunit/ui/text/TextTestRunner.h>
 #include <cppunit/extensions/HelperMacros.h>
 
+#include "st_facilities/FitsUtil.h"
 #include "st_facilities/Util.h"
 
 #include "tip/IFileSvc.h"
@@ -155,6 +156,9 @@ void DssTests::compareCuts() {
    delete m_inputTable;
    delete m_outputTable;
    delete m_outputTable2;
+
+   st_facilities::FitsUtil::writeChecksums(m_outfile);
+   st_facilities::FitsUtil::writeChecksums(m_outfile2);
 }
 
 int main() {

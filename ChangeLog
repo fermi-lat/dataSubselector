@@ -1,4 +1,40 @@
 ------------------------------------------------------------
+TAG
+Tag name: v2r4, operation: add
+Package: dataSubselector
+User: jchiang  Tue Dec  7 16:37:28 2004
+Files:
+  dataSubselector/.cvsignore  1.2
+  dataSubselector/ChangeLog  1.140
+  dataSubselector/Data/input_events.fits  1.3
+  dataSubselector/cmt/.cvsignore  1.2
+  dataSubselector/cmt/requirements  1.24
+  dataSubselector/dataSubselector/CutController.h  1.2
+  dataSubselector/dataSubselector/CutParameters.h  1.5
+  dataSubselector/dataSubselector/Cuts.h  1.18
+  dataSubselector/dataSubselector/Gti.h  1.3
+  dataSubselector/doc/.cvsignore  1.1
+  dataSubselector/doc/release.notes  1.12
+  dataSubselector/doc/dataSubselector.usage  1.1
+  dataSubselector/include/dataSubselector.h  1.1
+  dataSubselector/include/cutParameters.h  1.3
+  dataSubselector/pfiles/dataSubselector.par  1.6
+  dataSubselector/src/RangeCut.cxx  1.4
+  dataSubselector/src/Gti.cxx  1.2
+  dataSubselector/src/SConstruct  1.5
+  dataSubselector/src/mainpage.h  1.2
+  dataSubselector/src/GtiCut.cxx  1.2
+  dataSubselector/src/CutController.cxx  1.2
+  dataSubselector/src/CutParameters.cxx  1.5
+  dataSubselector/src/Cuts.cxx  1.16
+  dataSubselector/src/SkyConeCut.cxx  1.4
+  dataSubselector/src/buildBase  1.2
+  dataSubselector/src/dataSubselector/dataSubselector.cxx  1.7
+  dataSubselector/src/test/test.cxx  1.8
+  dataSubselector/src/viewCuts/viewCuts.cxx  1.4
+
+    *
+------------------------------------------------------------
 User: jchiang  Tue Dec  7 16:37:10 PST 2004
 dataSubselector/doc
 

@@ -3,10 +3,11 @@
  * @brief Cut on a column value in a given range of values.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/RangeCut.cxx,v 1.4 2004/12/05 22:21:36 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/RangeCut.cxx,v 1.5 2004/12/08 20:40:23 jchiang Exp $
  */
 
 #include <iostream>
+#include <sstream>
 
 #include "facilities/Util.h"
 

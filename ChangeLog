@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Wed Jun  9 11:58:19 PDT 2004
+dataSubselector/doc
+
+Added Files:
+	release.notes 
+Log Message:
+convert to use tip and st_app
+    *
+------------------------------------------------------------
+User: jchiang  Wed Jun  9 11:58:19 PDT 2004
 dataSubselector/cmt
 
 Modified Files:

@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Thu Sep 23 22:46:09 PDT 2004
+dataSubselector/dataSubselector
+
+Modified Files:
+	CutParameters.h 
+Log Message:
+change all float data members to doubles since hoops does not let one assign to floats
+    *
+------------------------------------------------------------
 User: jchiang  Mon Aug 16 17:04:41 PDT 2004
 dataSubselector/doc
 

@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Dec  6 15:25:22 PST 2004
+dataSubselector/dataSubselector
+
+Modified Files:
+	Cuts.h Gti.h 
+Log Message:
+add ability to add GTI extensions
+    *
+------------------------------------------------------------
 User: jchiang  Sun Dec  5 14:21:36 PST 2004
 dataSubselector/src/dataSubselector
 

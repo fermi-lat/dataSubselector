@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Fri Jun 11 17:05:12 PDT 2004
+dataSubselector/dataSubselector
+
+Modified Files:
+	CutParameters.h 
+Log Message:
+allow for a rectangular extraction region, in Equatorial or Galactic coordinates
+    *
+------------------------------------------------------------
+User: jchiang  Fri Jun 11 17:05:12 PDT 2004
 dataSubselector/cmt
 
 Modified Files:

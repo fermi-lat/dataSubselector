@@ -1,7 +1,7 @@
 /**
  * @file CutController.cxx
  *
- * $Header$
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/CutController.cxx,v 1.1 2004/12/04 17:17:08 jchiang Exp $
  */
 
 #include "facilities/Util.h"
@@ -21,6 +21,11 @@ CutController * CutController::instance(st_app::AppParGroup & pars,
       s_instance = new CutController(pars, eventFile);
    }
    return s_instance;
+}
+
+void CutController::delete_instance() {
+   delete s_instance;
+   s_instance = 0;
 }
 
 CutController::CutController(st_app::AppParGroup & pars, 

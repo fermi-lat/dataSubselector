@@ -1,5 +1,16 @@
 ------------------------------------------------------------
 User: jchiang  Sat Dec  4 09:17:08 PST 2004
+dataSubselector/dataSubselector
+
+Modified Files:
+	Cuts.h 
+Added Files:
+	CutController.h 
+Log Message:
+add CutController
+    *
+------------------------------------------------------------
+User: jchiang  Sat Dec  4 09:17:08 PST 2004
 dataSubselector/cmt
 
 Modified Files:

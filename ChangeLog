@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Fri Jan 14 18:26:33 PST 2005
+dataSubselector/doc
+
+Modified Files:
+	release.notes 
+Log Message:
+move CutController to application directory
+    *
+------------------------------------------------------------
 User: jchiang  Fri Jan 14 18:26:32 PST 2005
 dataSubselector/dataSubselector
 

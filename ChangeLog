@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Mon Apr  4 10:50:58 PDT 2005
+dataSubselector/src/dataSubselector
+
+Modified Files:
+	CutController.cxx CutController.h 
+Log Message:
+update GTIs to incoporate time range cuts; tagging v3r3
+    *
+------------------------------------------------------------
+User: jchiang  Mon Apr  4 10:50:58 PDT 2005
 dataSubselector/src
 
 Modified Files:

@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Dec 15 17:13:28 PST 2004
+dataSubselector/src
+
+Modified Files:
+	Cuts.cxx 
+Log Message:
+remove #include cfitsio.h
+    *
+------------------------------------------------------------
 User: jchiang  Wed Dec 15 17:13:27 PST 2004
 dataSubselector/doc
 

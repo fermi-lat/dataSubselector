@@ -3,7 +3,7 @@
  * @brief Filter FT1 data.
  * @author J. Chiang
  *
- *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.9 2004/12/08 21:38:13 jchiang Exp $
+ *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.10 2005/01/15 02:26:33 jchiang Exp $
  */
 
 #include "facilities/Util.h"
@@ -25,13 +25,13 @@ using dataSubselector::CutController;
  * @class DataFilter
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.9 2004/12/08 21:38:13 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.10 2005/01/15 02:26:33 jchiang Exp $
  */
 
 class DataFilter : public st_app::StApp {
 public:
    DataFilter() : st_app::StApp(), 
-                  m_pars(st_app::StApp::getParGroup("dataSubselector")) {
+                  m_pars(st_app::StApp::getParGroup("gtselect")) {
       try {
          m_pars.Prompt();
          m_pars.Save();

@@ -1,5 +1,16 @@
 ------------------------------------------------------------
 User: jchiang  Fri Dec  3 19:23:32 PST 2004
+dataSubselector/src
+
+Modified Files:
+	Cuts.cxx 
+Added Files:
+	GtiCut.cxx RangeCut.cxx SkyConeCut.cxx 
+Log Message:
+refactor Cuts classes
+    *
+------------------------------------------------------------
+User: jchiang  Fri Dec  3 19:23:32 PST 2004
 dataSubselector/dataSubselector
 
 Modified Files:

@@ -3,7 +3,7 @@
  * @brief Acceptance cone selection.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/SkyConeCut.cxx,v 1.2 2004/12/04 17:17:08 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/SkyConeCut.cxx,v 1.3 2004/12/05 22:21:36 jchiang Exp $
  */
 
 #include <stdexcept>
@@ -77,6 +77,19 @@ bool Cuts::SkyConeCut::operator==(const CutBase & arg) const {
    } catch (...) {
       return false;
    }
+}
+
+bool Cuts::SkyConeCut::supercedes(const CutBase & cut) const {
+   if (cut.type() != "SkyCone") {
+      return false;
+   }
+   SkyConeCut & coneCut = 
+      dynamic_cast<SkyConeCut &>(const_cast<CutBase &>(cut));
+   double separation = m_coneCenter.difference(coneCut.m_coneCenter)*180./M_PI;
+   if (m_radius < coneCut.m_radius - separation) {
+      return true;
+   }
+   return false;
 }
 
 void Cuts::SkyConeCut::

@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Sun Dec  5 14:21:36 PST 2004
+dataSubselector/src/dataSubselector
+
+Modified Files:
+	dataSubselector.cxx 
+Log Message:
+add introspection
+    *
+------------------------------------------------------------
+User: jchiang  Sun Dec  5 14:21:36 PST 2004
 dataSubselector/src
 
 Modified Files:

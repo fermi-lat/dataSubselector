@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Sat Dec  4 09:17:08 PST 2004
+dataSubselector/pfiles
+
+Modified Files:
+	dataSubselector.par 
+Log Message:
+add CutController
+    *
+------------------------------------------------------------
+User: jchiang  Sat Dec  4 09:17:08 PST 2004
 dataSubselector/doc
 
 Modified Files:

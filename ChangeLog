@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Dec  1 15:56:49 PST 2004
+dataSubselector/dataSubselector
+
+Added Files:
+	Cuts.h 
+Log Message:
+Add Cuts class for DSS handling
+    *
+------------------------------------------------------------
 User: jchiang  Fri Oct 29 22:04:09 PDT 2004
 dataSubselector/doc
 

@@ -1,18 +1,18 @@
 /**
- * @file U2.cxx
+ * @file dataSubselector.cxx
  * @brief  The main program body for the dataSubselection tool
  * 
  * @author Tom Stephens
  * @date Created:  17 Oct 2003
- * @date Last Modified:  $Date: 2003/12/03 15:18:02 $
- * @version Revision:  $Revision: 1.4 $
+ * @date Last Modified:  $Date: 2003/12/03 17:01:22 $
+ * @version Revision:  $Revision: 1.1 $
  *
- * $Id: U2.cxx,v 1.4 2003/12/03 15:18:02 tstephen Exp $
+ * $Id: dataSubselector.cxx,v 1.1 2003/12/03 17:01:22 tstephen Exp $
  */
 
 
 
-#include "../include/U2.h"
+#include "../include/dataSubselector.h"
 
 /**
  * @brief  Main program loop for the dataSubselection Tool
@@ -29,8 +29,8 @@ int main(int argc, char **argv)
   // check to be sure that we have enough information to run the command or print
   // the help information if requested.
   if (argc>1&&strcmp(argv[1],"-h")==0) {
-    std::cout <<"\ndataSubselection -h  ==> Prints this message\n\n  otherwise \n\n";
-    std::cout <<"dataSubselection <input file> <output file> [options]\n";
+    std::cout <<"\ndataSubselector -h  ==> Prints this message\n\n  otherwise \n\n";
+    std::cout <<"dataSubselector <input file> <output file> [options]\n";
     std::cout <<"\n";
     std::cout <<"options:\n";
     std::cout <<"\n";
@@ -60,8 +60,8 @@ int main(int argc, char **argv)
   } else if (argc<3) {
     std::cout << "\nYou need to specifiy at least an input and output file\n";
     std::cout << "usage:\n";
-    std::cout << "   dataSubselection <input file> <output file> [options]\n";
-    std::cout << "For a complete list of options use 'dataSubselection -h'\n\n";
+    std::cout << "   dataSubselector <input file> <output file> [options]\n";
+    std::cout << "For a complete list of options use 'dataSubselector -h'\n\n";
   } else {  // we have a valid command so let's get started
     try {
   

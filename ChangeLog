@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: tstephen  Wed Jan 28 06:10:43 PST 2004
+dataSubselector
+
+Modified Files:
+	.cvsignore 
+Log Message:
+Added rh9_gcc32 directory to cvsignore
+    *
+------------------------------------------------------------
 User: tstephen  Tue Jan 27 07:38:59 PST 2004
 dataSubselector/cmt
 

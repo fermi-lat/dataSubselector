@@ -4,7 +4,7 @@
  * dataSubselector.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.19 2004/12/08 06:11:12 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.20 2004/12/08 20:40:21 jchiang Exp $
  */
 
 #ifndef dataSubselector_Cuts_h
@@ -33,7 +33,7 @@ class Gti;
  * packages outside of dataSubselector.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.19 2004/12/08 06:11:12 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.20 2004/12/08 20:40:21 jchiang Exp $
  */
 
 class Cuts {
@@ -135,7 +135,7 @@ public:
    /// @brief The number of cuts contained herein.
    unsigned int size() const {return m_cuts.size();}
 
-   /// @brief Do a member-wise comparision of each cut in m_cuts.
+   /// @brief Do a member-wise comparison of each cut in m_cuts.
    /// The ordering of cuts must be the same.
    bool operator==(const Cuts & rhs) const;
 
@@ -157,6 +157,9 @@ private:
 
    unsigned int find(const CutBase * cut) const;
 
+   /// @brief Add a cut. The passed cut will not be added if an 
+   ///        existing cut supercedes it, but it will be deleted.  If
+   ///        added, this cut will be deleted by the destructor ~Cut().
    unsigned int addCut(CutBase * newCut);
 
 };

@@ -3,7 +3,7 @@
  * @brief Filter FT1 data.
  * @author J. Chiang
  *
- *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.8 2004/12/08 20:40:24 jchiang Exp $
+ *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.9 2004/12/08 21:38:13 jchiang Exp $
  */
 
 #include "facilities/Util.h"
@@ -17,7 +17,7 @@
 #include "tip/IFileSvc.h"
 #include "tip/Table.h"
 
-#include "dataSubselector/CutController.h"
+#include "CutController.h"
 
 using dataSubselector::CutController;
 
@@ -25,7 +25,7 @@ using dataSubselector::CutController;
  * @class DataFilter
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.8 2004/12/08 20:40:24 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.9 2004/12/08 21:38:13 jchiang Exp $
  */
 
 class DataFilter : public st_app::StApp {

@@ -1,7 +1,7 @@
 /**
  * @file CutController.cxx
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/CutController.cxx,v 1.2 2004/12/05 22:21:36 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/CutController.cxx,v 1.3 2004/12/08 20:40:23 jchiang Exp $
  */
 
 #include "facilities/Util.h"

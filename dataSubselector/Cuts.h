@@ -4,7 +4,7 @@
  * dataSubselector.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.14 2004/12/05 22:21:36 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.15 2004/12/06 23:25:21 jchiang Exp $
  */
 
 #ifndef dataSubselector_Cuts_h
@@ -30,7 +30,7 @@ namespace dataSubselector {
  * dataSubselector.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.14 2004/12/05 22:21:36 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.15 2004/12/06 23:25:21 jchiang Exp $
  */
 
 class Cuts {
@@ -64,7 +64,7 @@ public:
 
    void writeDssKeywords(tip::Header & header) const;
 
-   void Cuts::writeGtiExtension(const std::string & filename) const;
+   void writeGtiExtension(const std::string & filename) const;
 
    unsigned int size() const {return m_cuts.size();}
 

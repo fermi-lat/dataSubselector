@@ -4,7 +4,7 @@
  * an accept() method.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Gti.h,v 1.3 2004/12/07 05:11:28 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Gti.h,v 1.4 2004/12/08 20:40:21 jchiang Exp $
  */
 
 #ifndef dataSubselector_Gti_h
@@ -20,7 +20,10 @@ namespace dataSubselector {
 
 /**
  * @class Gti
+ * @brief A more useful and complete implementation of evtbin::Gti
+ * @author J. Chiang
  *
+ * $Header$
  */
 
 class Gti : public evtbin::Gti {
@@ -34,9 +37,24 @@ public:
 
    Gti(const tip::Table & gtiTable);
 
+   Gti(const evtbin::Gti & gti) : evtbin::Gti(gti) {}
+
    bool accept(double time) const;
 
    void writeExtension(const std::string & filename) const;
+
+   /// @brief Given a start and stop time this method recomputes the
+   /// the GTIs.
+   /// @return A new Gti object with the new good-time intervals.
+   /// @param start The start time of the time range cut (MET seconds)
+   /// @param stop The stop time of the time range cut (MET seconds)
+   Gti applyTimeRangeCut(double start, double stop) const;
+
+   /// @return The minimum lower bound of the GTIs (MET seconds)
+   double minValue() const;
+
+   /// @return The maximum upper bound of the GTIs (MET seconds)
+   double maxValue() const;
 
 };
 

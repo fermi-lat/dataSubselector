@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: tstephen  Tue Dec 23 13:09:25 PST 2003
+dataSubselector/Data
+
+Modified Files:
+	dataSubselector.par 
+Log Message:
+Fixed the maximium probablility photon is a gamma ray cut
+and added units to the prompts.
+    *
+------------------------------------------------------------
 User: tstephen  Tue Dec 16 07:01:01 PST 2003
 dataSubselector/cmt
 

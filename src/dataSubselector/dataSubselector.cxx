@@ -3,7 +3,7 @@
  * @brief Filter FT1 data.
  * @author J. Chiang
  *
- *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.13 2005/04/04 21:09:09 jchiang Exp $
+ *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.14 2005/04/06 20:33:04 jchiang Exp $
  */
 
 #include "facilities/Util.h"
@@ -27,7 +27,7 @@ using dataSubselector::CutController;
  * @class DataFilter
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.13 2005/04/04 21:09:09 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.14 2005/04/06 20:33:04 jchiang Exp $
  */
 
 class DataFilter : public st_app::StApp {
@@ -106,6 +106,7 @@ void DataFilter::run() {
    CutController * cuts = CutController::instance(m_pars, m_inputFile);
    copyTable("EVENTS", cuts);
    copyTable("gti");
+   cuts->updateGti(m_outputFile);
    unsigned int verbosity = m_pars["chatter"];
    if (verbosity > 1) {
       std::cout << "Done." << std::endl;
@@ -117,18 +118,18 @@ void DataFilter::run() {
 
 void DataFilter::copyTable(const std::string & extension,
                            CutController * cuts) const {
-   tip::Table * inputTable 
-      = tip::IFileSvc::instance().editTable(m_inputFile, extension);
+   const tip::Table * inputTable 
+      = tip::IFileSvc::instance().readTable(m_inputFile, extension);
    
    tip::Table * outputTable 
       = tip::IFileSvc::instance().editTable(m_outputFile, extension);
 
    outputTable->setNumRecords(inputTable->getNumRecords());
 
-   tip::Table::Iterator inputIt = inputTable->begin();
+   tip::Table::ConstIterator inputIt = inputTable->begin();
    tip::Table::Iterator outputIt = outputTable->begin();
 
-   tip::TableRecord & input = *inputIt;
+   tip::ConstTableRecord & input = *inputIt;
    tip::Table::Record & output = *outputIt;
 
    long npts(0);

@@ -1,7 +1,7 @@
 /**
  * @file CutController.cxx
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/CutController.cxx,v 1.1 2005/01/15 02:26:33 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/CutController.cxx,v 1.2 2005/04/04 17:50:58 jchiang Exp $
  */
 
 #include "facilities/Util.h"
@@ -55,7 +55,7 @@ CutController::CutController(st_app::AppParGroup & pars,
    if (pars["erescut"]) {
       addRangeCut("CALIB_VERSION[3]", "dimensionless", 1, 1, 3);
    }
-   updateGti(eventFile);
+//   updateGti(eventFile);
 }
 
 bool CutController::accept(tip::ConstTableRecord & row) const {

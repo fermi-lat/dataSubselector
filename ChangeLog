@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Apr 12 10:21:50 PDT 2005
+dataSubselector/src/dataSubselector
+
+Modified Files:
+	CutController.cxx CutController.h dataSubselector.cxx 
+Log Message:
+fix major bug in gtselect whereby the input file's GTI extension was modified; tagging v3r4
+    *
+------------------------------------------------------------
 TAG
 Tag name: v3r3p2, operation: add
 Package: dataSubselector

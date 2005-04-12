@@ -3,7 +3,7 @@
  * @brief Manage the cuts specified in the par file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/CutController.h,v 1.1 2005/01/15 02:26:33 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/CutController.h,v 1.2 2005/04/04 17:50:58 jchiang Exp $
  */
 
 #ifndef dataSubselector_CutController_h
@@ -28,7 +28,7 @@ namespace dataSubselector {
  * @brief Controller interface between application and CutBase hierarchy.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/CutController.h,v 1.1 2005/01/15 02:26:33 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/CutController.h,v 1.2 2005/04/04 17:50:58 jchiang Exp $
  */
 
 class CutController {
@@ -46,6 +46,8 @@ public:
       m_cuts.writeDssKeywords(header);
    }
 
+   void updateGti(const std::string & filename) const;
+
 protected:
 
    CutController::CutController(st_app::AppParGroup & pars,
@@ -62,8 +64,6 @@ private:
                     double minVal, double maxVal, unsigned int indx=0);
 
    bool CutController::withinCoordLimits(double ra, double dec) const;
-
-   void updateGti(const std::string & filename) const;
 
 };
 

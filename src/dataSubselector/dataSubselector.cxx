@@ -3,7 +3,7 @@
  * @brief Filter FT1 data.
  * @author J. Chiang
  *
- *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.15 2005/04/12 17:21:50 jchiang Exp $
+ *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.16 2005/04/21 17:39:59 jchiang Exp $
  */
 
 #include "facilities/Util.h"
@@ -27,7 +27,7 @@ using dataSubselector::CutController;
  * @class DataFilter
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.15 2005/04/12 17:21:50 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.16 2005/04/21 17:39:59 jchiang Exp $
  */
 
 class DataFilter : public st_app::StApp {
@@ -39,7 +39,7 @@ public:
          m_pars.Save();
          setName("gtselect");
          setVersion(s_cvs_id);
-  } catch (std::exception & eObj) {
+      } catch (std::exception & eObj) {
          std::cerr << eObj.what() << std::endl;
          std::exit(1);
       } catch (...) {
@@ -75,7 +75,7 @@ private:
 
 };
 
-std::string DataFilter::s_cvs_id("$Name$");
+std::string DataFilter::s_cvs_id("$Name:  $");
 
 st_app::StAppFactory<DataFilter> myAppFactory("gtselect");
 

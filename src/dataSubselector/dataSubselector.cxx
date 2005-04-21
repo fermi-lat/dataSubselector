@@ -3,7 +3,7 @@
  * @brief Filter FT1 data.
  * @author J. Chiang
  *
- *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.14 2005/04/06 20:33:04 jchiang Exp $
+ *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.15 2005/04/12 17:21:50 jchiang Exp $
  */
 
 #include "facilities/Util.h"
@@ -27,7 +27,7 @@ using dataSubselector::CutController;
  * @class DataFilter
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.14 2005/04/06 20:33:04 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.15 2005/04/12 17:21:50 jchiang Exp $
  */
 
 class DataFilter : public st_app::StApp {
@@ -75,7 +75,7 @@ private:
 
 };
 
-std::string DataFilter::s_cvs_id("$Name:  $");
+std::string DataFilter::s_cvs_id("$Name$");
 
 st_app::StAppFactory<DataFilter> myAppFactory("gtselect");
 

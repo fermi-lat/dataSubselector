@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Thu Apr 21 10:40:00 PDT 2005
+dataSubselector/src/dataSubselector
+
+Modified Files:
+	dataSubselector.cxx 
+Log Message:
+try to get version from cvs
+    *
+------------------------------------------------------------
 TAG
 Tag name: v3r4, operation: add
 Package: dataSubselector

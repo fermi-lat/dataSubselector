@@ -3,7 +3,7 @@
  * @brief Handle data selections and DSS keyword management.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Cuts.cxx,v 1.20 2004/12/16 01:13:27 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Cuts.cxx,v 1.21 2005/03/21 17:46:52 jchiang Exp $
  */
 
 #include <cctype>
@@ -125,6 +125,10 @@ unsigned int Cuts::parseColname(const std::string & colname,
 
 unsigned int Cuts::find(const CutBase * cut) const {
    for (unsigned int i = 0; i < size(); i++) {
+     if(cut->type() != m_cuts[i]->type())
+       {
+	 continue;
+       }
       if (*cut == *m_cuts[i]) {
          return i;
       }
@@ -234,11 +238,11 @@ bool Cuts::operator==(const Cuts & rhs) const {
    if (size() != rhs.size()) {
       return false;
    }
-// Note that the ordering of the cuts must be the same.
    for (unsigned int i = 0; i < size(); i++) {
-      if (!(*m_cuts.at(i) == *rhs.m_cuts.at(i))) {
-         return false;
-      }
+     int place = find(rhs.m_cuts.at(i));
+     if(place==size()){
+       return false;
+     }
    }
    return true;
 }

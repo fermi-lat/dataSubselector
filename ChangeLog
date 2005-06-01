@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Wed Jun  1 12:49:33 PDT 2005
+dataSubselector/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+use Template Method pattern; tagging v3r5
+    *
+------------------------------------------------------------
+User: jchiang  Wed Jun  1 12:49:33 PDT 2005
 dataSubselector/src
 
 Modified Files:

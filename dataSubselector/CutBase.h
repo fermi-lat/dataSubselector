@@ -3,7 +3,7 @@
  * @brief Base class for cuts.
  * @author J. Chiang
  *
- * $Header$
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/CutBase.h,v 1.1 2004/12/08 20:40:21 jchiang Exp $
  */
 
 #ifndef dataSubselector_CutBase_h
@@ -25,7 +25,7 @@ namespace dataSubselector {
  * @brief Base class for cuts that are applied to FITS data.
  * @author J. Chiang
  * 
- * $Header$
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/CutBase.h,v 1.1 2004/12/08 20:40:21 jchiang Exp $
  */
 
 class CutBase {
@@ -41,12 +41,13 @@ public:
    virtual bool accept(tip::ConstTableRecord & row) const = 0;
 
    /// @brief True if all of the key-value pairs pass this cut.
-   virtual bool accept(const std::map<std::string, double> &params) const=0;
-
-   /// @brief Do a member-wise comparison.
-   virtual bool operator==(const CutBase & rhs) const = 0;
+   virtual bool accept(const std::map<std::string, double> &params) const = 0;
 
    virtual CutBase * clone() const = 0;
+
+   /// @brief Do a member-wise comparison.
+   /// This should not be over-ridden, so it is nonvirtual. See GOF, p. 329.
+   bool operator==(const CutBase & rhs) const;
 
    /// @brief The cut type, "range", "GTI", or "SkyCone"
    virtual const std::string & type() const {return m_type;}
@@ -67,6 +68,9 @@ public:
    virtual bool supercedes(const CutBase &) const {return false;}
 
 protected:
+
+   /// @brief Hook method for use by operator==(...)
+   virtual bool equals(const CutBase & rhs) const = 0;
 
    virtual void getKeyValues(std::string & type, std::string & unit,
                              std::string & value, std::string & ref) const = 0;

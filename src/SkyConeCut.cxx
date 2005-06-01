@@ -3,7 +3,7 @@
  * @brief Acceptance cone selection.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/SkyConeCut.cxx,v 1.5 2004/12/08 20:40:23 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/SkyConeCut.cxx,v 1.6 2005/01/19 01:23:31 jchiang Exp $
  */
 
 #include <iostream>
@@ -70,7 +70,7 @@ bool SkyConeCut::accept(const std::map<std::string, double> & params) const {
    return true;
 }
 
-bool SkyConeCut::operator==(const CutBase & arg) const {
+bool SkyConeCut::equals(const CutBase & arg) const {
    try {
       SkyConeCut & rhs = 
          dynamic_cast<SkyConeCut &>(const_cast<CutBase &>(arg));

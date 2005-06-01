@@ -3,7 +3,7 @@
  * @brief Implementation for CutBase methods.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/CutBase.cxx,v 1.1 2004/12/08 20:40:23 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/CutBase.cxx,v 1.2 2005/01/19 01:23:31 jchiang Exp $
  */
 
 #include <sstream>
@@ -13,6 +13,10 @@
 #include "dataSubselector/CutBase.h"
 
 namespace dataSubselector {
+
+bool CutBase::operator==(const CutBase & rhs) const {
+   return m_type == rhs.m_type && this->equals(rhs);
+}
 
 void CutBase::writeCut(std::ostream & stream, unsigned int keynum) const {
    std::string type, unit, value, ref("");

@@ -3,7 +3,7 @@
  * @brief Cuts based on a valid a range of column values.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/RangeCut.h,v 1.1 2004/12/08 20:40:21 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/RangeCut.h,v 1.2 2005/04/04 17:50:57 jchiang Exp $
  */
 
 #ifndef dataSubselector_RangeCut_h
@@ -18,7 +18,7 @@ namespace dataSubselector {
  * @brief Cut on FITS binary table column values.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/RangeCut.h,v 1.1 2004/12/08 20:40:21 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/RangeCut.h,v 1.2 2005/04/04 17:50:57 jchiang Exp $
  */
 
 class RangeCut : public CutBase {
@@ -40,8 +40,6 @@ public:
 
    virtual bool accept(const std::map<std::string, double> & params) const;
 
-   virtual bool operator==(const CutBase & rhs) const;
-
    virtual CutBase * clone() const {return new RangeCut(*this);}
 
    virtual bool supercedes(const CutBase & cut) const;
@@ -61,10 +59,12 @@ public:
 
    /// @brief The interval type.
    IntervalType intervalType() const {
-      return m_type;
+      return m_intervalType;
    }
 
 protected:
+
+   virtual bool equals(const CutBase & rhs) const;
 
    virtual void getKeyValues(std::string & type, std::string & unit,
                              std::string & value, std::string & ref) const;
@@ -75,7 +75,7 @@ private:
    std::string m_unit;
    double m_min;
    double m_max;
-   IntervalType m_type;
+   IntervalType m_intervalType;
    unsigned int m_index;
    std::string m_fullName;
 

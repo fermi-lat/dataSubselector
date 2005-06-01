@@ -3,7 +3,7 @@
  * @brief Describe a GTI cut.
  * @author J. Chiang
  *
- * $Header$
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/GtiCut.h,v 1.1 2004/12/08 20:40:21 jchiang Exp $
  */
 
 #ifndef dataSubselector_GtiCut_h
@@ -21,7 +21,7 @@ namespace dataSubselector {
  * @brief Cut on Good Time Intervals
  * @author J. Chiang
  *
- * $Header$
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/GtiCut.h,v 1.1 2004/12/08 20:40:21 jchiang Exp $
  */
 
 class GtiCut : public CutBase {
@@ -41,14 +41,14 @@ public:
 
    virtual bool accept(const std::map<std::string, double> & params) const;
 
-   virtual bool operator==(const CutBase & rhs) const;
-
    virtual CutBase * clone() const {return new GtiCut(*this);}
 
    /// @brief A reference to the Gti object.
    const Gti & gti() const {return m_gti;}
 
 protected:
+
+   virtual bool equals(const CutBase & rhs) const;
 
    virtual void getKeyValues(std::string & type, std::string & unit,
                              std::string & value, std::string & ref) const;

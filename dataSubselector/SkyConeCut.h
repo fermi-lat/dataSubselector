@@ -3,7 +3,7 @@
  * @brief Describe an acceptance cone on the sky.
  * @author J. Chiang
  *
- * $Header$
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/SkyConeCut.h,v 1.1 2004/12/08 20:40:21 jchiang Exp $
  */
 
 #ifndef dataSubselector_SkyConeCut_h
@@ -22,7 +22,7 @@ namespace dataSubselector {
  * @brief Acceptance cone on the sky.
  * @author J. Chiang
  *
- * $Header$
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/SkyConeCut.h,v 1.1 2004/12/08 20:40:21 jchiang Exp $
  */
 
 class SkyConeCut : public CutBase {
@@ -48,8 +48,6 @@ public:
 
    virtual bool accept(const std::map<std::string, double> & params) const;
 
-   virtual bool operator==(const CutBase & rhs) const;
-
    virtual CutBase * clone() const {return new SkyConeCut(*this);}
 
    virtual bool supercedes(const CutBase &) const;
@@ -64,6 +62,8 @@ public:
    double radius() const {return m_radius;}
 
 protected:
+
+   virtual bool equals(const CutBase & rhs) const;
 
    virtual void getKeyValues(std::string & type, std::string & unit,
                              std::string & value, std::string & ref) const;

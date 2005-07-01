@@ -3,7 +3,7 @@
  * @brief Describe an acceptance cone on the sky.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/SkyConeCut.h,v 1.1 2004/12/08 20:40:21 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/SkyConeCut.h,v 1.2 2005/06/01 19:49:32 jchiang Exp $
  */
 
 #ifndef dataSubselector_SkyConeCut_h
@@ -22,7 +22,7 @@ namespace dataSubselector {
  * @brief Acceptance cone on the sky.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/SkyConeCut.h,v 1.1 2004/12/08 20:40:21 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/SkyConeCut.h,v 1.2 2005/06/01 19:49:32 jchiang Exp $
  */
 
 class SkyConeCut : public CutBase {
@@ -52,6 +52,12 @@ public:
 
    virtual bool supercedes(const CutBase &) const;
       
+   /// @return The corresponding filter string, using the haversine
+   /// formula, that can be passed to tip, following the cfitsio
+   /// extended filename syntax.  The implementation is from Tom
+   /// Stephens' original cutParameters.cxx code.
+   virtual std::string filterString() const;
+
    /// @brief The RA of the cone center (J2000 degrees)
    double ra() const {return m_ra;}
 

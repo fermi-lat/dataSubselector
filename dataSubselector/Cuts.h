@@ -4,7 +4,7 @@
  * dataSubselector.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.20 2004/12/08 20:40:21 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.21 2005/01/15 02:26:32 jchiang Exp $
  */
 
 #ifndef dataSubselector_Cuts_h
@@ -33,7 +33,7 @@ class Gti;
  * packages outside of dataSubselector.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.20 2004/12/08 20:40:21 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.21 2005/01/15 02:26:32 jchiang Exp $
  */
 
 class Cuts {
@@ -145,6 +145,8 @@ public:
 
    /// @return A reference to the i-th cut.
    const CutBase & operator[](unsigned int i) const {return *(m_cuts.at(i));}
+
+   std::string filterString() const;
 
 private:
 

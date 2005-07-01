@@ -1,7 +1,7 @@
 /**
  * @file CutController.cxx
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/CutController.cxx,v 1.2 2005/04/04 17:50:58 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/CutController.cxx,v 1.3 2005/04/12 17:21:50 jchiang Exp $
  */
 
 #include "facilities/Util.h"
@@ -118,5 +118,14 @@ void CutController::updateGti(const std::string & eventFile) const {
    }
    gti.writeExtension(eventFile);
 }
-      
+
+std::string CutController::filterString() const {
+   std::string filter(m_cuts.filterString());
+   if (filter != "") {
+      filter += " && ";
+   }
+   filter += "gtifilter()";
+   return filter;
+}
+
 } // namespace dataSubselector

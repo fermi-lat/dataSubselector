@@ -3,7 +3,7 @@
  * @brief Handle data selections and DSS keyword management.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Cuts.cxx,v 1.22 2005/05/24 19:09:34 cohen Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Cuts.cxx,v 1.23 2005/06/01 19:49:33 jchiang Exp $
  */
 
 #include <cctype>
@@ -247,6 +247,20 @@ void Cuts::writeCuts(std::ostream & stream) const {
    for (unsigned int i = 0; i < m_cuts.size(); i++) {
       m_cuts.at(i)->writeCut(stream, i + 1);
    }
+}
+
+std::string Cuts::filterString() const {
+   std::string filter("");
+   for (unsigned int i = 0; i < m_cuts.size(); i++) {
+      std::string my_filter = m_cuts.at(i)->filterString();
+      if (my_filter != "") {
+         if (filter != "") {
+            filter += " && ";
+         }
+         filter += my_filter;
+      }
+   }
+   return filter;
 }
 
 } // namespace dataSubselector

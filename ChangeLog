@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Fri Jul  1 15:32:55 PDT 2005
+dataSubselector/src
+
+Modified Files:
+	Cuts.cxx RangeCut.cxx SkyConeCut.cxx 
+Log Message:
+use filter expressions and extended filename syntax to speed things up
+    *
+------------------------------------------------------------
 User: jchiang  Fri Jul  1 15:32:54 PDT 2005
 dataSubselector/dataSubselector
 

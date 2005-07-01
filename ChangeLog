@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Fri Jul  1 15:32:54 PDT 2005
+dataSubselector/dataSubselector
+
+Modified Files:
+	CutBase.h Cuts.h RangeCut.h SkyConeCut.h 
+Log Message:
+use filter expressions and extended filename syntax to speed things up
+    *
+------------------------------------------------------------
 TAG
 Tag name: v3r5, operation: add
 Package: dataSubselector

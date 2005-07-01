@@ -3,7 +3,7 @@
  * @brief Base class for cuts.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/CutBase.h,v 1.1 2004/12/08 20:40:21 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/CutBase.h,v 1.2 2005/06/01 19:49:31 jchiang Exp $
  */
 
 #ifndef dataSubselector_CutBase_h
@@ -25,7 +25,7 @@ namespace dataSubselector {
  * @brief Base class for cuts that are applied to FITS data.
  * @author J. Chiang
  * 
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/CutBase.h,v 1.1 2004/12/08 20:40:21 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/CutBase.h,v 1.2 2005/06/01 19:49:31 jchiang Exp $
  */
 
 class CutBase {
@@ -66,6 +66,10 @@ public:
    ///        redundancy but also ensures no cuts are missed for
    ///        subclasses that do not re-implement.
    virtual bool supercedes(const CutBase &) const {return false;}
+
+   virtual std::string filterString() const {
+      return "";
+   }
 
 protected:
 

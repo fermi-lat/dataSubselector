@@ -3,7 +3,7 @@
  * @brief Filter FT1 data.
  * @author J. Chiang
  *
- *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.16 2005/04/21 17:39:59 jchiang Exp $
+ *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.17 2005/04/21 21:43:52 jchiang Exp $
  */
 
 #include "facilities/Util.h"
@@ -27,7 +27,7 @@ using dataSubselector::CutController;
  * @class DataFilter
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.16 2005/04/21 17:39:59 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.17 2005/04/21 21:43:52 jchiang Exp $
  */
 
 class DataFilter : public st_app::StApp {
@@ -118,8 +118,13 @@ void DataFilter::run() {
 
 void DataFilter::copyTable(const std::string & extension,
                            CutController * cuts) const {
+   std::string filterString("");
+   if (cuts) {
+      filterString = cuts->filterString();
+   }
    const tip::Table * inputTable 
-      = tip::IFileSvc::instance().readTable(m_inputFile, extension);
+      = tip::IFileSvc::instance().readTable(m_inputFile, extension,
+                                            filterString);
    
    tip::Table * outputTable 
       = tip::IFileSvc::instance().editTable(m_outputFile, extension);
@@ -134,12 +139,17 @@ void DataFilter::copyTable(const std::string & extension,
 
    long npts(0);
 
+//    for (; inputIt != inputTable->end(); ++inputIt) {
+//       if (!cuts || cuts->accept(input)) {
+//          output = input;
+//          ++outputIt;
+//          npts++;
+//       }
+//    }
    for (; inputIt != inputTable->end(); ++inputIt) {
-      if (!cuts || cuts->accept(input)) {
-         output = input;
-         ++outputIt;
-         npts++;
-      }
+      output = input;
+      ++outputIt;
+      npts++;
    }
 // Resize output table to account for filtered rows.
    outputTable->setNumRecords(npts);

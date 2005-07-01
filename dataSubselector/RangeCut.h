@@ -3,7 +3,7 @@
  * @brief Cuts based on a valid a range of column values.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/RangeCut.h,v 1.2 2005/04/04 17:50:57 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/RangeCut.h,v 1.3 2005/06/01 19:49:32 jchiang Exp $
  */
 
 #ifndef dataSubselector_RangeCut_h
@@ -18,7 +18,7 @@ namespace dataSubselector {
  * @brief Cut on FITS binary table column values.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/RangeCut.h,v 1.2 2005/04/04 17:50:57 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/RangeCut.h,v 1.3 2005/06/01 19:49:32 jchiang Exp $
  */
 
 class RangeCut : public CutBase {
@@ -43,6 +43,8 @@ public:
    virtual CutBase * clone() const {return new RangeCut(*this);}
 
    virtual bool supercedes(const CutBase & cut) const;
+
+   virtual std::string filterString() const;
 
    /// @brief The column name identifier for a range cut as it
    ///        appears in the DSTYPn keyword, e.g., "ENERGY" or

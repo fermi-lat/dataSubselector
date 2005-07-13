@@ -3,7 +3,7 @@
  * @brief Filter FT1 data.
  * @author J. Chiang
  *
- *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.17 2005/04/21 21:43:52 jchiang Exp $
+ *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.18 2005/07/01 22:32:56 jchiang Exp $
  */
 
 #include "facilities/Util.h"
@@ -27,7 +27,7 @@ using dataSubselector::CutController;
  * @class DataFilter
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.17 2005/04/21 21:43:52 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.18 2005/07/01 22:32:56 jchiang Exp $
  */
 
 class DataFilter : public st_app::StApp {
@@ -87,11 +87,11 @@ void DataFilter::banner() const {
 }
 
 void DataFilter::run() {
-   std::string inputFile = m_pars["input_file"];
+   std::string inputFile = m_pars["infile"];
    m_inputFile = inputFile;
    facilities::Util::expandEnvVar(&m_inputFile);
 
-   std::string outputFile = m_pars["output_file"];
+   std::string outputFile = m_pars["outfile"];
    m_outputFile = outputFile;
    facilities::Util::expandEnvVar(&m_outputFile);
    bool clobber = m_pars["clobber"];

@@ -3,7 +3,7 @@
  * @brief Handle data selections and DSS keyword management.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Cuts.cxx,v 1.25 2005/08/17 03:56:48 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Cuts.cxx,v 1.26 2005/08/17 20:54:53 jchiang Exp $
  */
 
 #include <cctype>
@@ -65,7 +65,7 @@ Cuts Cuts::mergeGtis(std::vector<Cuts> & cuts_vector) {
       }
    }
    
-// Merge all of the GTIs into one.
+// Merge all of the GTIs into one, taking the union of the intervals.
    dataSubselector::Gti merged_gti;
    std::vector<const dataSubselector::GtiCut *> gtiCuts;
    for (unsigned int i = 0; i < cuts_vector.size(); i++) {
@@ -74,7 +74,7 @@ Cuts Cuts::mergeGtis(std::vector<Cuts> & cuts_vector) {
          if (i == 0 && j == 0) {
             merged_gti = gtiCuts.at(j)->gti();
          } else {
-            merged_gti = merged_gti & gtiCuts.at(j)->gti();
+            merged_gti = merged_gti | gtiCuts.at(j)->gti();
          }
       }
    }

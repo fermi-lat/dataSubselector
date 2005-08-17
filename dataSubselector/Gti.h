@@ -4,7 +4,7 @@
  * an accept() method.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Gti.h,v 1.4 2004/12/08 20:40:21 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Gti.h,v 1.5 2005/04/04 17:50:57 jchiang Exp $
  */
 
 #ifndef dataSubselector_Gti_h
@@ -23,7 +23,7 @@ namespace dataSubselector {
  * @brief A more useful and complete implementation of evtbin::Gti
  * @author J. Chiang
  *
- * $Header$
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Gti.h,v 1.5 2005/04/04 17:50:57 jchiang Exp $
  */
 
 class Gti : public evtbin::Gti {
@@ -55,6 +55,10 @@ public:
 
    /// @return The maximum upper bound of the GTIs (MET seconds)
    double maxValue() const;
+
+   /// @return A Gti that is the union of intervals between this and
+   /// the other Gti.  The resulting set of GTIs are disjoint.
+   Gti operator|(const evtbin::Gti & rhs) const;
 
 };
 

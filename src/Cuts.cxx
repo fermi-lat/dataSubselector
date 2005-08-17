@@ -3,7 +3,7 @@
  * @brief Handle data selections and DSS keyword management.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Cuts.cxx,v 1.23 2005/06/01 19:49:33 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Cuts.cxx,v 1.24 2005/07/01 22:32:55 jchiang Exp $
  */
 
 #include <cctype>
@@ -238,6 +238,21 @@ bool Cuts::operator==(const Cuts & rhs) const {
       unsigned int place = find(rhs.m_cuts.at(i));
       if (place == size()){
          return false;
+      }
+   }
+   return true;
+}
+
+bool Cuts::compareWithoutGtis(const Cuts & rhs) const {
+   if (size() != rhs.size()) {
+      return false;
+   }
+   for (unsigned int i = 0; i < size(); i++) {
+      if (rhs.m_cuts.at(i)->type() != "GTI") {
+         unsigned int place = find(rhs.m_cuts.at(i));
+         if (place == size()){
+            return false;
+         }
       }
    }
    return true;

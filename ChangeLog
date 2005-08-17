@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Wed Aug 17 13:54:54 PDT 2005
+dataSubselector/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+add Cuts constructor that reads in a vector of input files; tagging v3r8
+    *
+------------------------------------------------------------
+User: jchiang  Wed Aug 17 13:54:54 PDT 2005
 dataSubselector/src
 
 Modified Files:

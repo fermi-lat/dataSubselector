@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Tue Aug 16 20:56:48 PDT 2005
+dataSubselector/pfiles
+
+Modified Files:
+	gtselect.par 
+Log Message:
+add Cuts::compareWithoutGtis; tagging v3r7
+    *
+------------------------------------------------------------
+User: jchiang  Tue Aug 16 20:56:48 PDT 2005
 dataSubselector/doc
 
 Modified Files:

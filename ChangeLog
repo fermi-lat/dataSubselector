@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Aug 17 15:26:16 PDT 2005
+dataSubselector/dataSubselector
+
+Modified Files:
+	Gti.h 
+Log Message:
+take the union of merged Gti objects, not the intersection
+    *
+------------------------------------------------------------
 User: jchiang  Wed Aug 17 15:26:15 PDT 2005
 dataSubselector/cmt
 

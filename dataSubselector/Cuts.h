@@ -4,7 +4,7 @@
  * dataSubselector.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.21 2005/01/15 02:26:32 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.22 2005/07/01 22:32:54 jchiang Exp $
  */
 
 #ifndef dataSubselector_Cuts_h
@@ -33,7 +33,7 @@ class Gti;
  * packages outside of dataSubselector.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.21 2005/01/15 02:26:32 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.22 2005/07/01 22:32:54 jchiang Exp $
  */
 
 class Cuts {
@@ -138,6 +138,9 @@ public:
    /// @brief Do a member-wise comparison of each cut in m_cuts.
    /// The ordering of cuts must be the same.
    bool operator==(const Cuts & rhs) const;
+
+   /// @brief Do a member-wise comparison of each cut, but skip GTIs
+   bool compareWithoutGtis(const Cuts & rhs) const;
 
    /// @brief Write a summary of the cuts to the output stream.  This
    /// summary contains the same information as the DSS keywords.

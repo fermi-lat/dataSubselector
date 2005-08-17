@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Aug 17 15:26:19 PDT 2005
+dataSubselector/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+take the union of merged Gti objects, not the intersection
+    *
+------------------------------------------------------------
 User: jchiang  Wed Aug 17 15:26:18 PDT 2005
 dataSubselector/src
 

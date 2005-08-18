@@ -3,7 +3,7 @@
  * @brief Describe a GTI cut.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/GtiCut.h,v 1.1 2004/12/08 20:40:21 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/GtiCut.h,v 1.2 2005/06/01 19:49:32 jchiang Exp $
  */
 
 #ifndef dataSubselector_GtiCut_h
@@ -21,7 +21,7 @@ namespace dataSubselector {
  * @brief Cut on Good Time Intervals
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/GtiCut.h,v 1.1 2004/12/08 20:40:21 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/GtiCut.h,v 1.2 2005/06/01 19:49:32 jchiang Exp $
  */
 
 class GtiCut : public CutBase {
@@ -40,6 +40,8 @@ public:
    virtual bool accept(tip::ConstTableRecord & row) const;
 
    virtual bool accept(const std::map<std::string, double> & params) const;
+
+   virtual void writeCut(std::ostream & stream, unsigned int keynum) const;
 
    virtual CutBase * clone() const {return new GtiCut(*this);}
 

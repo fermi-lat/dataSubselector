@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Thu Aug 18 14:56:25 PDT 2005
+dataSubselector/src
+
+Modified Files:
+	GtiCut.cxx 
+Log Message:
+reimplement writeCut for GtiCut
+    *
+------------------------------------------------------------
+User: jchiang  Thu Aug 18 14:56:25 PDT 2005
 dataSubselector/dataSubselector
 
 Modified Files:

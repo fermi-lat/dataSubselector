@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Sep 12 10:35:16 PDT 2005
+dataSubselector/src/dataSubselector
+
+Modified Files:
+	dataSubselector.cxx 
+Log Message:
+add check for input FT1 file
+    *
+------------------------------------------------------------
 TAG
 Tag name: v3r8p2, operation: add
 Package: dataSubselector

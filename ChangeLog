@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Mon Sep 12 15:14:29 PDT 2005
+dataSubselector/doc
+
+Modified Files:
+	release.notes 
+Log Message:
+use evtable, sctable; merge identical skyconecuts; tagging v3r8p4
+    *
+------------------------------------------------------------
+User: jchiang  Mon Sep 12 15:14:29 PDT 2005
 dataSubselector/dataSubselector
 
 Modified Files:

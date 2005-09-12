@@ -4,7 +4,7 @@
  * dataSubselector.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.23 2005/08/17 03:56:48 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.24 2005/08/17 20:54:51 jchiang Exp $
  */
 
 #ifndef dataSubselector_Cuts_h
@@ -35,7 +35,7 @@ class GtiCuts;
  * packages outside of dataSubselector.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.23 2005/08/17 03:56:48 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.24 2005/08/17 20:54:51 jchiang Exp $
  */
 
 class Cuts {
@@ -59,14 +59,14 @@ public:
    ///        encountered as the DSS type.  If false, the range cut
    ///        will be stored, but if applied to a tip::TableRecord,
    ///        tip will throw an exception.
-   Cuts(const std::string & eventFile, const std::string & extension="EVENTS",
+   Cuts(const std::string & eventFile, const std::string & extension,
         bool check_columns=true);
 
    /// @brief This constructor reads in a vector of eventFiles, verifying
    ///        that the non-GTI cuts are the same in all files, and merging
    ///        the GTIs from the various files into a single Gti object.
    Cuts(const std::vector<std::string> & eventFiles,
-        const std::string & extension="Events",
+        const std::string & extension,
         bool check_columns=true);
 
    /// A copy constructor is needed since there are pointer data members.

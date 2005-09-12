@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Mon Sep 12 15:14:31 PDT 2005
+dataSubselector/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+use evtable, sctable; merge identical skyconecuts; tagging v3r8p4
+    *
+------------------------------------------------------------
+User: jchiang  Mon Sep 12 15:14:31 PDT 2005
 dataSubselector/src/dataSubselector
 
 Modified Files:

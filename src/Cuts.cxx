@@ -3,7 +3,7 @@
  * @brief Handle data selections and DSS keyword management.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Cuts.cxx,v 1.26 2005/08/17 20:54:53 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Cuts.cxx,v 1.27 2005/08/17 22:26:18 jchiang Exp $
  */
 
 #include <cctype>
@@ -79,7 +79,9 @@ Cuts Cuts::mergeGtis(std::vector<Cuts> & cuts_vector) {
       }
    }
 
-   my_cuts.addGtiCut(merged_gti);
+   if (merged_gti.getNumIntervals() > 0) {
+      my_cuts.addGtiCut(merged_gti);
+   }
    return my_cuts;
 }
 

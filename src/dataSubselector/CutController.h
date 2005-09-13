@@ -3,7 +3,7 @@
  * @brief Manage the cuts specified in the par file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/CutController.h,v 1.3 2005/04/12 17:21:50 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/CutController.h,v 1.4 2005/07/01 22:32:56 jchiang Exp $
  */
 
 #ifndef dataSubselector_CutController_h
@@ -28,7 +28,7 @@ namespace dataSubselector {
  * @brief Controller interface between application and CutBase hierarchy.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/CutController.h,v 1.3 2005/04/12 17:21:50 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/CutController.h,v 1.4 2005/07/01 22:32:56 jchiang Exp $
  */
 
 class CutController {
@@ -36,7 +36,8 @@ class CutController {
 public:
 
    static CutController * instance(st_app::AppParGroup & pars,
-                                   const std::string & eventFile);
+                                   const std::string & eventFile,
+                                   const std::string & evtable);
 
    static void delete_instance();
 
@@ -53,7 +54,8 @@ public:
 protected:
 
    CutController::CutController(st_app::AppParGroup & pars,
-                                const std::string & eventFile);
+                                const std::string & eventFile,
+                                const std::string & evtable);
 
 private:
 

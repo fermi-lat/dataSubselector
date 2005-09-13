@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Sep 13 14:26:11 PDT 2005
+dataSubselector/src
+
+Modified Files:
+	Cuts.cxx 
+Log Message:
+do not an empty gti to the Cuts object
+    *
+------------------------------------------------------------
 User: jchiang  Mon Sep 12 17:44:25 PDT 2005
 dataSubselector/src/dataSubselector
 

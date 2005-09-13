@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Sep 12 17:44:24 PDT 2005
+dataSubselector/doc
+
+Modified Files:
+	release.notes 
+Log Message:
+cut controller ctor patch; tagging v3r8p5
+    *
+------------------------------------------------------------
 User: jchiang  Mon Sep 12 17:44:23 PDT 2005
 dataSubselector/cmt
 

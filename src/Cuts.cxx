@@ -3,7 +3,7 @@
  * @brief Handle data selections and DSS keyword management.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Cuts.cxx,v 1.28 2005/09/13 21:26:10 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Cuts.cxx,v 1.29 2005/09/19 23:33:53 jchiang Exp $
  */
 
 #include <cctype>
@@ -294,7 +294,8 @@ unsigned int Cuts::addCut(CutBase * newCut) {
 }
 
 void Cuts::writeDssKeywords(tip::Header & header) const {
-   header["NDSKEYS"].set(m_cuts.size());
+   int ndskeys = m_cuts.size();
+   header["NDSKEYS"].set(ndskeys);
    for (unsigned int i = 0; i < m_cuts.size(); i++) {
       m_cuts[i]->writeDssKeywords(header, i + 1);
    }

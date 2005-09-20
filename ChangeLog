@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Sep 20 11:44:17 PDT 2005
+dataSubselector/src
+
+Modified Files:
+	Cuts.cxx 
+Log Message:
+wild stab at getting keyword values to be written without causing a crash
+    *
+------------------------------------------------------------
 User: jchiang  Mon Sep 19 16:33:53 PDT 2005
 dataSubselector/src
 

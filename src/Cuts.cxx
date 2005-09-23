@@ -3,7 +3,7 @@
  * @brief Handle data selections and DSS keyword management.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Cuts.cxx,v 1.30 2005/09/20 18:44:16 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Cuts.cxx,v 1.31 2005/09/23 19:56:13 jchiang Exp $
  */
 
 #include <cctype>
@@ -293,20 +293,26 @@ void Cuts::writeDssKeywords(tip::Header & header) const {
 }
 
 void Cuts::removeDssKeywords(tip::Header & header) const {
-   int ndskeys;
-   header["NDSKEYS"].get(ndskeys);
-   char * dskeys[] = {"DSTYP", "DSUNI", "DSVAL", "DSREF"};
-   for (int i = 0; i < ndskeys; i++) {
-      for (int j = 0; j < 4; j++) {
-         std::ostringstream keyname;
-         keyname << dskeys[j] << i;
-         tip::Header::Iterator keyword = header.find(keyname.str());
-         if (keyword != header.end()) {
-            header.erase(keyword);
+   int ndskeys(0);
+   try {
+      header["NDSKEYS"].get(ndskeys);
+      char * dskeys[] = {"DSTYP", "DSUNI", "DSVAL", "DSREF"};
+      for (int i = 0; i < ndskeys; i++) {
+         for (int j = 0; j < 4; j++) {
+            std::ostringstream keyname;
+            keyname << dskeys[j] << i;
+            tip::Header::Iterator keyword = header.find(keyname.str());
+            if (keyword != header.end()) {
+               header.erase(keyword);
+            }
          }
       }
+      header.erase("NDSKEYS");
+   } catch (tip::TipException & eObj) {
+      if (!st_facilities::Util::expectedException(eObj, "keyword not found")) {
+         throw;
+      }
    }
-   header.erase("NDSKEYS");
 }
 
 void Cuts::writeGtiExtension(const std::string & filename) const {

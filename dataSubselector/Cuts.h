@@ -4,7 +4,7 @@
  * dataSubselector.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.25 2005/09/12 22:14:28 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.26 2005/09/19 23:33:52 jchiang Exp $
  */
 
 #ifndef dataSubselector_Cuts_h
@@ -35,7 +35,7 @@ class GtiCuts;
  * packages outside of dataSubselector.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.25 2005/09/12 22:14:28 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.26 2005/09/19 23:33:52 jchiang Exp $
  */
 
 class Cuts {
@@ -143,10 +143,6 @@ public:
    ///        tip::IFileSvc::editTable method.
    void writeDssKeywords(tip::Header & header) const;
 
-   static void removeDssKeywords(std::string filename,
-                                 std::string extname,
-                                 int ndskeys);
-
    /// @brief Add the first GTI extension in the m_cuts vector to
    ///        the specified FITS file.  It is tacitly assumed that
    ///        there is only one GTI extension.  If a GTI extension
@@ -206,6 +202,10 @@ private:
    ///        existing cut supercedes it, but it will be deleted.  If
    ///        added, this cut will be deleted by the destructor ~Cut().
    unsigned int addCut(CutBase * newCut);
+
+   /// @brief Remove all DSS keywords (and NDSKEYS) from
+   ///        the header.
+   void removeDssKeywords(tip::Header & header) const;
 
 };
 

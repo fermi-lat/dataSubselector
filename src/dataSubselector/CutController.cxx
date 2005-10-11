@@ -1,7 +1,7 @@
 /**
  * @file CutController.cxx
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/CutController.cxx,v 1.4 2005/07/01 22:32:56 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/CutController.cxx,v 1.5 2005/09/13 00:44:25 jchiang Exp $
  */
 
 #include "facilities/Util.h"
@@ -34,8 +34,10 @@ CutController::CutController(st_app::AppParGroup & pars,
                              const std::string & eventFile,
                              const std::string & evtable) 
    : m_pars(pars), m_cuts(eventFile, evtable) {
-   double ra = pars["ra"], dec = pars["dec"], radius = pars["rad"];
-   if (ra != 0 && dec != 0 && radius !=0) {
+   double ra = pars["ra"];
+   double dec = pars["dec"];
+   double radius = pars["rad"];
+   if (radius !=0) {
       m_cuts.addSkyConeCut(ra, dec, radius);
    }
    addRangeCut("TIME", "s", pars["tmin"], pars["tmax"]);
@@ -57,7 +59,6 @@ CutController::CutController(st_app::AppParGroup & pars,
    if (pars["erescut"]) {
       addRangeCut("CALIB_VERSION[3]", "dimensionless", 1, 1, 3);
    }
-//   updateGti(eventFile);
 }
 
 bool CutController::accept(tip::ConstTableRecord & row) const {

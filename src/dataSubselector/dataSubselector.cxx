@@ -3,7 +3,7 @@
  * @brief Filter FT1 data.
  * @author J. Chiang
  *
- *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.21 2005/09/12 22:14:30 jchiang Exp $
+ *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.22 2005/09/13 00:44:25 jchiang Exp $
  */
 
 #include "facilities/Util.h"
@@ -27,7 +27,7 @@ using dataSubselector::CutController;
  * @class DataFilter
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.21 2005/09/12 22:14:30 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.22 2005/09/13 00:44:25 jchiang Exp $
  */
 
 class DataFilter : public st_app::StApp {
@@ -142,13 +142,6 @@ void DataFilter::copyTable(const std::string & extension,
 
    long npts(0);
 
-//    for (; inputIt != inputTable->end(); ++inputIt) {
-//       if (!cuts || cuts->accept(input)) {
-//          output = input;
-//          ++outputIt;
-//          npts++;
-//       }
-//    }
    for (; inputIt != inputTable->end(); ++inputIt) {
       output = input;
       ++outputIt;

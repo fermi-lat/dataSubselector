@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Mon Oct 10 23:20:27 PDT 2005
+dataSubselector/src/dataSubselector
+
+Modified Files:
+	CutController.cxx dataSubselector.cxx 
+Log Message:
+add gtmaketime application
+    *
+------------------------------------------------------------
+User: jchiang  Mon Oct 10 23:20:27 PDT 2005
 dataSubselector/pfiles
 
 Added Files:

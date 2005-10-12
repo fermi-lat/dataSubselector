@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Oct 12 13:18:21 PDT 2005
+dataSubselector/pfiles
+
+Modified Files:
+	gtmaketime.par 
+Log Message:
+write output file with new GTI filtering
+    *
+------------------------------------------------------------
 User: jchiang  Tue Oct 11 14:09:02 PDT 2005
 dataSubselector/doc
 

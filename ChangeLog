@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Sun Dec 11 18:03:50 PST 2005
+dataSubselector/src
+
+Modified Files:
+	Cuts.cxx 
+Log Message:
+protect against empty cuts vector
+    *
+------------------------------------------------------------
 User: jchiang  Sun Dec 11 18:02:05 PST 2005
 dataSubselector/src/dataSubselector
 

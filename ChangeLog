@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Sun Dec 11 18:02:05 PST 2005
+dataSubselector/src/dataSubselector
+
+Modified Files:
+	CutController.cxx CutController.h 
+Log Message:
+sync up with new ft1 template
+    *
+------------------------------------------------------------
+User: jchiang  Sun Dec 11 18:02:05 PST 2005
 dataSubselector/pfiles
 
 Modified Files:

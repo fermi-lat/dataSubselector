@@ -3,7 +3,7 @@
  * @brief Manage the cuts specified in the par file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/CutController.h,v 1.4 2005/07/01 22:32:56 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/CutController.h,v 1.5 2005/09/13 00:44:25 jchiang Exp $
  */
 
 #ifndef dataSubselector_CutController_h
@@ -28,7 +28,7 @@ namespace dataSubselector {
  * @brief Controller interface between application and CutBase hierarchy.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/CutController.h,v 1.4 2005/07/01 22:32:56 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/CutController.h,v 1.5 2005/09/13 00:44:25 jchiang Exp $
  */
 
 class CutController {
@@ -65,7 +65,8 @@ private:
    static CutController * s_instance;
 
    void addRangeCut(const std::string & colname, const std::string & unit,
-                    double minVal, double maxVal, unsigned int indx=0);
+                    double minVal, double maxVal, unsigned int indx=0,
+                    bool force=false);
 
    bool CutController::withinCoordLimits(double ra, double dec) const;
 

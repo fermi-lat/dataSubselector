@@ -1,4 +1,15 @@
 ------------------------------------------------------------
+User: peachey  Fri Dec 23 14:47:44 PST 2005
+dataSubselector/dataSubselector
+
+Modified Files:
+	Gti.h 
+Log Message:
+Changes to accomodate recent changes to evtbin::Gti class (operator | was
+added to evtbin::Gti and container type definition changed.
+
+    *
+------------------------------------------------------------
 User: jchiang  Fri Dec 23 11:54:06 PST 2005
 dataSubselector/pfiles
 

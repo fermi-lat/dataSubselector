@@ -1,5 +1,16 @@
 ------------------------------------------------------------
 User: peachey  Fri Dec 23 14:47:44 PST 2005
+dataSubselector/src
+
+Modified Files:
+	Gti.cxx GtiCut.cxx 
+Log Message:
+Changes to accomodate recent changes to evtbin::Gti class (operator | was
+added to evtbin::Gti and container type definition changed.
+
+    *
+------------------------------------------------------------
+User: peachey  Fri Dec 23 14:47:44 PST 2005
 dataSubselector/dataSubselector
 
 Modified Files:

@@ -3,7 +3,7 @@
  * @brief Tests program for Cuts class.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/test/test.cxx,v 1.18 2005/08/18 06:32:47 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/test/test.cxx,v 1.19 2005/09/12 22:14:31 jchiang Exp $
  */ 
 
 #ifdef TRAP_FPE
@@ -103,7 +103,7 @@ void DssTests::compareGtis() {
 
    CPPUNIT_ASSERT(!(gti1 != gti2));
 
-   gti1.insertInterval(0, 10.);
+   gti1.insertInterval(100000., 100010.);
 
    CPPUNIT_ASSERT(gti1 != gti2);
 }
@@ -115,7 +115,7 @@ void DssTests::updateGti() {
    dataSubselector::Gti new_gti = gti.applyTimeRangeCut(500., 1750.);
 
    double expected_values[2][2] = {{500, 1000}, {1500, 1750}};
-   std::vector< std::pair<double, double> >::const_iterator interval;
+   evtbin::Gti::ConstIterator interval;
    int i(0);
    for (interval = new_gti.begin();
         interval != new_gti.end(); ++interval, i++) {

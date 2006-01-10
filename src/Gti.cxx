@@ -4,7 +4,7 @@
  * accept() method.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Gti.cxx,v 1.7 2005/08/18 06:32:47 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Gti.cxx,v 1.8 2005/12/23 22:47:44 peachey Exp $
  */
 
 #include <algorithm>
@@ -130,8 +130,8 @@ double Gti::minValue() const {
 double Gti::maxValue() const {
    double max_val = begin()->first;
    for (ConstIterator interval = begin(); interval != end(); ++interval) {
-      if (interval->first > max_val) {
-         max_val = interval->first;
+      if (interval->second > max_val) {
+         max_val = interval->second;
       }
    }
    return max_val;

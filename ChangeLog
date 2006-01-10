@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Jan 10 09:45:54 PST 2006
+dataSubselector/src
+
+Modified Files:
+	Gti.cxx 
+Log Message:
+fix Gti::maxValue bug; tagging v4r1p1
+    *
+------------------------------------------------------------
 User: jchiang  Tue Jan 10 09:45:53 PST 2006
 dataSubselector/doc
 

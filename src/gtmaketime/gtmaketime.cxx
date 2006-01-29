@@ -5,7 +5,7 @@
  * event data file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/gtmaketime/gtmaketime.cxx,v 1.2 2005/10/11 15:56:53 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/gtmaketime/gtmaketime.cxx,v 1.3 2005/10/12 20:18:22 jchiang Exp $
  */
 
 #include <memory>
@@ -34,9 +34,6 @@ public:
    MakeTime() : st_app::StApp(),
                 m_pars(st_app::StApp::getParGroup("gtmaketime")) {
       try {
-         m_pars.Prompt();
-         m_pars.Save();
-         setName("gtmaketime");
          setVersion(s_cvs_id);
       } catch (std::exception & eObj) {
          std::cerr << eObj.what() << std::endl;
@@ -87,6 +84,8 @@ void MakeTime::banner() const {
 }
 
 void MakeTime::run() {
+   m_pars.Prompt();
+   m_pars.Save();
    check_outfile();
    createGti();
    mergeGtis();

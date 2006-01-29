@@ -3,7 +3,7 @@
  * @brief Filter FT1 data.
  * @author J. Chiang
  *
- *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.22 2005/09/13 00:44:25 jchiang Exp $
+ *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.23 2005/10/11 06:20:27 jchiang Exp $
  */
 
 #include "facilities/Util.h"
@@ -27,7 +27,7 @@ using dataSubselector::CutController;
  * @class DataFilter
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.22 2005/09/13 00:44:25 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.23 2005/10/11 06:20:27 jchiang Exp $
  */
 
 class DataFilter : public st_app::StApp {
@@ -35,9 +35,6 @@ public:
    DataFilter() : st_app::StApp(), 
                   m_pars(st_app::StApp::getParGroup("gtselect")) {
       try {
-         m_pars.Prompt();
-         m_pars.Save();
-         setName("gtselect");
          setVersion(s_cvs_id);
       } catch (std::exception & eObj) {
          std::cerr << eObj.what() << std::endl;
@@ -87,6 +84,8 @@ void DataFilter::banner() const {
 }
 
 void DataFilter::run() {
+   m_pars.Prompt();
+   m_pars.Save();
    std::string evtable = m_pars["evtable"];
    std::string inputFile = m_pars["infile"];
    m_inputFile = inputFile;

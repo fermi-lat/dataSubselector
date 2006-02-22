@@ -1,7 +1,7 @@
 /**
  * @file CutController.cxx
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/CutController.cxx,v 1.6 2005/10/11 06:20:27 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/CutController.cxx,v 1.7 2005/12/12 02:02:05 jchiang Exp $
  */
 
 #include "facilities/Util.h"
@@ -46,9 +46,12 @@ CutController::CutController(st_app::AppParGroup & pars,
    addRangeCut("THETA", "deg", pars["thetamin"], pars["thetamax"]);
    addRangeCut("ZENITH_ANGLE", "deg", pars["zmin"], pars["zmax"]);
    int eventClass = pars["eventClass"];
-   if (eventClass >= 0) {
+   if (eventClass >= 0 && eventClass < 4) {
       addRangeCut("EVENT_CLASS", "dimensionless", eventClass, eventClass,
                   0, true);
+   }
+   if (eventClass == 4) { // Class A events only
+      addRangeCut("EVENT_CLASS", "dimensionless", 0, 1, 0, true);
    }
 }
 

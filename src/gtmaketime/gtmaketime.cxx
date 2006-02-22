@@ -5,10 +5,12 @@
  * event data file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/gtmaketime/gtmaketime.cxx,v 1.3 2005/10/12 20:18:22 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/gtmaketime/gtmaketime.cxx,v 1.4 2006/01/29 20:58:15 jchiang Exp $
  */
 
 #include <memory>
+
+#include "st_stream/StreamFormatter.h"
 
 #include "st_app/AppParGroup.h"
 #include "st_app/StApp.h"
@@ -72,7 +74,7 @@ private:
    static std::string s_cvs_id;
 };
 
-std::string MakeTime::s_cvs_id("$Name:  $");
+std::string MakeTime::s_cvs_id("$Name$");
 
 st_app::StAppFactory<MakeTime> myAppFactory("gtmaketime");
 
@@ -93,17 +95,19 @@ void MakeTime::run() {
 }
 
 void MakeTime::check_outfile() {
+   st_stream::StreamFormatter formatter("MakeTime", "run", 2);
    bool clobber = m_pars["clobber"];
    std::string outfile = m_pars["outfile"];
    m_outfile = outfile;
    if (outfile == "") {
-      std::cout << "Please specify an output file name." << std::endl;
+      formatter.err() << "Please specify an output file name." 
+                      << std::endl;
       std::exit(1);
    }
    if (!clobber && st_facilities::Util::fileExists(outfile)) {
-      std::cout << "Output file " << outfile 
-                << " exists and clobber is set to 'no'.  Exiting."
-                << std::endl;
+      formatter.err() << "Output file " << outfile 
+                      << " exists and clobber is set to 'no'.  Exiting."
+                      << std::endl;
       std::exit(1);
    }
 }

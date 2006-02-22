@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Tue Feb 21 22:44:16 PST 2006
+dataSubselector/src/gtmaketime
+
+Modified Files:
+	gtmaketime.cxx 
+Log Message:
+enable class A event selection; tagging v4r1p3
+    *
+------------------------------------------------------------
+User: jchiang  Tue Feb 21 22:44:16 PST 2006
 dataSubselector/src/dataSubselector
 
 Modified Files:

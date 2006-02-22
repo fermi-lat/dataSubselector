@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Feb 21 22:44:16 PST 2006
+dataSubselector/src/dataSubselector
+
+Modified Files:
+	CutController.cxx 
+Log Message:
+enable class A event selection; tagging v4r1p3
+    *
+------------------------------------------------------------
 User: jchiang  Tue Feb 21 22:44:15 PST 2006
 dataSubselector/pfiles
 

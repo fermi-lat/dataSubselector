@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Wed Feb 22 17:52:16 PST 2006
+dataSubselector/src
+
+Modified Files:
+	Cuts.cxx RangeCut.cxx 
+Log Message:
+klugy additions to handle event class handling for likelihood; tagging v4r1p4
+    *
+------------------------------------------------------------
+User: jchiang  Wed Feb 22 17:52:16 PST 2006
 dataSubselector/doc
 
 Modified Files:

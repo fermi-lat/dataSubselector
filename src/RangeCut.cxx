@@ -3,7 +3,7 @@
  * @brief Cut on a column value in a given range of values.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/RangeCut.cxx,v 1.8 2005/06/01 19:49:33 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/RangeCut.cxx,v 1.9 2005/07/01 22:32:55 jchiang Exp $
  */
 
 #include <iostream>
@@ -27,9 +27,9 @@ RangeCut::RangeCut(const std::string & colname, const std::string & unit,
 }
 
 RangeCut::RangeCut(const std::string & type,
-                         const std::string & unit, 
-                         const std::string & value,
-                         unsigned int indx) 
+                   const std::string & unit, 
+                   const std::string & value,
+                   unsigned int indx) 
    : CutBase("range"), m_colname(type), m_unit(unit), m_index(indx),
      m_fullName(type) {
    std::vector<std::string> tokens;

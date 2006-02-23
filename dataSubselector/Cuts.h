@@ -4,7 +4,7 @@
  * dataSubselector.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.26 2005/09/19 23:33:52 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.27 2005/09/23 19:56:11 jchiang Exp $
  */
 
 #ifndef dataSubselector_Cuts_h
@@ -35,7 +35,7 @@ class GtiCuts;
  * packages outside of dataSubselector.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.26 2005/09/19 23:33:52 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.27 2005/09/23 19:56:11 jchiang Exp $
  */
 
 class Cuts {
@@ -64,7 +64,8 @@ public:
    ///        should already include any time range cuts, explicit
    ///        time range cuts are not needed.
    Cuts(const std::string & eventFile, const std::string & extension,
-        bool check_columns=true, bool skipTimeRangeCuts=false);
+        bool check_columns=true, bool skipTimeRangeCuts=false,
+        bool skipEventClassCuts=false);
 
    /// @brief This constructor reads in a vector of eventFiles, verifying
    ///        that the non-GTI cuts are the same in all files, and merging
@@ -72,7 +73,8 @@ public:
    Cuts(const std::vector<std::string> & eventFiles,
         const std::string & extension,
         bool check_columns=true,
-        bool skipTimeRangeCuts=false);
+        bool skipTimeRangeCuts=false,
+        bool skipEventClassCuts=false);
 
    /// A copy constructor is needed since there are pointer data members.
    Cuts(const Cuts & rhs);

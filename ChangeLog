@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Mon Feb 27 16:47:46 PST 2006
+dataSubselector/doc
+
+Modified Files:
+	release.notes 
+Log Message:
+increase precision for filter string; restore history keyword describing the filter string; tagging v4r1p5
+    *
+------------------------------------------------------------
+User: jchiang  Mon Feb 27 16:47:46 PST 2006
 dataSubselector/cmt
 
 Modified Files:

@@ -5,7 +5,7 @@
  * event data file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/gtmaketime/gtmaketime.cxx,v 1.4 2006/01/29 20:58:15 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/gtmaketime/gtmaketime.cxx,v 1.5 2006/02/22 06:44:16 jchiang Exp $
  */
 
 #include <memory>
@@ -74,7 +74,7 @@ private:
    static std::string s_cvs_id;
 };
 
-std::string MakeTime::s_cvs_id("$Name$");
+std::string MakeTime::s_cvs_id("$Name:  $");
 
 st_app::StAppFactory<MakeTime> myAppFactory("gtmaketime");
 
@@ -144,7 +144,8 @@ void MakeTime::mergeGtis() {
    m_evfile = evfile;
    std::string evtable = m_pars["evtable"];
 
-   dataSubselector::Cuts cuts(evfile, evtable);
+   bool checkColumns = m_pars["apply_filter"];
+   dataSubselector::Cuts cuts(evfile, evtable, checkColumns);
    
    std::vector<const dataSubselector::GtiCut *> gtiCuts;
    cuts.getGtiCuts(gtiCuts);
@@ -157,7 +158,7 @@ void MakeTime::mergeGtis() {
 void MakeTime::copyTable() const {
    tip::IFileSvc::instance().createFile(m_outfile, m_evfile);
 
-   std::string extension("EVENTS");
+   std::string extension = m_pars["evtable"];
    const tip::Table * inputTable 
       = tip::IFileSvc::instance().readTable(m_evfile, extension);
    
@@ -177,8 +178,9 @@ void MakeTime::copyTable() const {
    dataSubselector::Cuts my_cuts;
    my_cuts.addGtiCut(m_gti);
 
+   bool applyFilter = m_pars["apply_filter"];
    for (; inputIt != inputTable->end(); ++inputIt) {
-      if (my_cuts.accept(input)) {
+      if (!applyFilter || my_cuts.accept(input)) {
          output = input;
          ++outputIt;
          npts++;

@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Fri Mar 31 13:20:08 PST 2006
+dataSubselector/src/gtmaketime
+
+Modified Files:
+	gtmaketime.cxx 
+Log Message:
+enable GTI calculation for non-FT1 files; tagging v4r1p6
+    *
+------------------------------------------------------------
+User: jchiang  Fri Mar 31 13:20:08 PST 2006
 dataSubselector/src
 
 Modified Files:

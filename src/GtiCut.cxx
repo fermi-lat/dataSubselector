@@ -3,7 +3,7 @@
  * @brief Encapsulate a GTI.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/GtiCut.cxx,v 1.5 2005/08/18 21:56:25 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/GtiCut.cxx,v 1.6 2005/12/23 22:47:44 peachey Exp $
  */
 
 #include "dataSubselector/GtiCut.h"
@@ -27,7 +27,7 @@ bool GtiCut::accept(const std::map<std::string, double> & params) const {
 bool GtiCut::equals(const CutBase & arg) const {
    try {
       GtiCut & rhs = dynamic_cast<GtiCut &>(const_cast<CutBase &>(arg));
-      return !(m_gti != rhs.m_gti);
+      return m_gti == rhs.m_gti;
    } catch (...) {
       return false;
    }

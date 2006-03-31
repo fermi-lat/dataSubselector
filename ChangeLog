@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Fri Mar 31 13:20:07 PST 2006
+dataSubselector/doc
+
+Modified Files:
+	release.notes 
+Log Message:
+enable GTI calculation for non-FT1 files; tagging v4r1p6
+    *
+------------------------------------------------------------
+User: jchiang  Fri Mar 31 13:20:07 PST 2006
 dataSubselector/dataSubselector
 
 Modified Files:

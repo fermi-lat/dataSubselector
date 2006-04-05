@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Apr  5 15:06:22 PDT 2006
+dataSubselector/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+update DATE-OBS et al keywords in gtmaketime; tagging v4r2p1
+    *
+------------------------------------------------------------
 TAG
 Tag name: v4r2, operation: add
 Package: dataSubselector

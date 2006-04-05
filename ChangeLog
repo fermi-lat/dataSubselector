@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Apr  5 13:24:20 PDT 2006
+dataSubselector/pfiles
+
+Modified Files:
+	gtmaketime.par 
+Log Message:
+allow user-specifiable or header derived start and stop times and overwrite mode for GTI extension in gtmaketime
+    *
+------------------------------------------------------------
 User: jchiang  Fri Mar 31 13:20:08 PST 2006
 dataSubselector/src/gtmaketime
 

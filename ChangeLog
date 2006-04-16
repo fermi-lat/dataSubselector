@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Sun Apr 16 14:06:14 PDT 2006
+dataSubselector/doc
+
+Modified Files:
+	release.notes 
+Log Message:
+do not modify input file for gtmaketime; tagging v4r2p2
+    *
+------------------------------------------------------------
 User: jchiang  Sun Apr 16 14:06:13 PDT 2006
 dataSubselector/cmt
 

@@ -5,7 +5,7 @@
  * event data file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/gtmaketime/gtmaketime.cxx,v 1.6 2006/03/31 21:20:08 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/gtmaketime/gtmaketime.cxx,v 1.8 2006/04/05 22:06:23 jchiang Exp $
  */
 
 #include <iostream>
@@ -175,12 +175,6 @@ makeUserGti(std::vector<const dataSubselector::GtiCut *> & gtiCuts) const {
       const tip::Header & header(evTable->getHeader());
       header["TSTART"].get(tstart);
       header["TSTOP"].get(tstop);
-   } else {
-      tip::Table * evTable 
-         = tip::IFileSvc::instance().editTable(m_evfile, extension);
-      tip::Header & header(evTable->getHeader());
-      header["TSTART"].set(tstart);
-      header["TSTOP"].set(tstop);
    }
    dataSubselector::Gti myGti;
    myGti.insertInterval(tstart, tstop);

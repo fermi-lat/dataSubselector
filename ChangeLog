@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Sun Apr 16 14:06:13 PDT 2006
+dataSubselector/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+do not modify input file for gtmaketime; tagging v4r2p2
+    *
+------------------------------------------------------------
 TAG
 Tag name: v4r2p1, operation: add
 Package: dataSubselector

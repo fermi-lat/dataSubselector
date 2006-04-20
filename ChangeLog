@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Thu Apr 20 10:32:19 PDT 2006
+dataSubselector/doc
+
+Modified Files:
+	release.notes 
+Log Message:
+convert viewCuts to gtviewcuts; tagging v4r3
+    *
+------------------------------------------------------------
 User: jchiang  Thu Apr 20 10:32:18 PDT 2006
 dataSubselector/cmt
 

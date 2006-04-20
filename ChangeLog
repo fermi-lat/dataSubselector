@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Thu Apr 20 10:32:19 PDT 2006
+dataSubselector/src/viewCuts
+
+Modified Files:
+	viewCuts.cxx 
+Log Message:
+convert viewCuts to gtviewcuts; tagging v4r3
+    *
+------------------------------------------------------------
+User: jchiang  Thu Apr 20 10:32:19 PDT 2006
 dataSubselector/pfiles
 
 Added Files:

@@ -4,7 +4,7 @@
  * dataSubselector.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.27 2005/09/23 19:56:11 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.28 2006/02/23 01:52:14 jchiang Exp $
  */
 
 #ifndef dataSubselector_Cuts_h
@@ -35,7 +35,7 @@ class GtiCuts;
  * packages outside of dataSubselector.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.27 2005/09/23 19:56:11 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.28 2006/02/23 01:52:14 jchiang Exp $
  */
 
 class Cuts {
@@ -145,6 +145,13 @@ public:
    ///        tip::IFileSvc::editTable method.
    void writeDssKeywords(tip::Header & header) const;
 
+   /// @brief Add the time-related DSS keywords to a write-enabled
+   ///        tip::Header.
+   /// @param header The reference returned from the tip::Table::getHeader
+   ///        method where the table has been opened using the
+   ///        tip::IFileSvc::editTable method.
+   void writeDssTimeKeywords(tip::Header & header) const;
+
    /// @brief Add the first GTI extension in the m_cuts vector to
    ///        the specified FITS file.  It is tacitly assumed that
    ///        there is only one GTI extension.  If a GTI extension
@@ -188,6 +195,9 @@ public:
    /// object is then equivalent to the composition of all of the Cuts
    /// in the vector.
    static Cuts mergeGtis(std::vector<Cuts> & cuts_vector);
+
+   /// @return True if the cut is a time range or GTI cut.
+   static bool isTimeCut(const CutBase & cut);
 
 private:
 

@@ -3,7 +3,7 @@
  * @brief Tests program for Cuts class.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/test/test.cxx,v 1.19 2005/09/12 22:14:31 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/test/test.cxx,v 1.20 2005/12/23 22:47:44 peachey Exp $
  */ 
 
 #ifdef TRAP_FPE
@@ -328,6 +328,7 @@ void DssTests::compareCutsWithoutGtis() {
 
    CPPUNIT_ASSERT(!(cuts1 == cuts2));
    CPPUNIT_ASSERT(cuts1.compareWithoutGtis(cuts2));
+   CPPUNIT_ASSERT(dataSubselector::Cuts::isTimeCut(cuts2[2]));
 }
 
 void DssTests::mergeGtis() {
@@ -424,6 +425,8 @@ void DssTests::test_DssFormatting() {
 
    delete table1;
    delete table2;
+
+   CPPUNIT_ASSERT(dataSubselector::Cuts::isTimeCut(cuts1[0]));
 }
 
 int main() {

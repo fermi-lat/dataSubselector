@@ -3,7 +3,7 @@
  * @brief Handle data selections and DSS keyword management.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Cuts.cxx,v 1.33 2005/12/12 02:03:50 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Cuts.cxx,v 1.34 2006/02/23 01:52:16 jchiang Exp $
  */
 
 #include <cctype>
@@ -294,6 +294,33 @@ void Cuts::writeDssKeywords(tip::Header & header) const {
    for (unsigned int i = 0; i < m_cuts.size(); i++) {
       m_cuts[i]->writeDssKeywords(header, i + 1);
    }
+}
+
+void Cuts::writeDssTimeKeywords(tip::Header & header) const {
+   removeDssKeywords(header);
+
+   std::vector<CutBase *> my_time_cuts;
+   for (size_t i = 0; i < m_cuts.size(); i++) {
+      if (isTimeCut(*m_cuts.at(i))) {
+         my_time_cuts.push_back(m_cuts.at(i));
+      }
+   }
+
+   int ndskeys = my_time_cuts.size();
+   header["NDSKEYS"].set(ndskeys);
+   for (unsigned int i = 0; i < my_time_cuts.size(); i++) {
+      my_time_cuts.at(i)->writeDssKeywords(header, i + 1);
+   }
+}
+
+bool Cuts::isTimeCut(const CutBase & cut) {
+   if (cut.type() == "GTI" || 
+       (cut.type() == "range" && 
+        dynamic_cast<RangeCut &>(const_cast<CutBase &>(cut)).colname() 
+        == "TIME")) {
+      return true;
+   }
+   return false;
 }
 
 void Cuts::removeDssKeywords(tip::Header & header) const {

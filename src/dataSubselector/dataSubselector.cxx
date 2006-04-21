@@ -3,12 +3,14 @@
  * @brief Filter FT1 data.
  * @author J. Chiang
  *
- *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.24 2006/01/29 20:58:14 jchiang Exp $
+ *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.25 2006/02/28 00:47:47 jchiang Exp $
  */
 
 #include "facilities/Util.h"
 
 #include "st_facilities/Util.h"
+
+#include "st_stream/StreamFormatter.h"
 
 #include "st_app/AppParGroup.h"
 #include "st_app/StApp.h"
@@ -27,7 +29,7 @@ using dataSubselector::CutController;
  * @class DataFilter
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.24 2006/01/29 20:58:14 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.25 2006/02/28 00:47:47 jchiang Exp $
  */
 
 class DataFilter : public st_app::StApp {
@@ -96,10 +98,13 @@ void DataFilter::run() {
    m_outputFile = outputFile;
    facilities::Util::expandEnvVar(&m_outputFile);
    bool clobber = m_pars["clobber"];
+   st_stream::StreamFormatter formatter("DataFilter", "run", 2);
    if (!clobber && st_facilities::Util::fileExists(m_outputFile)) {
-      std::cout << "Output file, " << outputFile << ", already exists, "
-                << "and you have specified 'clobber' as 'no'.\n"
-                << "Please provide a different file name." << std::endl;
+      formatter.err() << "Output file, " << outputFile << ", already exists,\n"
+                      << "and you have specified 'clobber' as 'no'.\n"
+                      << "Please provide a different file name." 
+                      << std::endl;
+      std::exit(1);
    } 
 
    tip::IFileSvc::instance().createFile(m_outputFile, m_inputFile);
@@ -109,10 +114,7 @@ void DataFilter::run() {
    copyTable(evtable, cuts);
    copyTable("gti");
    cuts->updateGti(m_outputFile);
-   unsigned int verbosity = m_pars["chatter"];
-   if (verbosity > 1) {
-      std::cout << "Done." << std::endl;
-   }
+   formatter.info() << "Done." << std::endl;
    CutController::delete_instance();
 
    st_facilities::FitsUtil::writeChecksums(m_outputFile);

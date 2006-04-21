@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Thu Apr 20 18:40:48 PDT 2006
+dataSubselector/src/dataSubselector
+
+Modified Files:
+	dataSubselector.cxx 
+Log Message:
+one more bit of st_stream to add
+    *
+------------------------------------------------------------
 TAG
 Tag name: v4r3p1, operation: add
 Package: dataSubselector

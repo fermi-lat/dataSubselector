@@ -3,7 +3,7 @@
  * @brief Handle data selections and DSS keyword management.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Cuts.cxx,v 1.34 2006/02/23 01:52:16 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Cuts.cxx,v 1.35 2006/04/20 20:03:10 jchiang Exp $
  */
 
 #include <cctype>
@@ -387,9 +387,17 @@ bool Cuts::compareWithoutGtis(const Cuts & rhs) const {
    return true;
 }
 
-void Cuts::writeCuts(std::ostream & stream) const {
+void Cuts::writeCuts(std::ostream & stream, bool suppressGtis) const {
    for (unsigned int i = 0; i < m_cuts.size(); i++) {
-      m_cuts.at(i)->writeCut(stream, i + 1);
+      if (!suppressGtis || m_cuts.at(i)->type() != "GTI") {
+         m_cuts.at(i)->writeCut(stream, i + 1);
+      } else {
+         stream << "DSTYP" << i+1 << ": TIME\n"
+                << "DSUNI" << i+1 << ": s\n"
+                << "DSVAL" << i+1 << ": TABLE\n"
+                << "DSREF" << i+1 << ": :GTI\n\n"
+                << "GTIs: (suppressed)\n\n";
+      }
    }
 }
 

@@ -4,7 +4,7 @@
  * dataSubselector.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.28 2006/02/23 01:52:14 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.29 2006/04/20 20:03:10 jchiang Exp $
  */
 
 #ifndef dataSubselector_Cuts_h
@@ -35,7 +35,7 @@ class GtiCuts;
  * packages outside of dataSubselector.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.28 2006/02/23 01:52:14 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.29 2006/04/20 20:03:10 jchiang Exp $
  */
 
 class Cuts {
@@ -179,7 +179,9 @@ public:
 
    /// @brief Write a summary of the cuts to the output stream.  This
    /// summary contains the same information as the DSS keywords.
-   void writeCuts(std::ostream & stream) const;
+   /// @param stream Where the output should be directed.
+   /// @param suppressGtis Suppress printing of the GTI data if it exists.
+   void writeCuts(std::ostream & stream, bool suppressGtis=false) const;
 
    /// @return A reference to the i-th cut.
    const CutBase & operator[](unsigned int i) const {return *(m_cuts.at(i));}

@@ -4,7 +4,7 @@
  * other extension.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/viewCuts/viewCuts.cxx,v 1.5 2005/01/15 02:26:33 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/viewCuts/viewCuts.cxx,v 1.6 2006/04/20 17:32:19 jchiang Exp $
  */
 
 #include <iostream>
@@ -71,6 +71,7 @@ void ViewCuts::run() {
    m_pars.Save();
    std::string infile = m_pars["infile"];
    std::string extname = m_pars["table"];
+   bool suppressGtis = m_pars["suppress_gtis"];
    dataSubselector::Cuts cuts(infile, extname, false);
-   cuts.writeCuts(std::cout);
+   cuts.writeCuts(std::cout, suppressGtis);
 }

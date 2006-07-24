@@ -3,7 +3,7 @@
  * @brief Filter FT1 data.
  * @author J. Chiang
  *
- *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.25 2006/02/28 00:47:47 jchiang Exp $
+ *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.26 2006/04/21 01:40:48 jchiang Exp $
  */
 
 #include "facilities/Util.h"
@@ -29,7 +29,7 @@ using dataSubselector::CutController;
  * @class DataFilter
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.25 2006/02/28 00:47:47 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.26 2006/04/21 01:40:48 jchiang Exp $
  */
 
 class DataFilter : public st_app::StApp {
@@ -125,6 +125,9 @@ void DataFilter::copyTable(const std::string & extension,
    std::string filterString("");
    if (cuts) {
       filterString = cuts->filterString();
+      st_stream::StreamFormatter formatter("DataFilter", "copyTable", 3);
+      formatter.info() << "Applying filter string: " 
+                       << filterString << std::endl;
    }
    const tip::Table * inputTable 
       = tip::IFileSvc::instance().readTable(m_inputFile, extension,

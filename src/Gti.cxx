@@ -4,7 +4,7 @@
  * accept() method.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Gti.cxx,v 1.8 2005/12/23 22:47:44 peachey Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Gti.cxx,v 1.9 2006/01/10 17:45:53 jchiang Exp $
  */
 
 #include <algorithm>
@@ -90,14 +90,12 @@ void Gti::writeExtension(const std::string & filename) const {
    tip::Table::Iterator it = gtiTable->begin();
    tip::Table::Record & row = *it;
    Gti::ConstIterator interval = begin();
-   double ontime(0);
    double tstart, tstop;
    tstart = interval->first;
    tstop = interval->second;
    for ( ; it != gtiTable->end(); ++it, ++interval) {
       row["START"].set(interval->first);
       row["STOP"].set(interval->second);
-      ontime += interval->second - interval->first;
       if (interval->first < tstart) {
          tstart = interval->first;
       }
@@ -107,7 +105,7 @@ void Gti::writeExtension(const std::string & filename) const {
    }
    double telapse(tstop - tstart);
    tip::Header & header = gtiTable->getHeader();
-   header["ONTIME"].set(ontime);
+   header["ONTIME"].set(computeOntime());
    header["TELAPSE"].set(telapse);
 }
 

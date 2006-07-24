@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Jul 24 13:03:26 PDT 2006
+dataSubselector/src/dataSubselector
+
+Modified Files:
+	dataSubselector.cxx 
+Log Message:
+use evtbin::Gti::computeOntime(); tagging v4r3p3
+    *
+------------------------------------------------------------
 User: jchiang  Mon Jul 24 13:03:25 PDT 2006
 dataSubselector/src
 

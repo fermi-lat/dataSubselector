@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Aug 30 15:40:00 PDT 2006
+dataSubselector/src/dataSubselector
+
+Modified Files:
+	CutController.cxx 
+Log Message:
+only apply acceptance cone cut if rad<180.; tagging v4r4
+    *
+------------------------------------------------------------
 User: jchiang  Wed Aug 30 15:39:59 PDT 2006
 dataSubselector/doc
 

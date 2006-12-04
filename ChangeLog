@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Sun Dec  3 17:40:06 PST 2006
+dataSubselector/doc
+
+Modified Files:
+	release.notes 
+Log Message:
+return vector of RangeCuts explicitly; tagging v4r5
+    *
+------------------------------------------------------------
+User: jchiang  Sun Dec  3 17:40:06 PST 2006
 dataSubselector/dataSubselector
 
 Modified Files:

@@ -4,7 +4,7 @@
  * dataSubselector.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.30 2006/05/03 00:10:43 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.31 2006/12/04 00:43:16 jchiang Exp $
  */
 
 #ifndef dataSubselector_Cuts_h
@@ -35,7 +35,7 @@ class GtiCuts;
  * packages outside of dataSubselector.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.30 2006/05/03 00:10:43 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.31 2006/12/04 00:43:16 jchiang Exp $
  */
 
 class Cuts {
@@ -142,10 +142,10 @@ public:
    /// @brief Remove all RangeCuts with a given column name.
    /// @param colname The name of the column corresponding to the
    ///        RangeCuts to be removed.
-   /// @param removedCuts Vector of removed cuts.  The calling routine
+   /// @param removedCuts Vector of removed RangeCuts.  The calling routine
    ///        is responsible for deleting these cuts.
    unsigned int Cuts::removeRangeCuts(const std::string & colname,
-                                      std::vector<CutBase *> & removedCuts);
+                                      std::vector<RangeCut *> & removedCuts);
 
    /// @brief Add the DSS keywords to a write-enabled tip::Header.
    /// @param header The reference returned from the tip::Table::getHeader

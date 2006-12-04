@@ -3,7 +3,7 @@
  * @brief Tests program for Cuts class.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/test/test.cxx,v 1.21 2006/04/20 20:03:10 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/test/test.cxx,v 1.22 2006/12/04 00:43:17 jchiang Exp $
  */ 
 
 #ifdef TRAP_FPE
@@ -447,7 +447,7 @@ void DssTests::test_removeRangeCuts() {
 
    CPPUNIT_ASSERT(cuts0 != cuts1);
 
-   std::vector<dataSubselector::CutBase *> removedCuts;
+   std::vector<dataSubselector::RangeCut *> removedCuts;
    cuts0.removeRangeCuts("RA", removedCuts);
    
    CPPUNIT_ASSERT(cuts0 == cuts1);

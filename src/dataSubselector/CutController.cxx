@@ -1,7 +1,7 @@
 /**
  * @file CutController.cxx
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/CutController.cxx,v 1.8 2006/02/22 06:44:16 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/CutController.cxx,v 1.9 2006/08/30 22:39:59 jchiang Exp $
  */
 
 #include "facilities/Util.h"
@@ -54,6 +54,7 @@ CutController::CutController(st_app::AppParGroup & pars,
    if (eventClass == 4) { // Class A events only
       addRangeCut("EVENT_CLASS", "dimensionless", 0, 1, 0, true);
    }
+   m_cuts.mergeRangeCuts();
 }
 
 bool CutController::accept(tip::ConstTableRecord & row) const {

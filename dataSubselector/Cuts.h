@@ -4,7 +4,7 @@
  * dataSubselector.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.31 2006/12/04 00:43:16 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.32 2006/12/04 01:40:06 jchiang Exp $
  */
 
 #ifndef dataSubselector_Cuts_h
@@ -35,7 +35,7 @@ class GtiCuts;
  * packages outside of dataSubselector.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.31 2006/12/04 00:43:16 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.32 2006/12/04 01:40:06 jchiang Exp $
  */
 
 class Cuts {
@@ -138,6 +138,10 @@ public:
       m_cuts.push_back(newCut.clone());
       return m_cuts.size();
    }
+
+   /// @brief Merge RangeCuts, taking care of intersecting intervals, 
+   /// open-ended ranges, etc.
+   unsigned int mergeRangeCuts();
 
    /// @brief Remove all RangeCuts with a given column name.
    /// @param colname The name of the column corresponding to the

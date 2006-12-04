@@ -3,7 +3,7 @@
  * @brief Cuts based on a valid a range of column values.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/RangeCut.h,v 1.3 2005/06/01 19:49:32 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/RangeCut.h,v 1.4 2005/07/01 22:32:54 jchiang Exp $
  */
 
 #ifndef dataSubselector_RangeCut_h
@@ -18,7 +18,7 @@ namespace dataSubselector {
  * @brief Cut on FITS binary table column values.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/RangeCut.h,v 1.3 2005/06/01 19:49:32 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/RangeCut.h,v 1.4 2005/07/01 22:32:54 jchiang Exp $
  */
 
 class RangeCut : public CutBase {
@@ -62,6 +62,18 @@ public:
    /// @brief The interval type.
    IntervalType intervalType() const {
       return m_intervalType;
+   }
+
+   /// @brief The units of the column.
+   const std::string & unit() const {
+      return m_unit;
+   }
+
+   /// @brief The index of the column vector that is operated on.
+   /// Since FITS column vectors are indexed from 1, 0 indicates that
+   /// this is not a column vector.
+   const unsigned int index() const {
+      return m_index;
    }
 
 protected:

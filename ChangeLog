@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Mon Dec  4 12:01:56 PST 2006
+dataSubselector/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+add Cuts::mergeRangeCuts; modify gtselect accordingly; tagging v4r6
+    *
+------------------------------------------------------------
+User: jchiang  Mon Dec  4 12:01:56 PST 2006
 dataSubselector/src/dataSubselector
 
 Modified Files:

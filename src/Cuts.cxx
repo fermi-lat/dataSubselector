@@ -3,7 +3,7 @@
  * @brief Handle data selections and DSS keyword management.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Cuts.cxx,v 1.35 2006/04/20 20:03:10 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Cuts.cxx,v 1.36 2006/05/03 00:10:44 jchiang Exp $
  */
 
 #include <cctype>
@@ -285,6 +285,28 @@ unsigned int Cuts::addCut(CutBase * newCut) {
       m_cuts.push_back(newCut);
    }
    return size();
+}
+
+unsigned int Cuts::removeRangeCuts(const std::string & colname,
+                                   std::vector<CutBase *> & removedCuts) {
+   removedCuts.clear();
+   for (size_t j = 0; j < m_cuts.size(); j++) {
+      if (m_cuts.at(j)->type() == "range") {
+         RangeCut * rangeCut(dynamic_cast<RangeCut *>(m_cuts.at(j)));
+         if (rangeCut->colname() == colname) {
+            removedCuts.push_back(m_cuts.at(j));
+            m_cuts.at(j) = 0;
+         }
+      }
+   }
+   std::vector<CutBase *> held_cuts;
+   for (size_t j = 0; j < m_cuts.size(); j++) {
+      if (m_cuts.at(j)) {
+         held_cuts.push_back(m_cuts.at(j));
+      }
+   }
+   m_cuts = held_cuts;
+   return m_cuts.size();
 }
 
 void Cuts::writeDssKeywords(tip::Header & header) const {

@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Sun Dec  3 16:43:17 PST 2006
+dataSubselector/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+allow RangeCuts to be deleted by column name
+    *
+------------------------------------------------------------
+User: jchiang  Sun Dec  3 16:43:17 PST 2006
 dataSubselector/src
 
 Modified Files:

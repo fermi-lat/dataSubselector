@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Sun Dec  3 16:43:16 PST 2006
+dataSubselector/dataSubselector
+
+Modified Files:
+	Cuts.h 
+Log Message:
+allow RangeCuts to be deleted by column name
+    *
+------------------------------------------------------------
 TAG
 Tag name: v4r4, operation: add
 Package: dataSubselector

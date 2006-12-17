@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Sun Dec 17 14:39:02 PST 2006
+dataSubselector/src/gtmaketime
+
+Modified Files:
+	gtmaketime.cxx 
+Log Message:
+skip unneeded entries in scData file; tagging v4r6p1
+    *
+------------------------------------------------------------
+User: jchiang  Sun Dec 17 14:39:02 PST 2006
 dataSubselector/doc
 
 Modified Files:

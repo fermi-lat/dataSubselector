@@ -5,7 +5,7 @@
  * event data file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/gtmaketime/gtmaketime.cxx,v 1.8 2006/04/05 22:06:23 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/gtmaketime/gtmaketime.cxx,v 1.9 2006/04/16 21:06:14 jchiang Exp $
  */
 
 #include <iostream>
@@ -64,10 +64,13 @@ private:
    
    st_app::AppParGroup & m_pars;
    dataSubselector::Gti m_gti;
+   double m_tmin;
+   double m_tmax;
    std::string m_evfile;
    std::string m_outfile;
 
    void check_outfile();
+   void findTimeLims();
    void createGti();
    void mergeGtis();
    void makeUserGti(std::vector<const dataSubselector::GtiCut*>&gtiCuts) const;
@@ -91,6 +94,7 @@ void MakeTime::run() {
    m_pars.Prompt();
    m_pars.Save();
    check_outfile();
+//   findTimeLims();
    createGti();
    mergeGtis();
    copyTable();
@@ -112,6 +116,16 @@ void MakeTime::check_outfile() {
                       << std::endl;
       std::exit(1);
    }
+}
+
+void MakeTime::findTimeLims() {
+   std::string evfile = m_pars["evfile"];
+   std::string evtable = m_pars["evtable"];
+   const tip::Table * evTable
+      = tip::IFileSvc::instance().readTable(evfile, evtable);
+   const tip::Header & header(evTable->getHeader());
+   header["TSTART"].get(m_tmin);
+   header["TSTOP"].get(m_tmax);
 }
 
 void MakeTime::createGti() {
@@ -137,6 +151,14 @@ void MakeTime::createGti() {
          dataSubselector::Gti gti;
          gti.insertInterval(start_time, stop_time);
          m_gti = m_gti | gti;
+         if (start_time > m_tmax) { // break out if past end of evfile
+            break;
+         }
+         if (stop_time > m_tmin) { // include only if within evfile range
+            dataSubselector::Gti gti;
+            gti.insertInterval(start_time, stop_time);
+            m_gti = m_gti | gti;
+         }
       }
    }
 }

@@ -5,7 +5,7 @@
  * event data file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/gtmaketime/gtmaketime.cxx,v 1.9 2006/04/16 21:06:14 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/gtmaketime/gtmaketime.cxx,v 1.10 2006/12/17 22:39:02 jchiang Exp $
  */
 
 #include <iostream>
@@ -94,7 +94,7 @@ void MakeTime::run() {
    m_pars.Prompt();
    m_pars.Save();
    check_outfile();
-//   findTimeLims();
+   findTimeLims();
    createGti();
    mergeGtis();
    copyTable();

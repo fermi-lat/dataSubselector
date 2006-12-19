@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Mon Dec 18 19:31:24 PST 2006
+dataSubselector/doc
+
+Modified Files:
+	release.notes 
+Log Message:
+uncomment crucial function call; tagging v4r6p2
+    *
+------------------------------------------------------------
+User: jchiang  Mon Dec 18 19:31:24 PST 2006
 dataSubselector/cmt
 
 Modified Files:

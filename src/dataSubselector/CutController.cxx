@@ -1,7 +1,7 @@
 /**
  * @file CutController.cxx
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/CutController.cxx,v 1.9 2006/08/30 22:39:59 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/CutController.cxx,v 1.10 2006/12/04 20:01:56 jchiang Exp $
  */
 
 #include "facilities/Util.h"
@@ -68,7 +68,7 @@ void CutController::addRangeCut(const std::string & colname,
                                 const std::string & unit,
                                 double minVal, double maxVal, 
                                 unsigned int indx, bool force) {
-   RangeCut::IntervalType type;
+   RangeCut::IntervalType type(RangeCut::CLOSED);
    if (!force && minVal == 0 && maxVal == 0) {
       return;
    }

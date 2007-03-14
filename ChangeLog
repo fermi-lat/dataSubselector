@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Wed Mar 14 13:39:34 PDT 2007
+dataSubselector/src/gtmaketime
+
+Modified Files:
+	gtmaketime.cxx 
+Log Message:
+speed up gtmaketime via filter string; tagging v4r6p4
+    *
+------------------------------------------------------------
+User: jchiang  Wed Mar 14 13:39:34 PDT 2007
 dataSubselector/doc
 
 Modified Files:

@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Apr 25 12:29:12 PDT 2007
+dataSubselector/doc
+
+Modified Files:
+	release.notes 
+Log Message:
+increase precision of MET values in GTI filter string; tagging v4r6p5
+    *
+------------------------------------------------------------
 User: jchiang  Wed Apr 25 12:29:11 PDT 2007
 dataSubselector/cmt
 

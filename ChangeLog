@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Mon May 28 21:49:43 PDT 2007
+dataSubselector/pfiles
+
+Modified Files:
+	gtselect.par 
+Log Message:
+change prompt for event class selection; tagging v4r6p6
+    *
+------------------------------------------------------------
+User: jchiang  Mon May 28 21:49:43 PDT 2007
 dataSubselector/doc
 
 Modified Files:

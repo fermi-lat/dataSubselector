@@ -5,7 +5,7 @@
  * event data file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/gtmaketime/gtmaketime.cxx,v 1.12 2007/03/14 20:39:34 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/gtmaketime/gtmaketime.cxx,v 1.13 2007/04/25 19:29:12 jchiang Exp $
  */
 
 #include <iomanip>
@@ -36,7 +36,7 @@
 class MakeTime : public st_app::StApp {
 public:
    MakeTime() : st_app::StApp(),
-                m_pars(st_app::StApp::getParGroup("gtmaketime")) {
+                m_pars(st_app::StApp::getParGroup("gtmktime")) {
       try {
          setVersion(s_cvs_id);
       } catch (std::exception & eObj) {
@@ -82,7 +82,7 @@ private:
 
 std::string MakeTime::s_cvs_id("$Name:  $");
 
-st_app::StAppFactory<MakeTime> myAppFactory("gtmaketime");
+st_app::StAppFactory<MakeTime> myAppFactory("gtmktime");
 
 void MakeTime::banner() const {
    int verbosity = m_pars["chatter"];

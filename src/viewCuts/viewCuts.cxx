@@ -4,7 +4,7 @@
  * other extension.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/viewCuts/viewCuts.cxx,v 1.6 2006/04/20 17:32:19 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/viewCuts/viewCuts.cxx,v 1.7 2006/05/03 00:10:44 jchiang Exp $
  */
 
 #include <iostream>
@@ -23,7 +23,7 @@ class ViewCuts : public st_app::StApp {
 public:
 
    ViewCuts() : st_app::StApp(),
-                m_pars(st_app::StApp::getParGroup("gtviewcuts")) {
+                m_pars(st_app::StApp::getParGroup("gtvcut")) {
       try {
          setVersion(s_cvs_id);
       } catch (std::exception & eObj) {
@@ -57,7 +57,7 @@ private:
 
 std::string ViewCuts::s_cvs_id("$Name:  $");
 
-st_app::StAppFactory<ViewCuts> myAppFactory("gtviewcuts");
+st_app::StAppFactory<ViewCuts> myAppFactory("gtvcut");
 
 void ViewCuts::banner() const {
    int verbosity = m_pars["chatter"];

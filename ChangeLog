@@ -1,4 +1,15 @@
 ------------------------------------------------------------
+User: jchiang  Tue Jun  5 08:14:41 PDT 2007
+dataSubselector/pfiles
+
+Added Files:
+	gtmktime.par gtvcut.par 
+Removed Files:
+	gtmaketime.par gtviewcuts.par 
+Log Message:
+check in app name changes; tagging v5r0p1
+    *
+------------------------------------------------------------
 User: jchiang  Tue Jun  5 08:14:40 PDT 2007
 dataSubselector/doc
 

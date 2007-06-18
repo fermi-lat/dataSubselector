@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Mon Jun 18 11:07:02 PDT 2007
+dataSubselector/doc
+
+Modified Files:
+	release.notes 
+Log Message:
+speed up gtmktime; tagging v5r1
+    *
+------------------------------------------------------------
+User: jchiang  Mon Jun 18 11:07:02 PDT 2007
 dataSubselector/cmt
 
 Modified Files:

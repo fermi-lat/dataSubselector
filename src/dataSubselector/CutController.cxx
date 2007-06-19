@@ -1,7 +1,7 @@
 /**
  * @file CutController.cxx
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/CutController.cxx,v 1.11 2007/03/02 16:31:30 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/CutController.cxx,v 1.12 2007/06/19 05:05:16 jchiang Exp $
  */
 
 #include "facilities/Util.h"
@@ -16,15 +16,6 @@ namespace dataSubselector {
 
 CutController * CutController::s_instance(0);
 
-CutController * CutController::instance(st_app::AppParGroup & pars, 
-                                        const std::string & eventFile,
-                                        const std::string & evtable) {
-   if (!s_instance) {
-      s_instance = new CutController(pars, eventFile, evtable);
-   }
-   return s_instance;
-}
-
 CutController * 
 CutController::instance(st_app::AppParGroup & pars, 
                         const std::vector<std::string> & eventFiles,
@@ -38,33 +29,6 @@ CutController::instance(st_app::AppParGroup & pars,
 void CutController::delete_instance() {
    delete s_instance;
    s_instance = 0;
-}
-
-CutController::CutController(st_app::AppParGroup & pars, 
-                             const std::string & eventFile,
-                             const std::string & evtable) 
-   : m_pars(pars), m_cuts(eventFile, evtable) {
-   double ra = pars["ra"];
-   double dec = pars["dec"];
-   double radius = pars["rad"];
-   double max_rad = 180.;
-   if (radius < max_rad) {
-      m_cuts.addSkyConeCut(ra, dec, radius);
-   }
-   addRangeCut("TIME", "s", pars["tmin"], pars["tmax"]);
-   addRangeCut("ENERGY", "MeV", pars["emin"], pars["emax"]);
-   addRangeCut("PHI", "deg", pars["phimin"], pars["phimax"]);
-   addRangeCut("THETA", "deg", pars["thetamin"], pars["thetamax"]);
-   addRangeCut("ZENITH_ANGLE", "deg", pars["zmin"], pars["zmax"]);
-   int eventClass = pars["eventClass"];
-   if (eventClass >= 0 && eventClass < 4) {
-      addRangeCut("EVENT_CLASS", "dimensionless", eventClass, eventClass,
-                  0, true);
-   }
-   if (eventClass == 4) { // Class A events only
-      addRangeCut("EVENT_CLASS", "dimensionless", 0, 1, 0, true);
-   }
-   m_cuts.mergeRangeCuts();
 }
 
 CutController::CutController(st_app::AppParGroup & pars, 

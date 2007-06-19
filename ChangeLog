@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Jun 18 22:05:16 PDT 2007
+dataSubselector/src/dataSubselector
+
+Modified Files:
+	CutController.cxx CutController.h dataSubselector.cxx 
+Log Message:
+address incessant whining
+    *
+------------------------------------------------------------
 User: jchiang  Mon Jun 18 21:18:29 PDT 2007
 dataSubselector/src/dataSubselector
 

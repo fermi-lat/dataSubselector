@@ -3,7 +3,7 @@
  * @brief Filter FT1 data.
  * @author J. Chiang
  *
- *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.28 2007/06/19 04:18:29 jchiang Exp $
+ *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.29 2007/06/19 05:05:16 jchiang Exp $
  */
 
 #include "facilities/Util.h"
@@ -32,7 +32,7 @@ using dataSubselector::Gti;
  * @class DataFilter
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.28 2007/06/19 04:18:29 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.29 2007/06/19 05:05:16 jchiang Exp $
  */
 
 class DataFilter : public st_app::StApp {
@@ -129,6 +129,11 @@ void DataFilter::run() {
 
    tip::Table * table
       = tip::IFileSvc::instance().editTable(m_outputFile, evtable);
+   st_facilities::Util::writeDateKeywords(table, gti.minValue(),
+                                          gti.maxValue());
+   delete table;
+
+   table = tip::IFileSvc::instance().editTable(m_outputFile, "GTI");
    st_facilities::Util::writeDateKeywords(table, gti.minValue(),
                                           gti.maxValue());
    delete table;

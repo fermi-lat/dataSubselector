@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Jun 20 14:25:38 PDT 2007
+dataSubselector/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+ensure all headers have TSTART and TSTOP synced up; disable parts that set these to GTI bounds; tagging v5r3
+    *
+------------------------------------------------------------
 TAG
 Tag name: v5r2, operation: add
 Package: dataSubselector

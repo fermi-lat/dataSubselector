@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Wed Jun 20 14:25:39 PDT 2007
+dataSubselector/src/gtmaketime
+
+Modified Files:
+	gtmaketime.cxx 
+Log Message:
+ensure all headers have TSTART and TSTOP synced up; disable parts that set these to GTI bounds; tagging v5r3
+    *
+------------------------------------------------------------
+User: jchiang  Wed Jun 20 14:25:39 PDT 2007
 dataSubselector/src/dataSubselector
 
 Modified Files:

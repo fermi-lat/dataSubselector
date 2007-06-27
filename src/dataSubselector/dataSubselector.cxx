@@ -3,7 +3,7 @@
  * @brief Filter FT1 data.
  * @author J. Chiang
  *
- *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.30 2007/06/19 05:24:48 jchiang Exp $
+ *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.31 2007/06/20 21:25:39 jchiang Exp $
  */
 
 #include "facilities/Util.h"
@@ -32,7 +32,7 @@ using dataSubselector::Gti;
  * @class DataFilter
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.30 2007/06/19 05:24:48 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.31 2007/06/20 21:25:39 jchiang Exp $
  */
 
 class DataFilter : public st_app::StApp {
@@ -118,10 +118,9 @@ void DataFilter::run() {
    CutController * cuts = 
       CutController::instance(m_pars, m_inputFiles, evtable);
    copyTable(evtable, cuts);
+   copyGtis();
    cuts->updateGti(m_outputFile);
    CutController::delete_instance();
-
-   copyGtis();
 
    writeDateKeywords();
 

@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Wed Jun 27 14:30:01 PDT 2007
+dataSubselector/doc
+
+Modified Files:
+	release.notes 
+Log Message:
+gtselect bug fix re: updating gtis; tagging v5r3p1
+    *
+------------------------------------------------------------
+User: jchiang  Wed Jun 27 14:30:01 PDT 2007
 dataSubselector/cmt
 
 Modified Files:

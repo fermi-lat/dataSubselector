@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Jun 27 14:30:02 PDT 2007
+dataSubselector/src/dataSubselector
+
+Modified Files:
+	dataSubselector.cxx 
+Log Message:
+gtselect bug fix re: updating gtis; tagging v5r3p1
+    *
+------------------------------------------------------------
 User: jchiang  Wed Jun 27 14:30:01 PDT 2007
 dataSubselector/doc
 

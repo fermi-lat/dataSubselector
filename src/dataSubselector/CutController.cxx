@@ -1,7 +1,7 @@
 /**
  * @file CutController.cxx
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/CutController.cxx,v 1.13 2007/06/19 05:24:48 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/CutController.cxx,v 1.14 2007/07/11 17:32:10 jchiang Exp $
  */
 
 #include <stdexcept>
@@ -76,10 +76,10 @@ void CutController::addRangeCut(const std::string & colname,
       /// don't apply any range cut
       return;
    }
-   if (minVal >= maxVal) {
+   if (minVal > maxVal) {
       std::ostringstream message;
       message << "minimum requested value, " << minVal 
-              << ", is greater than or equal to the maximum requested, "
+              << ", is greater than the maximum requested, "
               << maxVal << ", for field " << colname << "\n";
       throw std::runtime_error(message.str());
    }

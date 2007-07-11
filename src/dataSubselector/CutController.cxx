@@ -1,8 +1,10 @@
 /**
  * @file CutController.cxx
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/CutController.cxx,v 1.12 2007/06/19 05:05:16 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/CutController.cxx,v 1.13 2007/06/19 05:24:48 jchiang Exp $
  */
+
+#include <stdexcept>
 
 #include "facilities/Util.h"
 #include "st_app/AppParGroup.h"
@@ -71,14 +73,15 @@ void CutController::addRangeCut(const std::string & colname,
                                 unsigned int indx, bool force) {
    RangeCut::IntervalType type(RangeCut::CLOSED);
    if (!force && minVal == 0 && maxVal == 0) {
+      /// don't apply any range cut
       return;
    }
-   if (minVal != 0 && maxVal != 0) {
-      type = RangeCut::CLOSED;
-   } else if (minVal != 0 && maxVal == 0) {
-      type = RangeCut::MINONLY;
-   } else if (minVal == 0 && maxVal != 0) {
-      type = RangeCut::MAXONLY;
+   if (minVal >= maxVal) {
+      std::ostringstream message;
+      message << "minimum requested value, " << minVal 
+              << ", is greater than or equal to the maximum requested, "
+              << maxVal << ", for field " << colname << "\n";
+      throw std::runtime_error(message.str());
    }
    std::vector<std::string> tokens;
    facilities::Util::stringTokenize(colname, "[]", tokens);

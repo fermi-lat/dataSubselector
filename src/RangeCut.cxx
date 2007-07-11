@@ -3,7 +3,7 @@
  * @brief Cut on a column value in a given range of values.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/RangeCut.cxx,v 1.10 2006/02/23 01:52:16 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/RangeCut.cxx,v 1.11 2006/02/28 00:47:47 jchiang Exp $
  */
 
 #include <iomanip>
@@ -19,8 +19,8 @@
 namespace dataSubselector {
 
 RangeCut::RangeCut(const std::string & colname, const std::string & unit,
-                         double minVal, double maxVal, IntervalType type,
-                         unsigned int indx)
+                   double minVal, double maxVal, IntervalType type,
+                   unsigned int indx)
    : CutBase("range"), m_colname(colname), m_unit(unit),
      m_min(minVal), m_max(maxVal), m_intervalType(type), m_index(indx),
      m_fullName(colname) {

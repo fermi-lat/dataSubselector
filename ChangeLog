@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Wed Jul 11 10:32:10 PDT 2007
+dataSubselector/src
+
+Modified Files:
+	RangeCut.cxx 
+Log Message:
+ensure gtselect writes out only close range intervals; tagging v5r4
+    *
+------------------------------------------------------------
+User: jchiang  Wed Jul 11 10:32:10 PDT 2007
 dataSubselector/doc
 
 Modified Files:

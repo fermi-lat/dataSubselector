@@ -1,4 +1,43 @@
 ------------------------------------------------------------
+TAG
+Tag name: v5r5p1, operation: add
+Package: dataSubselector
+User: jchiang  Mon Jul 16 10:37:41 2007
+Files:
+  dataSubselector/.cvsignore  1.2
+  dataSubselector/ChangeLog  1.471
+  dataSubselector/Data/input_events.fits  1.3
+  dataSubselector/cmt/.cvsignore  1.2
+  dataSubselector/cmt/requirements  1.88
+  dataSubselector/dataSubselector/CutBase.h  1.3
+  dataSubselector/dataSubselector/RangeCut.h  1.5
+  dataSubselector/dataSubselector/Cuts.h  1.33
+  dataSubselector/dataSubselector/Gti.h  1.7
+  dataSubselector/dataSubselector/SkyConeCut.h  1.3
+  dataSubselector/dataSubselector/GtiCut.h  1.4
+  dataSubselector/doc/.cvsignore  1.1
+  dataSubselector/doc/release.notes  1.73
+  dataSubselector/pfiles/gtvcut.par  1.1
+  dataSubselector/pfiles/gtselect.par  1.9
+  dataSubselector/pfiles/gtmktime.par  1.1
+  dataSubselector/src/RangeCut.cxx  1.12
+  dataSubselector/src/Gti.cxx  1.10
+  dataSubselector/src/SConstruct  1.5
+  dataSubselector/src/CutBase.cxx  1.3
+  dataSubselector/src/mainpage.h  1.3
+  dataSubselector/src/GtiCut.cxx  1.7
+  dataSubselector/src/Cuts.cxx  1.41
+  dataSubselector/src/SkyConeCut.cxx  1.10
+  dataSubselector/src/buildBase  1.3
+  dataSubselector/src/dataSubselector/dataSubselector.cxx  1.32
+  dataSubselector/src/dataSubselector/CutController.h  1.8
+  dataSubselector/src/dataSubselector/CutController.cxx  1.15
+  dataSubselector/src/gtmaketime/gtmaketime.cxx  1.16
+  dataSubselector/src/test/test.cxx  1.25
+  dataSubselector/src/viewCuts/viewCuts.cxx  1.8
+
+    *
+------------------------------------------------------------
 User: jchiang  Mon Jul 16 10:37:25 PDT 2007
 dataSubselector/src/test
 

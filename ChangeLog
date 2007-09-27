@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Thu Sep 27 13:13:26 PDT 2007
+dataSubselector/Data
+
+Removed Files:
+	input_events.fits 
+Log Message:
+change name of subdirectory containing test data
+    *
+------------------------------------------------------------
 User: jchiang  Thu Sep 27 13:12:29 PDT 2007
 dataSubselector/data
 

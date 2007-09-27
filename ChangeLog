@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: golpa  Thu Sep 27 11:05:26 PDT 2007
+dataSubselector/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+Use commonUtilities to obtain various path information
+    *
+------------------------------------------------------------
 TAG
 Tag name: v5r5p1, operation: add
 Package: dataSubselector

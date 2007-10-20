@@ -3,7 +3,7 @@
  * @brief Acceptance cone selection.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/SkyConeCut.cxx,v 1.9 2005/09/12 22:14:30 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/SkyConeCut.cxx,v 1.10 2006/02/28 00:47:47 jchiang Exp $
  */
 
 #include <iomanip>
@@ -115,18 +115,11 @@ bool SkyConeCut::accept(double ra, double dec) const {
 }
 
 std::string SkyConeCut::filterString() const {
-   static double DEG_TO_RAD(M_PI/180.);
    double ra(m_coneCenter.ra());
    double dec(m_coneCenter.dec());
    std::ostringstream q;
    q << std::setprecision(10);
-   q << "((2*asin(min(1,sqrt(max(0,(sin((DEC-" << dec << ")*" 
-     << DEG_TO_RAD/2 << ")*sin((DEC-" << dec << ")*" 
-     << DEG_TO_RAD/2 << "))+(cos(DEC*" << DEG_TO_RAD
-     << ")*" << std::cos(dec*DEG_TO_RAD) << "*sin((RA-" 
-     << ra << ")*" << DEG_TO_RAD/2 << ")*sin((RA-" 
-     << ra << ")*" << DEG_TO_RAD/2 << ")))))))<" 
-     << m_radius*DEG_TO_RAD << ")";
+   q << "angsep(RA,DEC," << ra << "," << dec << ") < " << m_radius;
    return q.str();
 }
 

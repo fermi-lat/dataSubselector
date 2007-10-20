@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Sat Oct 20 08:55:23 PDT 2007
+dataSubselector/src
+
+Modified Files:
+	SkyConeCut.cxx 
+Log Message:
+use st_facilities::FitsUtil::fcopy and angsep(...); tagging v5r6p2
+    *
+------------------------------------------------------------
+User: jchiang  Sat Oct 20 08:55:23 PDT 2007
 dataSubselector/doc
 
 Modified Files:

@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Sat Oct 20 08:55:23 PDT 2007
+dataSubselector/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+use st_facilities::FitsUtil::fcopy and angsep(...); tagging v5r6p2
+    *
+------------------------------------------------------------
 TAG
 Tag name: v5r6p1, operation: add
 Package: dataSubselector

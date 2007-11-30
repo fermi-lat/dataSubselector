@@ -3,7 +3,7 @@
  * @brief Filter FT1 data.
  * @author J. Chiang
  *
- *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.33 2007/10/19 22:51:46 jchiang Exp $
+ *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.34 2007/10/20 15:55:23 jchiang Exp $
  */
 
 #include <stdexcept>
@@ -33,7 +33,7 @@ using dataSubselector::Gti;
  * @class DataFilter
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.33 2007/10/19 22:51:46 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.34 2007/10/20 15:55:23 jchiang Exp $
  */
 
 class DataFilter : public st_app::StApp {
@@ -124,7 +124,12 @@ void DataFilter::run() {
    cuts->updateGti(m_outputFile);
    CutController::delete_instance();
 
-   writeDateKeywords();
+   double tmin, tmax;
+   tmin = m_pars["tmin"];
+   tmax = m_pars["tmax"];
+   if (tmin != 0 || tmax != 0) {
+      writeDateKeywords();
+   }
 
    st_facilities::FitsUtil::writeChecksums(m_outputFile);
 

@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: golpa  Mon Dec 10 13:16:42 PST 2007
+dataSubselector
+
+Added Files:
+	SConscript dataSubselectorLib.py 
+Log Message:
+Initial import of SCons files
+    *
+------------------------------------------------------------
 TAG
 Tag name: v5r6p3, operation: add
 Package: dataSubselector

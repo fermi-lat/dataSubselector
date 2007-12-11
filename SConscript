@@ -1,6 +1,6 @@
 # -*- python -*-
 #
-# $Id$
+# $Id: SConscript,v 1.2 2007/12/11 18:56:50 jchiang Exp $
 
 import glob, os, platform
 
@@ -17,6 +17,9 @@ dataSubselectorLib = libEnv.StaticLibrary('dataSubselector',
 
 progEnv.Tool('dataSubselectorLib')
 
+test_dataSubselectorBin = progEnv.Program('test_dataSubselector', 
+                                          listFiles(['src/test/*.cxx']))
+
 gtselectBin = progEnv.Program('gtselect', 
                               listFiles(['src/dataSubselector/*.cxx']))
 
@@ -27,5 +30,6 @@ gtvcutBin = progEnv.Program('gtvcut', listFiles(['src/viewCuts/*.cxx']))
 progEnv.Tool('registerObjects', package = 'dataSubselector', 
              libraries = [dataSubselectorLib],
              binaries = [gtselectBin, gtmktimeBin, gtvcutBin], 
+             testApps = [test_dataSubselectorBin],
              includes = listFiles(['dataSubselector/*.h']),
              pfiles = listFiles(['pfiles/*.par']))

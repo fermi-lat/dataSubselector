@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: golpa  Thu Feb 21 16:27:43 PST 2008
+dataSubselector
+
+Modified Files:
+	SConscript dataSubselectorLib.py 
+Log Message:
+clone program environment into test environment to add cppunit for test app, minor cosmetic changes
+    *
+------------------------------------------------------------
 User: jchiang  Tue Dec 11 11:03:47 PST 2007
 dataSubselector
 

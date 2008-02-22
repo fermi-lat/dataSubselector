@@ -2,6 +2,15 @@
 TAG
 Tag name: v5r6p4, operation: mov
 Package: dataSubselector
+User: glast  Thu Feb 21 16:39:16 2008
+Files:
+  dataSubselector/dataSubselectorLib.py  1.2
+
+    *
+------------------------------------------------------------
+TAG
+Tag name: v5r6p4, operation: mov
+Package: dataSubselector
 User: glast  Thu Feb 21 16:39:05 2008
 Files:
   dataSubselector/SConscript  1.4

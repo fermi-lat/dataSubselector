@@ -1,14 +1,12 @@
 # -*- python -*-
 #
-# $Id: SConscript,v 1.3 2007/12/11 19:03:47 jchiang Exp $
+# $Id: SConscript,v 1.4 2008/02/22 00:27:43 golpa Exp $
 Import('baseEnv')
 Import('listFiles')
 progEnv = baseEnv.Clone()
 libEnv = baseEnv.Clone()
 
-if baseEnv['PLATFORM'] == 'win32':
-    progEnv.Append(CPPFLAGS = '/wd4290')
-
+libEnv.Tool('dataSubselectorLib', depsOnly = 1)
 dataSubselectorLib = libEnv.StaticLibrary('dataSubselector', 
                                           listFiles(['src/*.cxx']))
 

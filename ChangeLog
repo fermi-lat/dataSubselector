@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Mon Mar 17 14:10:59 PDT 2008
+dataSubselector/src/dataSubselector
+
+Modified Files:
+	CutController.cxx CutController.h 
+Log Message:
+recommit event class, conversion type handling changes
+    *
+------------------------------------------------------------
+User: jchiang  Mon Mar 17 14:10:59 PDT 2008
 dataSubselector/pfiles
 
 Modified Files:

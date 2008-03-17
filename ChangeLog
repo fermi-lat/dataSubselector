@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Mar 17 14:10:59 PDT 2008
+dataSubselector/pfiles
+
+Modified Files:
+	gtselect.par 
+Log Message:
+recommit event class, conversion type handling changes
+    *
+------------------------------------------------------------
 TAG
 Tag name: v5r7, operation: add
 Package: dataSubselector

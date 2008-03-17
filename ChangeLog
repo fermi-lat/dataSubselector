@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Sun Mar 16 22:17:25 PDT 2008
+dataSubselector/src/dataSubselector
+
+Modified Files:
+	CutController.cxx CutController.h 
+Log Message:
+remove unsupported cuts; add separate event class, conv type, pulse phase cuts
+    *
+------------------------------------------------------------
+User: jchiang  Sun Mar 16 22:17:25 PDT 2008
 dataSubselector/pfiles
 
 Modified Files:

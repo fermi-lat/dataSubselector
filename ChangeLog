@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Mar 17 13:57:14 PDT 2008
+dataSubselector/src/dataSubselector
+
+Modified Files:
+	CutController.cxx CutController.h 
+Log Message:
+implement pulse_phase cuts first
+    *
+------------------------------------------------------------
 User: jchiang  Mon Mar 17 13:57:13 PDT 2008
 dataSubselector/pfiles
 

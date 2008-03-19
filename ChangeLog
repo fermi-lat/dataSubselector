@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 TAG
+Tag name: dataSubselector-05-07-00, operation: mov
+Package: dataSubselector
+User: glast  Wed Mar 19 14:11:21 2008
+Files:
+  dataSubselector/SConscript  1.6
+
+    *
+------------------------------------------------------------
+TAG
 Tag name: v5r7, operation: mov
 Package: dataSubselector
 User: glast  Wed Mar 19 14:11:02 2008

@@ -1,6 +1,6 @@
 # -*- python -*-
 #
-# $Id: SConscript,v 1.4 2008/02/22 00:27:43 golpa Exp $
+# $Id: SConscript,v 1.5 2008/02/26 03:02:48 glastrm Exp $
 Import('baseEnv')
 Import('listFiles')
 progEnv = baseEnv.Clone()
@@ -29,4 +29,5 @@ progEnv.Tool('registerObjects', package = 'dataSubselector',
              binaries = [gtselectBin, gtmktimeBin, gtvcutBin], 
              testApps = [test_dataSubselectorBin],
              includes = listFiles(['dataSubselector/*.h']),
-             pfiles = listFiles(['pfiles/*.par']))
+             pfiles = listFiles(['pfiles/*.par']),
+             data = listFiles(['data/*'], recursive = True))

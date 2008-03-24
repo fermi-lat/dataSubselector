@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Mar 24 15:42:29 PDT 2008
+dataSubselector/src/dataSubselector
+
+Modified Files:
+	CutController.cxx 
+Log Message:
+ensure CONVERSION_TYPE cuts are written to DSS keywords
+    *
+------------------------------------------------------------
 TAG
 Tag name: dataSubselector-05-07-00, operation: mov
 Package: dataSubselector

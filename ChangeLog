@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Apr  1 13:47:53 PDT 2008
+dataSubselector/pfiles
+
+Modified Files:
+	gtselect.par 
+Log Message:
+more logical default value of zmax in parfile
+    *
+------------------------------------------------------------
 User: jchiang  Mon Mar 24 15:42:29 PDT 2008
 dataSubselector/src/dataSubselector
 

@@ -1,7 +1,7 @@
 /**
  * @file CutController.cxx
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/CutController.cxx,v 1.18 2008/03/17 21:10:59 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/CutController.cxx,v 1.19 2008/03/24 22:42:29 jchiang Exp $
  */
 
 #include <stdexcept>
@@ -51,7 +51,10 @@ CutController::CutController(st_app::AppParGroup & pars,
    if (evclsmin !=0 || evclsmax != 10) {
       addRangeCut("EVENT_CLASS", "dimensionless", evclsmin, evclsmax);
    }
-   addRangeCut("ZENITH_ANGLE", "deg", 0, pars["zmax"]);
+   double zmax = pars["zmax"];
+   if (zmax < 180.) {
+      addRangeCut("ZENITH_ANGLE", "deg", 0, pars["zmax"]);
+   }
    int convtype = pars["convtype"];
    if (convtype >= 0) {
       addRangeCut("CONVERSION_TYPE", "dimensionless", convtype, convtype, 

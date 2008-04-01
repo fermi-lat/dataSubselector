@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Tue Apr  1 13:47:53 PDT 2008
+dataSubselector/src/dataSubselector
+
+Modified Files:
+	CutController.cxx 
+Log Message:
+more logical default value of zmax in parfile
+    *
+------------------------------------------------------------
+User: jchiang  Tue Apr  1 13:47:53 PDT 2008
 dataSubselector/pfiles
 
 Modified Files:

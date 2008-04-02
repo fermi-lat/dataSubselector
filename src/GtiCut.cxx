@@ -3,8 +3,10 @@
  * @brief Encapsulate a GTI.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/GtiCut.cxx,v 1.6 2005/12/23 22:47:44 peachey Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/GtiCut.cxx,v 1.7 2006/03/31 21:20:08 jchiang Exp $
  */
+
+#include <iomanip>
 
 #include "dataSubselector/GtiCut.h"
 
@@ -49,6 +51,7 @@ void GtiCut::writeCut(std::ostream & stream, unsigned int keynum) const {
    CutBase::writeCut(stream, keynum);
    evtbin::Gti::ConstIterator dt;
    stream << "GTIs:\n";
+   stream << std::setprecision(12);
    for (dt = m_gti.begin(); dt != m_gti.end(); ++dt) {
       stream << dt->first << "  " << dt->second << "\n";
    }

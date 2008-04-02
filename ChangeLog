@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Apr  2 09:08:18 PDT 2008
+dataSubselector/src
+
+Modified Files:
+	GtiCut.cxx 
+Log Message:
+use greater precision to accomodate large MET values
+    *
+------------------------------------------------------------
 TAG
 Tag name: dataSubselector-06-00-00, operation: add
 Package: dataSubselector

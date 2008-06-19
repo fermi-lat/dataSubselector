@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: glastrm  Thu Jun 19 15:23:44 PDT 2008
+ScienceTools-scons/dataSubselector
+
+Modified Files:
+	SConscript 
+Log Message:
+Added Author and Version fields
+    *
+------------------------------------------------------------
 TAG
 Tag name: dataSubselector-06-00-01, operation: add
 Package: dataSubselector

@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+TAG
+Tag name: dataSubselector-06-00-01, operation: mov
+Package: dataSubselector
+User: glastrm  Thu Jun 19 15:23:54 2008
+Files:
+  dataSubselector/SConscript  1.7
+
+    *
+------------------------------------------------------------
 User: glastrm  Thu Jun 19 15:23:44 PDT 2008
 ScienceTools-scons/dataSubselector
 

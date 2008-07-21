@@ -1,4 +1,12 @@
 ------------------------------------------------------------
+User: glastrm  Mon Jul 21 09:30:28 PDT 2008
+dataSubselector
+
+Modified Files:
+	SConscript 
+Log Message:
+    *
+------------------------------------------------------------
 TAG
 Tag name: v6r1p1, operation: add
 Package: dataSubselector

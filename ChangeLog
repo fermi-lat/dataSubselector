@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Mon Jul 21 08:49:31 PDT 2008
+dataSubselector/src/dataSubselector
+
+Modified Files:
+	CutController.h 
+Log Message:
+remove superfluous class qualifications
+    *
+------------------------------------------------------------
+User: jchiang  Mon Jul 21 08:49:31 PDT 2008
 dataSubselector/dataSubselector
 
 Modified Files:

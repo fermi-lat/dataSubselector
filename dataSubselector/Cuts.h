@@ -4,7 +4,7 @@
  * dataSubselector.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.32 2006/12/04 01:40:06 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.33 2006/12/04 20:01:54 jchiang Exp $
  */
 
 #ifndef dataSubselector_Cuts_h
@@ -35,7 +35,7 @@ class GtiCuts;
  * packages outside of dataSubselector.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.32 2006/12/04 01:40:06 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.33 2006/12/04 20:01:54 jchiang Exp $
  */
 
 class Cuts {
@@ -148,8 +148,8 @@ public:
    ///        RangeCuts to be removed.
    /// @param removedCuts Vector of removed RangeCuts.  The calling routine
    ///        is responsible for deleting these cuts.
-   unsigned int Cuts::removeRangeCuts(const std::string & colname,
-                                      std::vector<RangeCut *> & removedCuts);
+   unsigned int removeRangeCuts(const std::string & colname,
+                                std::vector<RangeCut *> & removedCuts);
 
    /// @brief Add the DSS keywords to a write-enabled tip::Header.
    /// @param header The reference returned from the tip::Table::getHeader
@@ -217,8 +217,8 @@ private:
 
    std::vector<CutBase *> m_cuts;
 
-   unsigned int Cuts::parseColname(const std::string & colname,
-                                   std::string & col) const;
+   unsigned int parseColname(const std::string & colname,
+                             std::string & col) const;
 
    bool hasCut(const CutBase * newCut) const;
 

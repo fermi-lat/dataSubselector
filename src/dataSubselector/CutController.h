@@ -3,7 +3,7 @@
  * @brief Manage the cuts specified in the par file.
  * @author J. Chiang
  *
- * $Header$
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/CutController.h,v 1.11 2008/03/17 21:10:59 jchiang Exp $
  */
 
 #ifndef dataSubselector_CutController_h
@@ -52,10 +52,10 @@ public:
 
 protected:
 
-   CutController::CutController(st_app::AppParGroup & pars,
-                                const std::vector<std::string> & eventFiles,
-                                const std::string & evtable);
-
+   CutController(st_app::AppParGroup & pars,
+                 const std::vector<std::string> & eventFiles,
+                 const std::string & evtable);
+   
 private:
 
    st_app::AppParGroup & m_pars;

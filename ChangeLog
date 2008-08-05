@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Aug  5 12:52:03 PDT 2008
+dataSubselector/pfiles
+
+Modified Files:
+	gtmktime.par 
+Log Message:
+add ROI-based zenith angle cut
+    *
+------------------------------------------------------------
 User: jchiang  Tue Aug  5 12:52:02 PDT 2008
 dataSubselector/doc
 

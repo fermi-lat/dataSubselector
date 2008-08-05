@@ -5,7 +5,7 @@
  * event data file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/gtmaketime/gtmaketime.cxx,v 1.18 2007/11/30 17:19:22 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/gtmaketime/gtmaketime.cxx,v 1.19 2008/08/05 19:45:56 jchiang Exp $
  */
 
 #include <iomanip>
@@ -170,6 +170,9 @@ std::string MakeTime::roiZenAngleCut() {
          }
       }
    }
+   st_stream::StreamFormatter formatter("MakeTime", "roiZenAngleCut", 2);
+   formatter.info() << "DSS keywords required for ROI-based zenith angle cut"
+                    << "\nare not present in the FT1 file." << std::endl;
    return "";
 }
 

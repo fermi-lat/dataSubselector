@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: jchiang  Tue Aug  5 12:45:56 PDT 2008
+dataSubselector/src/gtmaketime
+
+Modified Files:
+	gtmaketime.cxx 
+Log Message:
+add mechanism to apply roi-based zenith cut using DSS keywords
+
+    *
+------------------------------------------------------------
 TAG
 Tag name: ScienceTools-09-07-00, operation: add
 Package: dataSubselector

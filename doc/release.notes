@@ -1,8 +1,9 @@
 /** @file release.notes
     @brief package dataSubselector
-    $Id: release.notes,v 1.83 2008/08/05 19:52:02 jchiang Exp $
+    $Id: release.notes,v 1.84 2008/08/06 05:49:38 jchiang Exp $
 
     @verbatim
+    v6r3    12-Aug-08   JC   add gtalign
     v6r2    05-Aug-08   JC   add command-line option to perform ROI-based
                              zenith angle cut based on DSS keywords
     v6r1p1  21-Jul-08   JC   remove superfluous class qualifications from 

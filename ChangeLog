@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Tue Aug 12 17:11:49 PDT 2008
+dataSubselector/src/gtalign
+
+Added Files:
+	DefaultAlignment.cxx DefaultAlignment.h gtalign.cxx 
+Log Message:
+add gtalign
+    *
+------------------------------------------------------------
+User: jchiang  Tue Aug 12 17:11:49 PDT 2008
 dataSubselector/pfiles
 
 Added Files:

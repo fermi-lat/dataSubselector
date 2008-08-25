@@ -1,5 +1,5 @@
 #
-# $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/pfiles/gtselect.par,v 1.12 2008/03/17 21:10:59 jchiang Exp $
+# $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/pfiles/gtselect.par,v 1.13 2008/04/01 20:47:53 jchiang Exp $
 #
 infile,f,a,"",,,"Input FT1 file"
 outfile,f,a,"",,,"Output FT1 file"
@@ -9,11 +9,11 @@ rad,r,a,20,0,180,radius of new search region (degrees)
 tmin,r,a,0,0,,start time (MET in s)
 tmax,r,a,0,0,,end time (MET in s)
 emin,r,a,30,0,,lower energy limit (MeV)
-emax,r,a,200000,0,,upper energy limit (MeV)
+emax,r,a,300000,0,,upper energy limit (MeV)
 evclsmin,i,h,0,0,10,"Minimum event class ID"
 evclsmax,i,h,10,0,10,"Maximum event class ID"
 convtype,i,h,-1,-1,1,"Conversion type (-1=both, 0=Front, 1=Back)"
-zmax,r,h,180,0,180,maximum zenith angle value (degrees)
+zmax,r,a,180,0,180,maximum zenith angle value (degrees)
 phasemin,r,h,0,0,1,minimum pulse phase
 phasemax,r,h,1,0,1,maximum pulse phase
 

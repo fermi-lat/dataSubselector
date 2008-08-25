@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Sun Aug 24 21:29:13 PDT 2008
+dataSubselector/doc
+
+Modified Files:
+	release.notes 
+Log Message:
+set default emax=3e5; zmax par unhidden; tagging v6r3p2
+    *
+------------------------------------------------------------
+User: jchiang  Sun Aug 24 21:29:13 PDT 2008
 dataSubselector/cmt
 
 Modified Files:

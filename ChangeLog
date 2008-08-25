@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Sun Aug 24 21:29:13 PDT 2008
+dataSubselector/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+set default emax=3e5; zmax par unhidden; tagging v6r3p2
+    *
+------------------------------------------------------------
 TAG
 Tag name: dataSubselector-06-03-01, operation: add
 Package: dataSubselector

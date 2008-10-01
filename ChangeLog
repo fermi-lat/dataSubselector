@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: jchiang  Tue Sep 30 22:22:11 PDT 2008
+dataSubselector/src/gtmaketime
+
+Modified Files:
+	gtmaketime.cxx 
+Log Message:
+update FILENAME in PHDU
+
+    *
+------------------------------------------------------------
 TAG
 Tag name: ScienceTools-09-06-00, operation: del
 Package: dataSubselector

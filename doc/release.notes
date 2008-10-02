@@ -1,8 +1,11 @@
 /** @file release.notes
     @brief package dataSubselector
-    $Id: release.notes,v 1.87 2008/08/25 04:29:13 jchiang Exp $
+    $Id: release.notes,v 1.88 2008/10/01 05:26:50 jchiang Exp $
 
     @verbatim
+    v6r3p4  02-Oct-08   JC   remove code in Gti::writeExtension that sets
+                             the TELAPSE keyword to range of GTIs. 
+                             Should have instead TELAPSE=TSTOP-TSTART
     v6r3p3  30-Sep-08   JC   set FILENAME keyword in gtmktime output
     v6r3p2  24-Aug-08   JC   set default emax=300000; make zmax un-hidden 
                              parameter

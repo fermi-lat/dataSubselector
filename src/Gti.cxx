@@ -4,7 +4,7 @@
  * accept() method.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Gti.cxx,v 1.9 2006/01/10 17:45:53 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Gti.cxx,v 1.10 2006/07/24 20:03:25 jchiang Exp $
  */
 
 #include <algorithm>
@@ -106,7 +106,6 @@ void Gti::writeExtension(const std::string & filename) const {
    double telapse(tstop - tstart);
    tip::Header & header = gtiTable->getHeader();
    header["ONTIME"].set(computeOntime());
-   header["TELAPSE"].set(telapse);
 }
 
 Gti Gti::applyTimeRangeCut(double start, double stop) const {

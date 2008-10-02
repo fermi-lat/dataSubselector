@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Thu Oct  2 15:20:18 PDT 2008
+dataSubselector/doc
+
+Modified Files:
+	release.notes 
+Log Message:
+do not set TELAPSE based on GTI range; tagging v6r3p4
+    *
+------------------------------------------------------------
+User: jchiang  Thu Oct  2 15:20:18 PDT 2008
 dataSubselector/cmt
 
 Modified Files:

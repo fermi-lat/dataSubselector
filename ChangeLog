@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Thu Oct  2 15:45:49 PDT 2008
+dataSubselector/src
+
+Modified Files:
+	Gti.cxx 
+Log Message:
+delete unused telapse variable
+    *
+------------------------------------------------------------
 User: jchiang  Thu Oct  2 15:20:18 PDT 2008
 dataSubselector/src
 

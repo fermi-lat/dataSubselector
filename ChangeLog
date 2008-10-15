@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: jchiang  Wed Oct 15 08:13:40 PDT 2008
+dataSubselector/pfiles
+
+Modified Files:
+	gtselect.par 
+Log Message:
+group prompted parameters together in par file.
+
+    *
+------------------------------------------------------------
 TAG
 Tag name: dataSubselector-06-03-04, operation: add
 Package: dataSubselector

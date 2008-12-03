@@ -3,7 +3,7 @@
  * @brief Tests program for Cuts class.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/test/test.cxx,v 1.25 2007/07/16 17:37:25 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/test/test.cxx,v 1.26 2007/09/27 18:05:26 golpa Exp $
  */ 
 
 #ifdef TRAP_FPE
@@ -268,8 +268,8 @@ void DssTests::compareCuts() {
    my_cuts.addRangeCut("CALIB_VERSION", "dimensionless", 1, 1,
                        dataSubselector::RangeCut::CLOSED, 1);
       
-   long npts(0);
-   long npts2(0);
+   tip::Index_t npts(0);
+   tip::Index_t npts2(0);
       
    std::map<std::string, double> params;
 

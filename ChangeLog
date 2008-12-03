@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Wed Dec  3 10:18:16 PST 2008
+dataSubselector/doc
+
+Modified Files:
+	release.notes 
+Log Message:
+use tip::Index_t; tagging v6r3p5
+    *
+------------------------------------------------------------
+User: jchiang  Wed Dec  3 10:18:16 PST 2008
 dataSubselector/cmt
 
 Modified Files:

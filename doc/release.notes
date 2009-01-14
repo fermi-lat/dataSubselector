@@ -1,8 +1,10 @@
 /** @file release.notes
     @brief package dataSubselector
-    $Id: release.notes,v 1.89 2008/10/02 22:20:18 jchiang Exp $
+    $Id: release.notes,v 1.90 2008/12/03 18:18:16 jchiang Exp $
 
     @verbatim
+    v6r4    13-Jan-09   JC   add gtifile parameter for temporary GTI file 
+                             for gtmktime
     v6r3p5  03-Dec-08   JC   use tip::Index_t instead of long for references to
                              tip::Table numRecords
     v6r3p4  02-Oct-08   JC   remove code in Gti::writeExtension that sets

@@ -1,5 +1,5 @@
 #
-# $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/pfiles/gtmktime.par,v 1.4 2008/10/01 05:26:50 jchiang Exp $
+# $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/pfiles/gtmktime.par,v 1.5 2009/01/14 04:58:46 jchiang Exp $
 #
 scfile,f,a,"",,,"Spacecraft data file"
 sctable,s,h,"SC_DATA",,,"Spacecraft data extension"
@@ -14,7 +14,7 @@ overwrite,b,h,no,,,"Build GTI from scratch (overwrite existing GTI)"
 header_obstimes,b,h,yes,,,"Use FITS header values for TSTART and TSTOP"
 tstart,r,h,0,,,"Observation start time (MET)"
 tstop,r,h,0,,,"Observation stop time (MET)"
-gtifile,s,h,"temp_gti.fits",,,"Name of temporary file for storing GTIs"
+gtifile,s,h,"default",,,"Name of temporary file for storing GTIs"
 
 chatter,i,h,2,0,4,Output verbosity
 clobber,        b, h, yes, , , "Overwrite existing output files"

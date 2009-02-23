@@ -1,8 +1,10 @@
 /** @file release.notes
     @brief package dataSubselector
-    $Id: release.notes,v 1.90 2008/12/03 18:18:16 jchiang Exp $
+    $Id: release.notes,v 1.91 2009/01/14 05:44:22 jchiang Exp $
 
     @verbatim
+    v6r4p1  23-Feb-09   JC   build filename of temporary GTI file by appending
+                             "_tempgti" to output file name (JB suggestion)
     v6r4    13-Jan-09   JC   add gtifile parameter for temporary GTI file 
                              for gtmktime
     v6r3p5  03-Dec-08   JC   use tip::Index_t instead of long for references to

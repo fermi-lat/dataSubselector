@@ -5,7 +5,7 @@
  * event data file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/gtmaketime/gtmaketime.cxx,v 1.21 2008/10/01 05:22:11 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/gtmaketime/gtmaketime.cxx,v 1.22 2009/01/14 04:58:46 jchiang Exp $
  */
 
 #include <iomanip>
@@ -301,6 +301,9 @@ void MakeTime::writeGtiFile(const std::string & gtifile) const {
 
 void MakeTime::copyTable() const {
    std::string gtifile = m_pars["gtifile"];
+   if (gtifile == "default") {
+      gtifile = m_outfile + "_tempgti";
+   }
    writeGtiFile(gtifile);
 
    std::string extension = m_pars["evtable"];

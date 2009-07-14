@@ -1,6 +1,6 @@
 # -*- python -*-
 #
-# $Id: SConscript,v 1.17 2009/01/14 06:30:41 glastrm Exp $
+# $Id: SConscript,v 1.18 2009/02/23 17:30:50 glastrm Exp $
 # Authors: James Chiang <jchiang@slac.stanford.edu>
 # Version: dataSubselector-06-04-01
 Import('baseEnv')
@@ -26,10 +26,17 @@ gtmktimeBin = progEnv.Program('gtmktime', listFiles(['src/gtmaketime/*.cxx']))
 
 gtvcutBin = progEnv.Program('gtvcut', listFiles(['src/viewCuts/*.cxx']))
 
-progEnv.Tool('registerObjects', package = 'dataSubselector', 
-             libraries = [dataSubselectorLib],
-             binaries = [gtselectBin, gtmktimeBin, gtvcutBin], 
-             testApps = [test_dataSubselectorBin],
+#progEnv.Tool('registerObjects', package = 'dataSubselector', 
+#             libraries = [dataSubselectorLib],
+#             binaries = [gtselectBin, gtmktimeBin, gtvcutBin], 
+#             testApps = [test_dataSubselectorBin],
+#             includes = listFiles(['dataSubselector/*.h']),
+#             pfiles = listFiles(['pfiles/*.par']),
+#             data = listFiles(['data/*'], recursive = True))
+progEnv.Tool('registerTargets', package = 'dataSubselector', 
+             staticLibraryCxts = [dataSubselectorLib],
+             binaryCxts = [gtselectBin, gtmktimeBin, gtvcutBin], 
+             testAppCxts = [test_dataSubselectorBin],
              includes = listFiles(['dataSubselector/*.h']),
              pfiles = listFiles(['pfiles/*.par']),
              data = listFiles(['data/*'], recursive = True))

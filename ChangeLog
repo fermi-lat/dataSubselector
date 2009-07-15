@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+TAG
+Tag name: v6r4p2, operation: mov
+Package: dataSubselector
+User: glastrm  Wed Jul 15 10:33:21 2009
+Files:
+  dataSubselector/SConscript  1.20
+
+    *
+------------------------------------------------------------
 User: glastrm  Wed Jul 15 10:33:15 PDT 2009
 dataSubselector
 

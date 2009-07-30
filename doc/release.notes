@@ -1,10 +1,11 @@
 /** @file release.notes
     @brief package dataSubselector
-    $Id: release.notes,v 1.93 2009/07/01 16:46:46 heather Exp $
+    $Id: release.notes,v 1.94 2009/07/15 17:29:38 jrb Exp $
 
     @verbatim
     * EOH *
 
+ dataSubselector-06-04-03 30-Jul-2009    jrb Fix SConscript
    v6r4p2   15-Jul-09  jrb   Update SConscript
     v6r4p1  23-Feb-09   JC   build filename of temporary GTI file by appending
                              "_tempgti" to output file name (JB suggestion)

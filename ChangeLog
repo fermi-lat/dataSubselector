@@ -2,6 +2,18 @@
 TAG
 Tag name: dataSubselector-06-04-03, operation: add
 Package: dataSubselector
+User: jrb  Thu Jul 30 11:22:51 2009
+Files:
+  dataSubselector/pfiles/gtalign.par  1.1
+  dataSubselector/pfiles/gtvcut.par  1.1
+  dataSubselector/pfiles/gtselect.par  1.16
+  dataSubselector/pfiles/gtmktime.par  1.6
+
+    *
+------------------------------------------------------------
+TAG
+Tag name: dataSubselector-06-04-03, operation: add
+Package: dataSubselector
 User: jrb  Thu Jul 30 11:22:43 2009
 Files:
   dataSubselector/doc/.cvsignore  1.1

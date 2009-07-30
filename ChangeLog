@@ -2,6 +2,20 @@
 TAG
 Tag name: dataSubselector-06-04-03, operation: add
 Package: dataSubselector
+User: jrb  Thu Jul 30 11:22:36 2009
+Files:
+  dataSubselector/dataSubselector/CutBase.h  1.3
+  dataSubselector/dataSubselector/RangeCut.h  1.5
+  dataSubselector/dataSubselector/Cuts.h  1.34
+  dataSubselector/dataSubselector/Gti.h  1.7
+  dataSubselector/dataSubselector/SkyConeCut.h  1.3
+  dataSubselector/dataSubselector/GtiCut.h  1.4
+
+    *
+------------------------------------------------------------
+TAG
+Tag name: dataSubselector-06-04-03, operation: add
+Package: dataSubselector
 User: jrb  Thu Jul 30 11:22:29 2009
 Files:
   dataSubselector/cmt/.cvsignore  1.2

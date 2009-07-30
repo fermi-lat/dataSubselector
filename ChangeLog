@@ -2,6 +2,16 @@
 TAG
 Tag name: dataSubselector-06-04-03, operation: add
 Package: dataSubselector
+User: jrb  Thu Jul 30 11:22:29 2009
+Files:
+  dataSubselector/cmt/.cvsignore  1.2
+  dataSubselector/cmt/requirements  1.108
+
+    *
+------------------------------------------------------------
+TAG
+Tag name: dataSubselector-06-04-03, operation: add
+Package: dataSubselector
 User: jrb  Thu Jul 30 11:22:17 2009
 Files:
   dataSubselector/.cvsignore  1.2

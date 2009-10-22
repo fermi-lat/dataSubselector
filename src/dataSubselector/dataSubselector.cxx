@@ -3,7 +3,7 @@
  * @brief Filter FT1 data.
  * @author J. Chiang
  *
- *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.36 2008/07/15 19:19:59 jchiang Exp $
+ *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.37 2008/12/03 18:18:16 jchiang Exp $
  */
 
 #include <algorithm>
@@ -35,7 +35,7 @@ using dataSubselector::Gti;
  * @class DataFilter
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.36 2008/07/15 19:19:59 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.37 2008/12/03 18:18:16 jchiang Exp $
  */
 
 class DataFilter : public st_app::StApp {
@@ -67,6 +67,8 @@ public:
 
    virtual void banner() const;
 
+   void promptForParameters();
+
 private:
 
    st_app::AppParGroup & m_pars;
@@ -97,9 +99,31 @@ void DataFilter::banner() const {
    }
 }
 
-void DataFilter::run() {
-   m_pars.Prompt();
+void DataFilter::promptForParameters() {
+   m_pars.Prompt("infile");
+   m_pars.Prompt("outfile");
+   m_pars.Prompt("ra");
+   m_pars.Prompt("dec");
+   m_pars.Prompt("rad");
+   try {
+      m_pars.Prompt("tmin");
+      m_pars.Prompt("tmax");
+   } catch (const hoops::Hexception &) {
+      m_pars["tmin"] = static_cast<float>(0);
+      m_pars["tmax"] = static_cast<float>(0);
+   }
+   m_pars.Prompt("emin");
+   m_pars.Prompt("emax");
+   m_pars.Prompt("zmax");
    m_pars.Save();
+}
+
+void DataFilter::run() {
+//    m_pars.Prompt();
+//    m_pars.Save();
+
+   promptForParameters();
+
    std::string evtable = m_pars["evtable"];
 
    std::string inputFile = m_pars["infile"];

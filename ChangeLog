@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Wed Oct 21 19:57:33 PDT 2009
+dataSubselector/src/dataSubselector
+
+Modified Files:
+	dataSubselector.cxx 
+Log Message:
+attempt to use indef
+    *
+------------------------------------------------------------
+User: jchiang  Wed Oct 21 19:57:33 PDT 2009
 dataSubselector/pfiles
 
 Modified Files:

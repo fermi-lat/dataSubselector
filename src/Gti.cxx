@@ -4,10 +4,11 @@
  * accept() method.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Gti.cxx,v 1.11 2008/10/02 22:20:18 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/Gti.cxx,v 1.12 2008/10/02 22:45:49 jchiang Exp $
  */
 
 #include <algorithm>
+#include <memory>
 
 #include "fitsio.h"
 

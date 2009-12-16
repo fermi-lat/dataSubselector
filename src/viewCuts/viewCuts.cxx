@@ -4,9 +4,10 @@
  * other extension.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/viewCuts/viewCuts.cxx,v 1.7 2006/05/03 00:10:44 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/viewCuts/viewCuts.cxx,v 1.8 2007/06/05 15:14:41 jchiang Exp $
  */
 
+#include <cstdlib>
 #include <iostream>
 
 #include "st_stream/StreamFormatter.h"
@@ -55,7 +56,7 @@ private:
    static std::string s_cvs_id;
 };
 
-std::string ViewCuts::s_cvs_id("$Name:  $");
+std::string ViewCuts::s_cvs_id("$Name: v6r4p4 $");
 
 st_app::StAppFactory<ViewCuts> myAppFactory("gtvcut");
 

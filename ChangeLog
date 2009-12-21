@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Dec 21 13:00:19 PST 2009
+dataSubselector/pfiles
+
+Modified Files:
+	gtselect.par 
+Log Message:
+extend valid range of event_class values for data selection
+    *
+------------------------------------------------------------
 User: elwinter  Wed Dec 16 13:12:23 PST 2009
 dataSubselector/src/viewCuts
 

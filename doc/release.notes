@@ -1,10 +1,11 @@
 /** @file release.notes
     @brief package dataSubselector
-    $Id: release.notes,v 1.95 2009/07/30 18:22:10 jrb Exp $
+    $Id: release.notes,v 1.96 2009/08/05 14:41:54 jchiang Exp $
 
     @verbatim
     * EOH *
 
+ dataSubselector-06-04-05 21-Dec-2009 jchiang extend allowed range of event_class selection in gtselect.par file
  dataSubselector-06-04-04 05-Aug-2009 jchiang bump patch number so that LATEST builds without errors in test program
  dataSubselector-06-04-03 30-Jul-2009    jrb Fix SConscript
    v6r4p2   15-Jul-09  jrb   Update SConscript

@@ -3,7 +3,7 @@
  * @brief Filter FT1 data.
  * @author J. Chiang
  *
- *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.37 2008/12/03 18:18:16 jchiang Exp $
+ *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.38 2009/10/22 02:57:33 jchiang Exp $
  */
 
 #include <algorithm>
@@ -35,7 +35,7 @@ using dataSubselector::Gti;
  * @class DataFilter
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.37 2008/12/03 18:18:16 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.38 2009/10/22 02:57:33 jchiang Exp $
  */
 
 class DataFilter : public st_app::StApp {
@@ -119,10 +119,10 @@ void DataFilter::promptForParameters() {
 }
 
 void DataFilter::run() {
-//    m_pars.Prompt();
-//    m_pars.Save();
+   m_pars.Prompt();
+   m_pars.Save();
 
-   promptForParameters();
+//    promptForParameters();
 
    std::string evtable = m_pars["evtable"];
 

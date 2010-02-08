@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Mon Feb  8 13:22:51 PST 2010
+dataSubselector/src/dataSubselector
+
+Modified Files:
+	dataSubselector.cxx 
+Log Message:
+implement default behavior for gtselect using ape 2.6 and hoops v1r1p4 revisions
+    *
+------------------------------------------------------------
+User: jchiang  Mon Feb  8 13:22:51 PST 2010
 dataSubselector/pfiles
 
 Modified Files:

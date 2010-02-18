@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: jrb  Wed Feb 17 16:53:12 PST 2010
+ScienceTools-scons/dataSubselector
+
+Modified Files:
+	.cvsignore SConscript 
+Log Message:
+Fix library link
+
+    *
+------------------------------------------------------------
 TAG
 Tag name: dataSubselector-07-00-00, operation: add
 Package: dataSubselector

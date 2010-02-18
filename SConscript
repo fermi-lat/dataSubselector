@@ -1,6 +1,6 @@
 # -*- python -*-
 #
-# $Id: SConscript,v 1.24 2009/12/21 21:54:09 jchiang Exp $
+# $Id: SConscript,v 1.25 2010/02/08 21:24:12 jchiang Exp $
 # Authors: James Chiang <jchiang@slac.stanford.edu>
 # Version: dataSubselector-07-00-00
 Import('baseEnv')
@@ -8,7 +8,6 @@ Import('listFiles')
 progEnv = baseEnv.Clone()
 libEnv = baseEnv.Clone()
 
-libEnv.Tool('dataSubselectorLib', depsOnly = 1)
 dataSubselectorLib = libEnv.StaticLibrary('dataSubselector', 
                                           listFiles(['src/*.cxx']))
 

@@ -3,7 +3,7 @@
  * @brief Filter FT1 data.
  * @author J. Chiang
  *
- *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.39 2009/12/21 21:52:07 jchiang Exp $
+ *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.40 2010/02/08 21:22:51 jchiang Exp $
  */
 
 #include <algorithm>
@@ -35,7 +35,7 @@ using dataSubselector::Gti;
  * @class DataFilter
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.39 2009/12/21 21:52:07 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.40 2010/02/08 21:22:51 jchiang Exp $
  */
 
 class DataFilter : public st_app::StApp {
@@ -72,7 +72,7 @@ public:
 private:
 
    st_app::AppParGroup & m_pars;
-   float m_ra, m_dec, m_rad, m_tmin, m_tmax;
+   double m_ra, m_dec, m_rad, m_tmin, m_tmax;
 
    std::vector<std::string> m_inputFiles;
    std::string m_outputFile;

@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Jun 16 15:43:16 PDT 2010
+ScienceTools-scons/dataSubselector/src/gtmaketime
+
+Modified Files:
+	gtmaketime.cxx 
+Log Message:
+add includes for gcc4.4.3 build
+    *
+------------------------------------------------------------
 TAG
 Tag name: dataSubselector-07-01-00, operation: add
 Package: dataSubselector

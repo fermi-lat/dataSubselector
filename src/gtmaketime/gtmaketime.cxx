@@ -5,9 +5,10 @@
  * event data file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/gtmaketime/gtmaketime.cxx,v 1.23 2009/02/23 17:27:41 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/gtmaketime/gtmaketime.cxx,v 1.24 2009/12/16 21:11:06 elwinter Exp $
  */
 
+#include <cstdio>
 #include <cstdlib>
 #include <iomanip>
 #include <iostream>
@@ -89,7 +90,7 @@ private:
    static std::string s_cvs_id;
 };
 
-std::string MakeTime::s_cvs_id("$Name: v6r4p4 $");
+std::string MakeTime::s_cvs_id("$Name:  $");
 
 st_app::StAppFactory<MakeTime> myAppFactory("gtmktime");
 

@@ -3,7 +3,7 @@
  * @brief Tests program for Cuts class.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/test/test.cxx,v 1.26 2007/09/27 18:05:26 golpa Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/test/test.cxx,v 1.27 2008/12/03 18:18:16 jchiang Exp $
  */ 
 
 #ifdef TRAP_FPE
@@ -11,6 +11,7 @@
 #endif
 
 #include <cmath>
+#include <cstdio>
 
 #include <iostream>
 #include <stdexcept>

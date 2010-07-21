@@ -3,7 +3,7 @@
  * @brief Filter FT1 data.
  * @author J. Chiang
  *
- *  $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.40 2010/02/08 21:22:51 jchiang Exp $
+ *  $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.41 2010/03/25 22:06:57 jchiang Exp $
  */
 
 #include <algorithm>
@@ -35,7 +35,7 @@ using dataSubselector::Gti;
  * @class DataFilter
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.40 2010/02/08 21:22:51 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.41 2010/03/25 22:06:57 jchiang Exp $
  */
 
 class DataFilter : public st_app::StApp {
@@ -89,7 +89,7 @@ private:
    static std::string s_cvs_id;
 };
 
-std::string DataFilter::s_cvs_id("$Name:  $");
+std::string DataFilter::s_cvs_id("$Name: ScienceTools-LATEST-1-3163 $");
 
 st_app::StAppFactory<DataFilter> myAppFactory("gtselect");
 
@@ -135,9 +135,6 @@ void DataFilter::promptForParameters() {
 }
 
 void DataFilter::run() {
-//    m_pars.Prompt();
-//    m_pars.Save();
-
    promptForParameters();
 
    std::string evtable = m_pars["evtable"];
@@ -169,8 +166,6 @@ void DataFilter::run() {
    pars["tmin"] = m_tmin;
    pars["tmax"] = m_tmax;
 
-//    CutController * cuts = 
-//       CutController::instance(m_pars, m_inputFiles, evtable);
    CutController * cuts = 
       CutController::instance(pars, m_inputFiles, evtable);
    copyTable(evtable, cuts);
@@ -179,8 +174,6 @@ void DataFilter::run() {
    CutController::delete_instance();
 
    double tmin, tmax;
-//    tmin = m_pars["tmin"];
-//    tmax = m_pars["tmax"];
    tmin = m_tmin;
    tmax = m_tmax;
    if (tmin != 0 || tmax != 0 || m_inputFiles.size() > 1) {

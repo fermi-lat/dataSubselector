@@ -3,7 +3,7 @@
  * @brief Manage the cuts specified in the par file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/dataSubselector/CutController.h,v 1.11 2008/03/17 21:10:59 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/dataSubselector/CutController.h,v 1.12 2008/07/21 15:49:31 jchiang Exp $
  */
 
 #ifndef dataSubselector_CutController_h
@@ -61,11 +61,17 @@ private:
    st_app::AppParGroup & m_pars;
    Cuts m_cuts;
 
+   std::string m_passVer;
+   unsigned int m_mask;
+   std::string m_evclsFilter;
+
    static CutController * s_instance;
 
    void addRangeCut(const std::string & colname, const std::string & unit,
                     double minVal, double maxVal, unsigned int indx=0,
                     bool force=false);
+
+   void checkPassVersion(const std::vector<std::string> & evfiles);
 
 };
 

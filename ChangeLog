@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Wed Jul 21 14:09:26 PDT 2010
+ScienceTools-scons/dataSubselector/src/dataSubselector
+
+Modified Files:
+	CutController.cxx CutController.h dataSubselector.cxx 
+Log Message:
+gtselect update to perform bitmask filtering on EVENT_CLASS
+    *
+------------------------------------------------------------
+User: jchiang  Wed Jul 21 14:09:26 PDT 2010
 ScienceTools-scons/dataSubselector/pfiles
 
 Modified Files:

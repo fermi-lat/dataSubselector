@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Fri Jul 23 08:55:06 PDT 2010
+dataSubselector
+
+Modified Files:
+	SConscript 
+Log Message:
+stag/GoGui_auto-tag
+    *
+------------------------------------------------------------
 User: jchiang  Fri Jul 23 08:54:22 PDT 2010
 ScienceTools-scons/dataSubselector/cmt
 

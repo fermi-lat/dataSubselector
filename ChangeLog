@@ -1,4 +1,49 @@
 ------------------------------------------------------------
+TAG
+Tag name: dataSubselector-08-01-01, operation: add
+Package: dataSubselector
+User: jchiang  Sat Sep 25 17:27:22 2010
+Files:
+  dataSubselector/.cvsignore  1.3
+  dataSubselector/dataSubselectorLib.py  1.3
+  dataSubselector/ChangeLog  1.735
+  dataSubselector/SConscript  1.32
+  dataSubselector/cmt/.cvsignore  1.2
+  dataSubselector/cmt/requirements  1.117
+  dataSubselector/data/input_events.fits  1.1
+  dataSubselector/dataSubselector/CutBase.h  1.3
+  dataSubselector/dataSubselector/RangeCut.h  1.5
+  dataSubselector/dataSubselector/Cuts.h  1.34
+  dataSubselector/dataSubselector/Gti.h  1.7
+  dataSubselector/dataSubselector/SkyConeCut.h  1.3
+  dataSubselector/dataSubselector/GtiCut.h  1.4
+  dataSubselector/doc/.cvsignore  1.1
+  dataSubselector/doc/release.notes  1.104
+  dataSubselector/pfiles/gtalign.par  1.1
+  dataSubselector/pfiles/gtvcut.par  1.2
+  dataSubselector/pfiles/gtselect.par  1.21
+  dataSubselector/pfiles/gtmktime.par  1.7
+  dataSubselector/src/RangeCut.cxx  1.13
+  dataSubselector/src/Gti.cxx  1.13
+  dataSubselector/src/SConstruct  1.5
+  dataSubselector/src/CutBase.cxx  1.3
+  dataSubselector/src/mainpage.h  1.3
+  dataSubselector/src/GtiCut.cxx  1.8
+  dataSubselector/src/Cuts.cxx  1.41
+  dataSubselector/src/SkyConeCut.cxx  1.12
+  dataSubselector/src/buildBase  1.3
+  dataSubselector/src/dataSubselector/dataSubselector.cxx  1.42
+  dataSubselector/src/dataSubselector/CutController.h  1.13
+  dataSubselector/src/dataSubselector/CutController.cxx  1.22
+  dataSubselector/src/gtalign/DefaultAlignment.h  1.1
+  dataSubselector/src/gtalign/gtalign.cxx  1.1
+  dataSubselector/src/gtalign/DefaultAlignment.cxx  1.2
+  dataSubselector/src/gtmaketime/gtmaketime.cxx  1.25
+  dataSubselector/src/test/test.cxx  1.28
+  dataSubselector/src/viewCuts/viewCuts.cxx  1.9
+
+    *
+------------------------------------------------------------
 User: jchiang  Sat Sep 25 17:27:16 PDT 2010
 dataSubselector/doc
 

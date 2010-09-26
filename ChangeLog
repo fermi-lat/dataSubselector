@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: jchiang  Sat Sep 25 17:21:07 PDT 2010
+ScienceTools-scons/dataSubselector/pfiles
+
+Modified Files:
+	gtvcut.par 
+Log Message:
+change default to suppress_gtis=yes
+
+    *
+------------------------------------------------------------
 TAG
 Tag name: ScienceTools-09-18-03, operation: add
 Package: dataSubselector

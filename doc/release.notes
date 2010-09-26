@@ -1,10 +1,11 @@
 /** @file release.notes
     @brief package dataSubselector
-    $Id: release.notes,v 1.102 2010/07/21 21:10:37 jchiang Exp $
+    $Id: release.notes,v 1.103 2010/07/23 15:55:06 jchiang Exp $
 
     @verbatim
     * EOH *
 
+ dataSubselector-08-01-01 25-Sep-2010 jchiang change default: gtvcut suppress_gtis=yes
  dataSubselector-08-01-00 23-Jul-2010 jchiang implement evclass=INDEF for gtselect (as default)
  dataSubselector-08-00-00 21-Jul-2010 jchiang gtselect updated to perform bitmask filtering on EVENT_CLASS
  dataSubselector-07-01-00 07-Apr-2010 jchiang use recommended filter value as default in gtmktime.par

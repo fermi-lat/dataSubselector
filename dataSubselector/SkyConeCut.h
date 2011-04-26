@@ -3,7 +3,7 @@
  * @brief Describe an acceptance cone on the sky.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/SkyConeCut.h,v 1.2 2005/06/01 19:49:32 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/dataSubselector/SkyConeCut.h,v 1.3 2005/07/01 22:32:54 jchiang Exp $
  */
 
 #ifndef dataSubselector_SkyConeCut_h
@@ -20,9 +20,6 @@ namespace dataSubselector {
 /**
  * @class SkyConeCut
  * @brief Acceptance cone on the sky.
- * @author J. Chiang
- *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/SkyConeCut.h,v 1.2 2005/06/01 19:49:32 jchiang Exp $
  */
 
 class SkyConeCut : public CutBase {

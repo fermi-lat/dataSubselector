@@ -4,7 +4,7 @@
  * an accept() method.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Gti.h,v 1.6 2005/08/17 22:26:16 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/dataSubselector/Gti.h,v 1.7 2005/12/23 22:47:44 peachey Exp $
  */
 
 #ifndef dataSubselector_Gti_h
@@ -20,10 +20,7 @@ namespace dataSubselector {
 
 /**
  * @class Gti
- * @brief A more useful and complete implementation of evtbin::Gti
- * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Gti.h,v 1.6 2005/08/17 22:26:16 jchiang Exp $
  */
 
 class Gti : public evtbin::Gti {
@@ -37,9 +34,11 @@ public:
 
    Gti(const tip::Table & gtiTable);
 
-   Gti(const evtbin::Gti & gti) : evtbin::Gti(gti) {}
+   Gti(const evtbin::Gti & gti);
 
    bool accept(double time) const;
+
+   bool accept2(double time) const;
 
    void writeExtension(const std::string & filename) const;
 

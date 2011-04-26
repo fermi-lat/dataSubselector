@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Mon Apr 25 21:28:36 PDT 2011
+ScienceTools-scons/dataSubselector/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+use std::map::lower_bound in Gti::accept2
+    *
+------------------------------------------------------------
+User: jchiang  Mon Apr 25 21:28:36 PDT 2011
 ScienceTools-scons/dataSubselector/src
 
 Modified Files:

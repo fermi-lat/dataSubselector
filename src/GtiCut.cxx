@@ -3,7 +3,7 @@
  * @brief Encapsulate a GTI.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/GtiCut.cxx,v 1.7 2006/03/31 21:20:08 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/GtiCut.cxx,v 1.8 2008/04/02 16:08:18 jchiang Exp $
  */
 
 #include <iomanip>
@@ -44,7 +44,8 @@ void GtiCut::getKeyValues(std::string & type, std::string & unit,
 }
 
 bool GtiCut::accept(double time) const {
-   return m_gti.accept(time);
+//   return m_gti.accept(time);
+   return m_gti.accept2(time);
 }
 
 void GtiCut::writeCut(std::ostream & stream, unsigned int keynum) const {

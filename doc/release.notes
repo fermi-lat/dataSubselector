@@ -1,10 +1,11 @@
 /** @file release.notes
     @brief package dataSubselector
-    $Id: release.notes,v 1.104 2010/09/26 00:27:16 jchiang Exp $
+    $Id: release.notes,v 1.105 2011/04/26 04:29:31 jchiang Exp $
 
     @verbatim
     * EOH *
 
+ dataSubselector-08-02-01 03-May-2011 jchiang use Gti::accept2 in GtiCuts::accept
  dataSubselector-08-02-00 25-Apr-2011 jchiang use std::map::lower_bound in Gti::accept2
  dataSubselector-08-01-01 25-Sep-2010 jchiang change default: gtvcut suppress_gtis=yes
  dataSubselector-08-01-00 23-Jul-2010 jchiang implement evclass=INDEF for gtselect (as default)

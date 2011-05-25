@@ -1,6 +1,6 @@
 # -*- python -*-
 #
-# $Id: SConscript,v 1.33 2011/04/26 04:29:31 jchiang Exp $
+# $Id: SConscript,v 1.34 2011/05/04 05:18:43 jchiang Exp $
 # Authors: James Chiang <jchiang@slac.stanford.edu>
 # Version: dataSubselector-08-02-01
 Import('baseEnv')
@@ -25,13 +25,6 @@ gtmktimeBin = progEnv.Program('gtmktime', listFiles(['src/gtmaketime/*.cxx']))
 
 gtvcutBin = progEnv.Program('gtvcut', listFiles(['src/viewCuts/*.cxx']))
 
-#progEnv.Tool('registerObjects', package = 'dataSubselector', 
-#             libraries = [dataSubselectorLib],
-#             binaries = [gtselectBin, gtmktimeBin, gtvcutBin], 
-#             testApps = [test_dataSubselectorBin],
-#             includes = listFiles(['dataSubselector/*.h']),
-#             pfiles = listFiles(['pfiles/*.par']),
-#             data = listFiles(['data/*'], recursive = True))
 progEnv.Tool('registerTargets', package = 'dataSubselector', 
              staticLibraryCxts = [[dataSubselectorLib, libEnv]],
              binaryCxts = [[gtselectBin, progEnv], [gtmktimeBin, progEnv],

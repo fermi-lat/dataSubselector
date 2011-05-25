@@ -5,7 +5,7 @@
  * event data file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/gtmaketime/gtmaketime.cxx,v 1.24 2009/12/16 21:11:06 elwinter Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/gtmaketime/gtmaketime.cxx,v 1.25 2010/06/16 22:43:16 jchiang Exp $
  */
 
 #include <cstdio>
@@ -218,8 +218,8 @@ void MakeTime::createGti() {
       double stop_time;
       std::vector<double> tstart;
       std::vector<double> tstop;
-// Initialize arrays with the first interval that ends after the first
-// event time, m_tmin
+// Initialize arrays with the first interval that ends after the start
+// time of the FT1 file, m_tmin
       for (; input != in_table->end(); ++input) {
          in["START"].get(start_time);
          in["STOP"].get(stop_time);

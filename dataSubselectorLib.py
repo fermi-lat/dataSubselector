@@ -1,4 +1,4 @@
-#$Id: dataSubselectorLib.py,v 1.2 2008/02/22 00:27:43 golpa Exp $
+#$Id: dataSubselectorLib.py,v 1.3 2008/02/26 03:02:48 glastrm Exp $
 def generate(env, **kw):
     if not kw.get('depsOnly',0):
         env.Tool('addLibrary', library = ['dataSubselector'])
@@ -6,6 +6,7 @@ def generate(env, **kw):
     env.Tool('astroLib')
     env.Tool('st_facilitiesLib')
     env.Tool('facilitiesLib')
+    env.Tool('irfLoaderLib')
     env.Tool('evtbinLib')
 
 def exists(env):

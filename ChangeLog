@@ -1,4 +1,15 @@
 ------------------------------------------------------------
+User: jchiang  Sat Aug 20 14:33:11 PDT 2011
+ScienceTools-scons/dataSubselector/src
+
+Modified Files:
+	Cuts.cxx 
+Added Files:
+	BitMaskCut.cxx 
+Log Message:
+add BitMaskCut class: clean up gtselect implementation and write out DSS keywords associated with event selection
+    *
+------------------------------------------------------------
 User: jchiang  Sat Aug 20 14:33:10 PDT 2011
 ScienceTools-scons/dataSubselector/dataSubselector
 

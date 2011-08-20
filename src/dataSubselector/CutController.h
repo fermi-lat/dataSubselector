@@ -3,7 +3,7 @@
  * @brief Manage the cuts specified in the par file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/dataSubselector/CutController.h,v 1.12 2008/07/21 15:49:31 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/dataSubselector/CutController.h,v 1.13 2010/07/21 21:09:26 jchiang Exp $
  */
 
 #ifndef dataSubselector_CutController_h
@@ -62,7 +62,6 @@ private:
    Cuts m_cuts;
 
    std::string m_passVer;
-   unsigned int m_mask;
    std::string m_evclsFilter;
 
    static CutController * s_instance;

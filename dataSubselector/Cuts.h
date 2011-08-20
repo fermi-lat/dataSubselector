@@ -4,7 +4,7 @@
  * dataSubselector.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.33 2006/12/04 20:01:54 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/dataSubselector/Cuts.h,v 1.34 2008/07/21 15:49:30 jchiang Exp $
  */
 
 #ifndef dataSubselector_Cuts_h
@@ -35,7 +35,7 @@ class GtiCuts;
  * packages outside of dataSubselector.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/Cuts.h,v 1.33 2006/12/04 20:01:54 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/dataSubselector/Cuts.h,v 1.34 2008/07/21 15:49:30 jchiang Exp $
  */
 
 class Cuts {
@@ -133,6 +133,15 @@ public:
    /// @param dec Declination of cone center (J2000 degrees).
    /// @param radius Cone half-opening angle (degrees)
    unsigned int addSkyConeCut(double ra, double dec, double radius);
+
+   /// @brief (single) Bit mask cut, usually used to make event
+   /// selection based on bit map in the EVENT_CLASS column
+   /// @return The current number of cuts stored.
+   /// @param colname Name of column to which the bit-mask is applied
+   /// @param bitPosition Position of the bit (corresponding to the
+   /// desired event class)
+   unsigned int addBitMaskCut(const std::string & colname,
+                              unsigned int bitPosition);
 
    unsigned int addCut(const CutBase & newCut) {
       m_cuts.push_back(newCut.clone());

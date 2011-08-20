@@ -3,7 +3,7 @@
  * @brief Base class for cuts.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/CutBase.h,v 1.2 2005/06/01 19:49:31 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/dataSubselector/CutBase.h,v 1.3 2005/07/01 22:32:54 jchiang Exp $
  */
 
 #ifndef dataSubselector_CutBase_h
@@ -25,7 +25,6 @@ namespace dataSubselector {
  * @brief Base class for cuts that are applied to FITS data.
  * @author J. Chiang
  * 
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/CutBase.h,v 1.2 2005/06/01 19:49:31 jchiang Exp $
  */
 
 class CutBase {

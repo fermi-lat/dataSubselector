@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Sep 20 16:08:55 PDT 2011
+ScienceTools-scons/dataSubselector/src
+
+Modified Files:
+	BitMaskCut.cxx 
+Log Message:
+try to handle Windows deficiency
+    *
+------------------------------------------------------------
 TAG
 Tag name: ScienceTools-09-25-01, operation: add
 Package: dataSubselector

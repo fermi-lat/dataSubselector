@@ -6,7 +6,7 @@
  *
  * @author J. Chiang
  *
- * $Header$
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/BitMaskCut.cxx,v 1.1 2011/08/20 21:33:10 jchiang Exp $
  */
 
 #include <sstream>
@@ -28,8 +28,9 @@ bool BitMaskCut::accept(tip::ConstTableRecord & row) const {
 }
 
 bool BitMaskCut::accept(const std::map<std::string, double> & params) const {
-   const std::map<std::string, double>::const_iterator value;
-   if ( (value = params.find(m_colname)) != params.end() ) {
+   const std::map<std::string, double>::const_iterator value
+      = params.find(m_colname);
+   if (value != params.end()) {
       return accept(static_cast<unsigned int>(value->second));
    }
    return true;

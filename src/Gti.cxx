@@ -4,7 +4,7 @@
  * accept() method.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/Gti.cxx,v 1.13 2009/12/16 21:07:38 elwinter Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/Gti.cxx,v 1.14 2011/04/26 04:28:36 jchiang Exp $
  */
 
 #include <algorithm>
@@ -73,7 +73,7 @@ void Gti::writeExtension(const std::string & filename) const {
    try {
 // Check if the extension exists already. If not, add it.
       std::auto_ptr<const tip::Table> 
-         gtiTable(tip::IFileSvc::instance().readTable(filename, "GTI"));
+         gtiTable(tip::IFileSvc::instance().editTable(filename, "GTI"));
    } catch (tip::TipException & eObj) {
       if (!st_facilities::Util::
           expectedException(eObj, "Could not open FITS extension")) {

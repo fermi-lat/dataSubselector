@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: jchiang  Thu Mar 22 19:08:12 PDT 2012
+ScienceTools-scons/dataSubselector/pfiles
+
+Modified Files:
+	gtmktime.par 
+Log Message:
+change to DATA_QUAL>0 to account for possible new data quality values
+
+    *
+------------------------------------------------------------
 TAG
 Tag name: dataSubselector-08-03-02, operation: add
 Package: dataSubselector

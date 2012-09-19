@@ -3,7 +3,7 @@
  * @brief Filter FT1 data.
  * @author J. Chiang
  *
- *  $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.41 2010/03/25 22:06:57 jchiang Exp $
+ *  $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.42 2010/07/21 21:09:26 jchiang Exp $
  */
 
 #include <algorithm>
@@ -33,9 +33,6 @@ using dataSubselector::Gti;
 
 /**
  * @class DataFilter
- * @author J. Chiang
- *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.41 2010/03/25 22:06:57 jchiang Exp $
  */
 
 class DataFilter : public st_app::StApp {
@@ -89,7 +86,7 @@ private:
    static std::string s_cvs_id;
 };
 
-std::string DataFilter::s_cvs_id("$Name: ScienceTools-LATEST-1-3163 $");
+std::string DataFilter::s_cvs_id("$Name:  $");
 
 st_app::StAppFactory<DataFilter> myAppFactory("gtselect");
 

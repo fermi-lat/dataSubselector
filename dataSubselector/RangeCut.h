@@ -3,7 +3,7 @@
  * @brief Cuts based on a valid a range of column values.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/RangeCut.h,v 1.4 2005/07/01 22:32:54 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/dataSubselector/RangeCut.h,v 1.5 2006/12/04 20:01:54 jchiang Exp $
  */
 
 #ifndef dataSubselector_RangeCut_h
@@ -18,7 +18,6 @@ namespace dataSubselector {
  * @brief Cut on FITS binary table column values.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/dataSubselector/RangeCut.h,v 1.4 2005/07/01 22:32:54 jchiang Exp $
  */
 
 class RangeCut : public CutBase {

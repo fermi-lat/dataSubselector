@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Wed Sep 19 16:33:27 PDT 2012
+ScienceTools-scons/dataSubselector/src
+
+Modified Files:
+	Cuts.cxx 
+Log Message:
+begin implementation of identifying IRFs from DSS keywords
+    *
+------------------------------------------------------------
+User: jchiang  Wed Sep 19 16:33:27 PDT 2012
 ScienceTools-scons/dataSubselector/dataSubselector
 
 Modified Files:

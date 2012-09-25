@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Mon Sep 24 23:22:37 PDT 2012
+ScienceTools-scons/dataSubselector/src
+
+Modified Files:
+	Cuts.cxx 
+Log Message:
+use irf_index.fits file to determine bit position mapping to IRF name
+    *
+------------------------------------------------------------
+User: jchiang  Mon Sep 24 23:22:37 PDT 2012
 ScienceTools-scons/dataSubselector/dataSubselector
 
 Modified Files:

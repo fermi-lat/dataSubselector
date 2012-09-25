@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Sep 25 09:49:34 PDT 2012
+ScienceTools-scons/dataSubselector/src
+
+Modified Files:
+	Cuts.cxx 
+Log Message:
+add some (temporary) error handling when PASS_VER is absent or not in P#V# format
+    *
+------------------------------------------------------------
 TAG
 Tag name: dataSubselector-08-04-00, operation: add
 Package: dataSubselector

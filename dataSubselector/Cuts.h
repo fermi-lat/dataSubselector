@@ -4,7 +4,7 @@
  * dataSubselector.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/dataSubselector/Cuts.h,v 1.35 2011/08/20 21:33:10 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/dataSubselector/Cuts.h,v 1.36 2012/09/19 23:33:27 jchiang Exp $
  */
 
 #ifndef dataSubselector_Cuts_h
@@ -244,6 +244,9 @@ private:
    /// @brief Remove all DSS keywords (and NDSKEYS) from
    ///        the header.
    void removeDssKeywords(tip::Header & header) const;
+
+   void read_bitmask_mapping(const std::string & pass_ver,
+                             std::map<unsigned int, std::string> & irfs) const;
 
    void set_irfName(const std::string & infile,
                     const std::string & ext);

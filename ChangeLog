@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Wed Sep 26 16:23:55 PDT 2012
+ScienceTools-scons/dataSubselector/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+add Cuts::setIrfs(...), unit tests
+    *
+------------------------------------------------------------
+User: jchiang  Wed Sep 26 16:23:55 PDT 2012
 ScienceTools-scons/dataSubselector/src
 
 Modified Files:

@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Sep 26 16:23:55 PDT 2012
+ScienceTools-scons/dataSubselector/dataSubselector
+
+Modified Files:
+	Cuts.h 
+Log Message:
+add Cuts::setIrfs(...), unit tests
+    *
+------------------------------------------------------------
 TAG
 Tag name: dataSubselector-08-04-01, operation: add
 Package: dataSubselector

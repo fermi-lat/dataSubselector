@@ -1,10 +1,11 @@
 /** @file release.notes
     @brief package dataSubselector
-    $Id: release.notes,v 1.112 2012/09/25 18:22:06 jchiang Exp $
+    $Id: release.notes,v 1.113 2012/09/26 23:25:01 jchiang Exp $
 
     @verbatim
     * EOH *
 
+ dataSubselector-08-04-03 27-Sep-2012 jchiang additional pre-pass 7 IRF handling
  dataSubselector-08-04-02 26-Sep-2012 jchiang add Cuts::setIrfs(...), unit tests
  dataSubselector-08-04-01 25-Sep-2012 jchiang temporary workaround for PASS_VER keyword errors (i.e., in simulated and old data)
  dataSubselector-08-04-00 24-Sep-2012 jchiang add Cuts::irfName() member function that identifies the desired IRF based on the DSS keywords

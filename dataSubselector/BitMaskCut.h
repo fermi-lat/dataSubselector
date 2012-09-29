@@ -6,7 +6,7 @@
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/dataSubselector/BitMaskCut.h,v 1.5 2006/12/04 20:01:54 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/dataSubselector/BitMaskCut.h,v 1.1 2011/08/20 21:33:10 jchiang Exp $
  */
 
 #ifndef dataSubselector_BitMaskCut_h
@@ -25,7 +25,8 @@ class BitMaskCut : public CutBase {
 
 public:
 
-   BitMaskCut(const std::string & colname, unsigned int bitPosition);
+   BitMaskCut(const std::string & colname, unsigned int bitPosition,
+              const std::string & pass_ver="");
 
    virtual ~BitMaskCut() {}
 
@@ -59,6 +60,8 @@ private:
    std::string m_colname;
    unsigned int m_bitPosition;
    unsigned int m_mask;
+
+   std::string m_pass_ver;
 
    bool accept(unsigned int value) const;
 

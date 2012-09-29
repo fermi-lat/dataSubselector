@@ -4,7 +4,7 @@
  * dataSubselector.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/dataSubselector/Cuts.h,v 1.37 2012/09/25 06:22:37 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/dataSubselector/Cuts.h,v 1.38 2012/09/26 23:23:55 jchiang Exp $
  */
 
 #ifndef dataSubselector_Cuts_h
@@ -140,8 +140,11 @@ public:
    /// @param colname Name of column to which the bit-mask is applied
    /// @param bitPosition Position of the bit (corresponding to the
    /// desired event class)
+   /// @param pass_ver Pass version of IRFs, e.g., "P7V6".
+   ///        This should be left blank for pre-Pass 7 IRFs.
    unsigned int addBitMaskCut(const std::string & colname,
-                              unsigned int bitPosition);
+                              unsigned int bitPosition,
+                              const std::string & pass_ver="");
 
    unsigned int addCut(const CutBase & newCut) {
       m_cuts.push_back(newCut.clone());
@@ -228,6 +231,10 @@ public:
 
    /// @return True if the cut is a time range or GTI cut.
    static bool isTimeCut(const CutBase & cut);
+
+   static void checkIrfs(const std::string & infile,
+                         const std::string & extname,
+                         const std::string & irfs);
 
    BitMaskCut * bitMaskCut() const;
 

@@ -1,7 +1,7 @@
 /**
  * @file CutController.cxx
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/dataSubselector/CutController.cxx,v 1.23 2011/08/20 21:33:11 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/dataSubselector/CutController.cxx,v 1.24 2011/08/20 23:58:32 jchiang Exp $
  */
 
 #include <sstream>
@@ -62,7 +62,7 @@ CutController::CutController(st_app::AppParGroup & pars,
    } else {
       try {
          int evclass = pars["evclass"];
-         m_cuts.addBitMaskCut("EVENT_CLASS", evclass);
+         m_cuts.addBitMaskCut("EVENT_CLASS", evclass, m_passVer);
       } catch (const hoops::Hexception &) {
          // Assume INDEF is given as the parameter value for evclass,
          // so use default of applying no EVENT_CLASS cut.

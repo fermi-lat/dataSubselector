@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Fri Sep 28 17:12:51 PDT 2012
+ScienceTools-scons/dataSubselector/src
+
+Modified Files:
+	BitMaskCut.cxx Cuts.cxx 
+Log Message:
+add PASS_VER to BITMASK DSS keywords so that the desired IRFs can be tracked in downstream files
+    *
+------------------------------------------------------------
 User: jchiang  Fri Sep 28 17:12:50 PDT 2012
 ScienceTools-scons/dataSubselector/dataSubselector
 

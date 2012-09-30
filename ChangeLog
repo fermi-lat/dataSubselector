@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Sun Sep 30 16:04:09 PDT 2012
+ScienceTools-scons/dataSubselector/src
+
+Modified Files:
+	Cuts.cxx 
+Log Message:
+skip column check so that primary hdus can be used in Cuts::checkIrfs(...)
+    *
+------------------------------------------------------------
 User: jchiang  Fri Sep 28 17:12:51 PDT 2012
 ScienceTools-scons/dataSubselector/src/dataSubselector
 

@@ -4,7 +4,7 @@
  * dataSubselector.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/dataSubselector/Cuts.h,v 1.38 2012/09/26 23:23:55 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/dataSubselector/Cuts.h,v 1.39 2012/09/29 00:12:50 jchiang Exp $
  */
 
 #ifndef dataSubselector_Cuts_h
@@ -266,8 +266,9 @@ private:
 
    void read_bitmask_mapping(std::map<unsigned int, std::string> & irfs) const;
 
-   void set_irfName(const std::string & infile,
-                    const std::string & ext);
+   void read_pass_ver(const std::string & infile, const std::string & ext);
+                      
+   void set_irfName(const std::string & infile, const std::string & ext);
 
 };
 

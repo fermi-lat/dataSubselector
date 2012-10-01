@@ -6,7 +6,7 @@
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/dataSubselector/BitMaskCut.h,v 1.1 2011/08/20 21:33:10 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/dataSubselector/BitMaskCut.h,v 1.2 2012/09/29 00:12:50 jchiang Exp $
  */
 
 #ifndef dataSubselector_BitMaskCut_h
@@ -46,6 +46,10 @@ public:
    
    unsigned int bitPosition() const {
       return m_bitPosition;
+   }
+
+   const std::string & pass_ver() const {
+      return m_pass_ver;
    }
 
 protected:

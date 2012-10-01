@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Oct  1 11:25:29 PDT 2012
+ScienceTools-scons/dataSubselector/dataSubselector
+
+Modified Files:
+	BitMaskCut.h Cuts.h 
+Log Message:
+disable set_irfName in Cuts constructors, deferring to an explicit call in checkIrfs (need to refactor)
+    *
+------------------------------------------------------------
 User: jchiang  Sun Sep 30 16:04:09 PDT 2012
 ScienceTools-scons/dataSubselector/src
 

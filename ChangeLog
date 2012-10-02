@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Oct  2 09:48:30 PDT 2012
+ScienceTools-scons/dataSubselector/src
+
+Modified Files:
+	Cuts.cxx 
+Log Message:
+more robust handling of pre-Pass 7 irfs in checkIrfs(...)
+    *
+------------------------------------------------------------
 User: jchiang  Mon Oct  1 11:25:30 PDT 2012
 ScienceTools-scons/dataSubselector/src
 

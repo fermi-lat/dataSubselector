@@ -3,7 +3,7 @@
  * @brief Handle data selections and DSS keyword management.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/Cuts.cxx,v 1.50 2012/10/01 18:25:30 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/Cuts.cxx,v 1.51 2012/10/02 16:48:29 jchiang Exp $
  */
 
 #include <cctype>
@@ -584,7 +584,7 @@ void Cuts::
 read_bitmask_mapping(std::map<unsigned int, std::string> & irfs) const {
    irfs.clear();
    std::string sub_path;
-   ::joinPaths("data glast lat irf_index.fits", sub_path);
+   ::joinPaths("data glast lat bcf irf_index.fits", sub_path);
    std::string irf_index = facilities::commonUtilities::joinPath(
       facilities::commonUtilities::getEnvironment("CALDB"), sub_path);
    const tip::Table * irf_map 

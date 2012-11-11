@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Sat Nov 10 19:24:11 PST 2012
+ScienceTools-scons/dataSubselector/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+use st_facilities::Environment
+    *
+------------------------------------------------------------
+User: jchiang  Sat Nov 10 19:24:11 PST 2012
 ScienceTools-scons/dataSubselector/src
 
 Modified Files:

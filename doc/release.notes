@@ -1,10 +1,11 @@
 /** @file release.notes
     @brief package dataSubselector
-    $Id: release.notes,v 1.115 2012/10/02 16:51:50 jchiang Exp $
+    $Id: release.notes,v 1.116 2012/11/11 03:54:43 jchiang Exp $
 
     @verbatim
     * EOH *
 
+ dataSubselector-08-04-06 16-Nov-2012 jchiang back off on IRF checking until custom irfs are handled correctly
  dataSubselector-08-04-05 10-Nov-2012 jchiang ensure setupEnvironment() is called exactly once via st_facilities::Environment
  dataSubselector-08-04-04 02-Oct-2012 jchiang refactor BITMASK and PASS_VER handling; remove set_irfName from Cuts constructors and make an explicit call required in Cuts::checkIrfs(...)
  dataSubselector-08-04-03 27-Sep-2012 jchiang additional pre-pass 7 IRF handling

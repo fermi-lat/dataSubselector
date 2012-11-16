@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Fri Nov 16 12:36:18 PST 2012
+ScienceTools-scons/dataSubselector/src
+
+Modified Files:
+	Cuts.cxx 
+Log Message:
+back off on irf checking until non-standard irfs are handled correctly
+    *
+------------------------------------------------------------
 TAG
 Tag name: dataSubselector-08-04-05, operation: add
 Package: dataSubselector

@@ -2,6 +2,21 @@
 TAG
 Tag name: dataSubselector-08-04-07, operation: add
 Package: dataSubselector
+User: sfegan  Wed Dec 19 09:00:12 2012
+Files:
+  dataSubselector/dataSubselector/CutBase.h  1.4
+  dataSubselector/dataSubselector/RangeCut.h  1.6
+  dataSubselector/dataSubselector/Cuts.h  1.40
+  dataSubselector/dataSubselector/BitMaskCut.h  1.3
+  dataSubselector/dataSubselector/Gti.h  1.8
+  dataSubselector/dataSubselector/SkyConeCut.h  1.4
+  dataSubselector/dataSubselector/GtiCut.h  1.4
+
+    *
+------------------------------------------------------------
+TAG
+Tag name: dataSubselector-08-04-07, operation: add
+Package: dataSubselector
 User: sfegan  Wed Dec 19 09:00:02 2012
 Files:
   dataSubselector/data/input_events.fits  1.1

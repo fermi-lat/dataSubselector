@@ -2,6 +2,15 @@
 TAG
 Tag name: dataSubselector-08-04-07, operation: add
 Package: dataSubselector
+User: sfegan  Wed Dec 19 09:00:02 2012
+Files:
+  dataSubselector/data/input_events.fits  1.1
+
+    *
+------------------------------------------------------------
+TAG
+Tag name: dataSubselector-08-04-07, operation: add
+Package: dataSubselector
 User: sfegan  Wed Dec 19 08:59:53 2012
 Files:
   dataSubselector/cmt/.cvsignore  1.2

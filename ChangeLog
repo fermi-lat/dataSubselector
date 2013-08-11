@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Sat Aug 10 21:20:19 PDT 2013
+ScienceTools-scons/dataSubselector/src/dataSubselector
+
+Modified Files:
+	CutController.cxx 
+Log Message:
+more code to handle IRFs automatically
+    *
+------------------------------------------------------------
+User: jchiang  Sat Aug 10 21:20:19 PDT 2013
 ScienceTools-scons/dataSubselector/src
 
 Modified Files:

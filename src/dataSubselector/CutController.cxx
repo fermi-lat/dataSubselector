@@ -1,7 +1,7 @@
 /**
  * @file CutController.cxx
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/dataSubselector/CutController.cxx,v 1.25 2012/09/29 00:12:51 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/dataSubselector/CutController.cxx,v 1.26 2013/08/08 19:13:46 jchiang Exp $
  */
 
 #include <sstream>
@@ -53,6 +53,11 @@ CutController::CutController(st_app::AppParGroup & pars,
    }
    addRangeCut("TIME", "s", pars["tmin"], pars["tmax"]);
    addRangeCut("ENERGY", "MeV", pars["emin"], pars["emax"]);
+   int convtype = pars["convtype"];
+   if (convtype >= 0) {
+      addRangeCut("CONVERSION_TYPE", "dimensionless", convtype, convtype, 
+                  0, true);
+   }
    if (m_passVer == "NONE") {
       int evclsmin = pars["evclsmin"];
       int evclsmax = pars["evclsmax"];
@@ -91,11 +96,6 @@ CutController::CutController(st_app::AppParGroup & pars,
    double zmax = pars["zmax"];
    if (zmax < 180.) {
       addRangeCut("ZENITH_ANGLE", "deg", 0, pars["zmax"]);
-   }
-   int convtype = pars["convtype"];
-   if (convtype >= 0) {
-      addRangeCut("CONVERSION_TYPE", "dimensionless", convtype, convtype, 
-                  0, true);
    }
    double phasemin = pars["phasemin"];
    double phasemax = pars["phasemax"];

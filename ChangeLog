@@ -1,4 +1,15 @@
 ------------------------------------------------------------
+User: jchiang  Sat Aug 10 21:20:18 PDT 2013
+ScienceTools-scons/dataSubselector/dataSubselector
+
+Modified Files:
+	Cuts.h 
+Added Files:
+	VersionCut.h 
+Log Message:
+more code to handle IRFs automatically
+    *
+------------------------------------------------------------
 User: jchiang  Thu Aug  8 12:13:46 PDT 2013
 ScienceTools-scons/dataSubselector/src/test
 

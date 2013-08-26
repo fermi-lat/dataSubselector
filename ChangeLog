@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Aug 26 15:56:21 PDT 2013
+ScienceTools-scons/dataSubselector/dataSubselector
+
+Modified Files:
+	Cuts.h 
+Log Message:
+changes to support FSSC proposal for irfs handling
+    *
+------------------------------------------------------------
 TAG
 Tag name: dataSubselector-08-05-00, operation: add
 Package: dataSubselector

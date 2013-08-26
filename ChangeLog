@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Mon Aug 26 15:56:21 PDT 2013
+ScienceTools-scons/dataSubselector/src
+
+Modified Files:
+	Cuts.cxx 
+Log Message:
+changes to support FSSC proposal for irfs handling
+    *
+------------------------------------------------------------
+User: jchiang  Mon Aug 26 15:56:21 PDT 2013
 ScienceTools-scons/dataSubselector/pfiles
 
 Modified Files:

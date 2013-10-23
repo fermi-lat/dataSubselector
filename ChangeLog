@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Wed Oct 23 13:58:36 PDT 2013
+ScienceTools-scons/dataSubselector/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+make range cuts half-open to avoid double counting of events on boundaries
+    *
+------------------------------------------------------------
+User: jchiang  Wed Oct 23 13:58:36 PDT 2013
 ScienceTools-scons/dataSubselector/src
 
 Modified Files:

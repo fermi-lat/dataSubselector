@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Oct 23 13:58:36 PDT 2013
+ScienceTools-scons/dataSubselector/src
+
+Modified Files:
+	RangeCut.cxx 
+Log Message:
+make range cuts half-open to avoid double counting of events on boundaries
+    *
+------------------------------------------------------------
 TAG
 Tag name: dataSubselector-08-06-00, operation: add
 Package: dataSubselector

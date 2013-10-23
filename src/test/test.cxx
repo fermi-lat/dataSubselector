@@ -3,7 +3,7 @@
  * @brief Tests program for Cuts class.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/test/test.cxx,v 1.33 2013/08/08 19:13:46 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/test/test.cxx,v 1.34 2013/08/26 22:56:22 jchiang Exp $
  */ 
 
 #ifdef TRAP_FPE
@@ -183,6 +183,8 @@ void DssTests::cutsConstructor() {
    params["ENERGY"] = 20.;
    CPPUNIT_ASSERT(!my_cuts.accept(params));
    params["ENERGY"] = 30.;
+   CPPUNIT_ASSERT(!my_cuts.accept(params));
+   params["ENERGY"] = 30.0001;
    CPPUNIT_ASSERT(my_cuts.accept(params));
    params["ENERGY"] = 100.;
    CPPUNIT_ASSERT(my_cuts.accept(params));

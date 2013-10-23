@@ -3,7 +3,7 @@
  * @brief Cut on a column value in a given range of values.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/dataSubselector/src/RangeCut.cxx,v 1.12 2007/07/11 17:32:10 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/RangeCut.cxx,v 1.13 2009/12/16 21:08:42 elwinter Exp $
  */
 
 #include <cstdlib>
@@ -105,11 +105,11 @@ std::string RangeCut::filterString() const {
    std::ostringstream filter;
    filter << std::setprecision(20);
    if (m_intervalType == MINONLY) {
-      filter << m_min << " <= " << m_fullName;
+      filter << m_min << " < " << m_fullName;
    } else if (m_intervalType == MAXONLY) {
       filter << m_fullName << " <= " << m_max;
    } else {
-      filter << m_min << " <= " << m_fullName << " && "
+      filter << m_min << " < " << m_fullName << " && "
              << m_fullName << " <= " << m_max;
    }
    return filter.str();
@@ -134,11 +134,11 @@ void RangeCut::getKeyValues(std::string & type, std::string & unit,
 
 bool RangeCut::accept(double value) const {
    if (m_intervalType == MINONLY) {
-      return m_min <= value;
+      return m_min < value;
    } else if (m_intervalType == MAXONLY) {
       return value <= m_max;
    }
-   return m_min <= value && value <= m_max;
+   return m_min < value && value <= m_max;
 }
 
 double RangeCut::extractValue(tip::ConstTableRecord & row) const {

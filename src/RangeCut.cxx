@@ -3,7 +3,7 @@
  * @brief Cut on a column value in a given range of values.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/RangeCut.cxx,v 1.13 2009/12/16 21:08:42 elwinter Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/RangeCut.cxx,v 1.14 2013/10/23 20:58:36 jchiang Exp $
  */
 
 #include <cstdlib>
@@ -109,8 +109,15 @@ std::string RangeCut::filterString() const {
    } else if (m_intervalType == MAXONLY) {
       filter << m_fullName << " <= " << m_max;
    } else {
-      filter << m_min << " < " << m_fullName << " && "
-             << m_fullName << " <= " << m_max;
+      if (m_min == m_max) {
+         // Fully closed interval to support selecting on a specific value.
+         filter << m_min << " <= " << m_fullName << " && "
+                << m_fullName << " <= " << m_max;
+      } else {
+         // Half open interval to avoid overlap of intervals at end points.
+         filter << m_min << " < " << m_fullName << " && "
+                << m_fullName << " <= " << m_max;
+      }
    }
    return filter.str();
 }

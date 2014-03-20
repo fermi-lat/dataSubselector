@@ -1,8 +1,8 @@
 # -*- python -*-
 #
-# $Id: SConscript,v 1.50 2013/10/23 20:59:45 jchiang Exp $
+# $Id: SConscript,v 1.51 2014/01/21 19:38:10 jchiang Exp $
 # Authors: James Chiang <jchiang@slac.stanford.edu>
-# Version: dataSubselector-08-06-02
+# Version: dataSubselector-08-06-03
 Import('baseEnv')
 Import('listFiles')
 progEnv = baseEnv.Clone()

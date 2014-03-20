@@ -3,7 +3,7 @@
  * @brief Cut on a column value in a given range of values.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/RangeCut.cxx,v 1.14 2013/10/23 20:58:36 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/RangeCut.cxx,v 1.15 2014/01/21 19:36:20 jchiang Exp $
  */
 
 #include <cstdlib>
@@ -144,6 +144,9 @@ bool RangeCut::accept(double value) const {
       return m_min < value;
    } else if (m_intervalType == MAXONLY) {
       return value <= m_max;
+   } else if (m_min == m_max) {
+      // Fully closed interval to support selecting on a specific value.
+      return m_min <= value && value <= m_max;
    }
    return m_min < value && value <= m_max;
 }

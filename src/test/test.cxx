@@ -3,7 +3,7 @@
  * @brief Tests program for Cuts class.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/test/test.cxx,v 1.34 2013/08/26 22:56:22 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/test/test.cxx,v 1.35 2013/10/23 20:58:36 jchiang Exp $
  */ 
 
 #ifdef TRAP_FPE
@@ -56,6 +56,8 @@ class DssTests : public CppUnit::TestFixture {
 
    CPPUNIT_TEST(test_irfName);
 
+   CPPUNIT_TEST(test_rangeCut);
+
    CPPUNIT_TEST_SUITE_END();
 
 public:
@@ -78,6 +80,7 @@ public:
    void test_BitMaskCut();
    void test_VersionCut();
    void test_irfName();
+   void test_rangeCut();
 
 private:
 
@@ -612,6 +615,15 @@ void DssTests::test_irfName() {
    cuts5.setIrfs("P7REP_SOURCE_V10");
 //   CPPUNIT_ASSERT(cuts5.CALDB_implied_irfs() == "P7REP_SOURCE_V15");
    CPPUNIT_ASSERT(cuts5.CALDB_implied_irfs() != "P7REP_SOURCE_V10");
+}
+
+void DssTests::test_rangeCut() {
+   dataSubselector::Cuts my_cuts;
+   my_cuts.addRangeCut("CALIB_VERSION", "dimensionless", 1, 1,
+                       dataSubselector::RangeCut::CLOSED);
+   std::map<std::string, double> params;
+   params["CALIB_VERSION"] = 1;
+   CPPUNIT_ASSERT(my_cuts.accept(params));
 }
 
 int main(int iargc, char * argv[]) {

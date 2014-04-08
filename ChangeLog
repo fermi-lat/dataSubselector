@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Apr  8 09:46:03 PDT 2014
+ScienceTools-scons/dataSubselector/src
+
+Modified Files:
+	Cuts.cxx Gti.cxx 
+Log Message:
+const fix for char * assignments
+    *
+------------------------------------------------------------
 TAG
 Tag name: dataSubselector-08-06-03, operation: add
 Package: dataSubselector

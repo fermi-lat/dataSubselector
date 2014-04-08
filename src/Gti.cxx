@@ -4,7 +4,7 @@
  * accept() method.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/Gti.cxx,v 1.14 2011/04/26 04:28:36 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/Gti.cxx,v 1.15 2012/03/18 00:50:55 jchiang Exp $
  */
 
 #include <algorithm>
@@ -84,9 +84,10 @@ void Gti::writeExtension(const std::string & filename) const {
       fits_open_file(&fptr, filename.c_str(), READWRITE, &status);
       ::fitsReportError(status);
       
-      char * ttype[] = {"START", "STOP"};
-      char * tform[] = {"D", "D"};
-      char * tunit[] = {"s", "s"};
+      char * ttype[] = {const_cast<char *>("START"),
+                        const_cast<char *>("STOP")};
+      char * tform[] = {const_cast<char *>("D"), const_cast<char *>("D")};
+      char * tunit[] = {const_cast<char *>("s"), const_cast<char *>("s")};
       fits_create_tbl(fptr, BINARY_TBL, 0, 2, ttype, tform, tunit,
                       "GTI", &status);
       ::fitsReportError(status);

@@ -3,7 +3,7 @@
  * @brief Handle data selections and DSS keyword management.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/Cuts.cxx,v 1.56 2013/08/11 04:20:18 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/Cuts.cxx,v 1.57 2013/08/26 22:56:21 jchiang Exp $
  */
 
 #include <cctype>
@@ -510,7 +510,10 @@ void Cuts::removeDssKeywords(tip::Header & header) const {
    int ndskeys(0);
    try {
       header["NDSKEYS"].get(ndskeys);
-      char * dskeys[] = {"DSTYP", "DSUNI", "DSVAL", "DSREF"};
+      char * dskeys[] = {const_cast<char *>("DSTYP"), 
+                         const_cast<char *>("DSUNI"), 
+                         const_cast<char *>("DSVAL"),
+                         const_cast<char *>("DSREF")};
       for (int i = 0; i < ndskeys; i++) {
          for (int j = 0; j < 4; j++) {
             std::ostringstream keyname;

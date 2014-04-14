@@ -4,7 +4,7 @@
  * dataSubselector.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/dataSubselector/Cuts.h,v 1.42 2013/08/11 04:20:18 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/dataSubselector/Cuts.h,v 1.43 2013/08/26 22:56:21 jchiang Exp $
  */
 
 #ifndef dataSubselector_Cuts_h
@@ -269,6 +269,10 @@ public:
       return m_pass_ver;
    }
 
+   const bool post_P7() const {
+      return m_post_P7;
+   }
+
    static void extract_irf_versions(const std::string & irf_name,
                                     std::string & pass_ver,
                                     std::string & irf_ver);
@@ -283,6 +287,7 @@ private:
    std::string m_irfName;
 
    std::string m_pass_ver;
+   bool m_post_P7;
 
    unsigned int parseColname(const std::string & colname,
                              std::string & col) const;
@@ -303,7 +308,6 @@ private:
    void read_pass_ver(const std::string & infile, const std::string & ext);
 
    void set_irfName(const std::string & infile, const std::string & ext);
-
 };
 
 } // namespace dataSubselector

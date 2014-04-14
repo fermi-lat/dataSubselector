@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Apr 14 13:53:39 PDT 2014
+ScienceTools-scons/dataSubselector/src/dataSubselector
+
+Modified Files:
+	CutController.cxx 
+Log Message:
+handle event_type cut for post Pass 7 irfs
+    *
+------------------------------------------------------------
 User: jchiang  Mon Apr 14 13:53:38 PDT 2014
 ScienceTools-scons/dataSubselector/src
 

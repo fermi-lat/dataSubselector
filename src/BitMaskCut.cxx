@@ -6,7 +6,7 @@
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/BitMaskCut.cxx,v 1.3 2012/09/29 00:12:50 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/BitMaskCut.cxx,v 1.4 2014/04/14 16:12:45 jchiang Exp $
  */
 
 #include <iomanip>
@@ -22,7 +22,8 @@ BitMaskCut::BitMaskCut(const std::string & colname,
                        unsigned long bitPosition,
                        const std::string & pass_ver) 
    : CutBase("bit_mask"), m_colname(colname), m_bitPosition(bitPosition),
-     m_mask(1 << bitPosition), m_pass_ver(pass_ver), m_post_P7(post_P7()) {
+     m_mask(1 << bitPosition), m_pass_ver(pass_ver),
+     m_post_P7(post_P7(pass_ver)) {
    if (m_post_P7) {
       // Pass version is P8 or later, so we assume bit-array columns
       // in the FT1 file and will take bitPosition as the bit-mask
@@ -112,7 +113,7 @@ void BitMaskCut::getKeyValues(std::string & type,
    value = "1:1";
 }
 
-bool BitMaskCut::post_P7() const {
+bool BitMaskCut::post_P7(const std::string & pass_ver) {
    static size_t nvers(5);
    char * old_pass_vers[] = {const_cast<char *>(""),
                              const_cast<char *>("NONE"),
@@ -120,7 +121,7 @@ bool BitMaskCut::post_P7() const {
                              const_cast<char *>("P7V6"),
                              const_cast<char *>("P7REP")};
    for (size_t i(0); i < nvers; i++) {
-      if (m_pass_ver == old_pass_vers[i]) {
+      if (pass_ver == old_pass_vers[i]) {
          return false;
       }
    }

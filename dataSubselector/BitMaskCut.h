@@ -6,7 +6,7 @@
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/dataSubselector/BitMaskCut.h,v 1.3 2012/10/01 18:25:29 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/dataSubselector/BitMaskCut.h,v 1.4 2014/04/14 16:12:44 jchiang Exp $
  */
 
 #ifndef dataSubselector_BitMaskCut_h
@@ -53,6 +53,8 @@ public:
       return m_pass_ver;
    }
 
+   static bool post_P7(const std::string & pass_ver);
+
 protected:
 
    virtual bool equals(const CutBase & rhs) const;
@@ -71,8 +73,6 @@ private:
    bool m_post_P7;
 
    bool accept(unsigned long value) const;
-
-   bool post_P7() const;
 
 };
 

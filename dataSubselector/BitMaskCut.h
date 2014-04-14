@@ -1,12 +1,12 @@
 /**
  * @file BitMaskCut.h
- * @brief Cuts based on a single bit mask applied to an unsigned int
+ * @brief Cuts based on a single bit mask applied to an unsigned long
  * column.  This is used for filtering on the EVENT_CLASS column for
  * Pass 7 IRFs and later.
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/dataSubselector/BitMaskCut.h,v 1.2 2012/09/29 00:12:50 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/dataSubselector/BitMaskCut.h,v 1.3 2012/10/01 18:25:29 jchiang Exp $
  */
 
 #ifndef dataSubselector_BitMaskCut_h
@@ -25,7 +25,8 @@ class BitMaskCut : public CutBase {
 
 public:
 
-   BitMaskCut(const std::string & colname, unsigned int bitPosition,
+   BitMaskCut(const std::string & colname,
+              unsigned long bitPosition,
               const std::string & pass_ver="");
 
    virtual ~BitMaskCut() {}
@@ -44,7 +45,7 @@ public:
       return m_colname;
    }
    
-   unsigned int bitPosition() const {
+   unsigned long bitPosition() const {
       return m_bitPosition;
    }
 
@@ -62,12 +63,16 @@ protected:
 private:
 
    std::string m_colname;
-   unsigned int m_bitPosition;
-   unsigned int m_mask;
+   unsigned long m_bitPosition;
+   unsigned long m_mask;
 
    std::string m_pass_ver;
 
-   bool accept(unsigned int value) const;
+   bool m_post_P7;
+
+   bool accept(unsigned long value) const;
+
+   bool post_P7() const;
 
 };
 

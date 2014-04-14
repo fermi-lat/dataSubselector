@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Mon Apr 14 13:53:38 PDT 2014
+ScienceTools-scons/dataSubselector/src
+
+Modified Files:
+	BitMaskCut.cxx Cuts.cxx 
+Log Message:
+handle event_type cut for post Pass 7 irfs
+    *
+------------------------------------------------------------
+User: jchiang  Mon Apr 14 13:53:38 PDT 2014
 ScienceTools-scons/dataSubselector/dataSubselector
 
 Modified Files:

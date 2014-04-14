@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Apr 14 09:12:45 PDT 2014
+ScienceTools-scons/dataSubselector/dataSubselector
+
+Modified Files:
+	BitMaskCut.h 
+Log Message:
+bit masking for bit-array FT1 columns
+    *
+------------------------------------------------------------
 TAG
 Tag name: dataSubselector-08-06-04, operation: add
 Package: dataSubselector

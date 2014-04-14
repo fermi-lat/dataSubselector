@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Mon Apr 14 09:12:45 PDT 2014
+ScienceTools-scons/dataSubselector/pfiles
+
+Modified Files:
+	gtselect.par 
+Log Message:
+bit masking for bit-array FT1 columns
+    *
+------------------------------------------------------------
+User: jchiang  Mon Apr 14 09:12:45 PDT 2014
 ScienceTools-scons/dataSubselector/dataSubselector
 
 Modified Files:

@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Thu Apr 17 13:47:05 PDT 2014
+ScienceTools-scons/dataSubselector/src/dataSubselector
+
+Modified Files:
+	CutController.cxx 
+Log Message:
+handle INDEF for evtype in gtselect
+    *
+------------------------------------------------------------
 TAG
 Tag name: dataSubselector-08-07-00, operation: add
 Package: dataSubselector

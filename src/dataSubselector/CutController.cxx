@@ -1,7 +1,7 @@
 /**
  * @file CutController.cxx
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/dataSubselector/CutController.cxx,v 1.28 2013/08/26 22:56:22 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/dataSubselector/CutController.cxx,v 1.29 2014/04/14 20:53:38 jchiang Exp $
  */
 
 #include <sstream>
@@ -74,9 +74,14 @@ CutController::CutController(st_app::AppParGroup & pars,
          // so use default of applying no EVENT_CLASS cut.
       }
       if (BitMaskCut::post_P7(m_passVer)) {
-         /// Handle any EVENT_TYPE cut supplied by the user.
-         int evtype = pars["evtype"];
-         m_cuts.addBitMaskCut("EVENT_TYPE", evtype, m_passVer);
+         try {
+            /// Handle any EVENT_TYPE cut supplied by the user.
+            int evtype = pars["evtype"];
+            m_cuts.addBitMaskCut("EVENT_TYPE", evtype, m_passVer);
+         } catch (const hoops::Hexception &) {
+            // Assume INDEF is given as the parameter value for evtype,
+            // so use default of applying no EVENT_TYPE cut.
+         }
       }
    }
    double zmax = pars["zmax"];

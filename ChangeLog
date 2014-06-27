@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Fri Jun 27 14:20:27 PDT 2014
+ScienceTools-scons/dataSubselector/src/dataSubselector
+
+Modified Files:
+	dataSubselector.cxx 
+Log Message:
+enable astroserver P300 data to be processed by gtselect using Pass 7-style EVENT_CLASS filtering
+    *
+------------------------------------------------------------
+User: jchiang  Fri Jun 27 14:20:27 PDT 2014
 ScienceTools-scons/dataSubselector/src
 
 Modified Files:

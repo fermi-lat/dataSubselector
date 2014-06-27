@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Fri Jun 27 14:20:27 PDT 2014
+ScienceTools-scons/dataSubselector/src
+
+Modified Files:
+	BitMaskCut.cxx 
+Log Message:
+enable astroserver P300 data to be processed by gtselect using Pass 7-style EVENT_CLASS filtering
+    *
+------------------------------------------------------------
 TAG
 Tag name: ScienceTools-09-33-03, operation: add
 Package: dataSubselector

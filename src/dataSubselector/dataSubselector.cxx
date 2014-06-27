@@ -3,7 +3,7 @@
  * @brief Filter FT1 data.
  * @author J. Chiang
  *
- *  $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.43 2012/09/19 23:33:27 jchiang Exp $
+ *  $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.44 2012/12/19 16:56:47 sfegan Exp $
  */
 
 #include <algorithm>
@@ -255,18 +255,18 @@ void DataFilter::copyTable(const std::string & extension,
 	    {
 	      // resize output file
 	      long newsize = nrows;
-#if 0 // AGGERSSIVE RESIZING SCHEME - SHOULD NOT BE USED I THINK
-	      if(infile+1 != m_inputFiles.end())
-		{
-		  // Guess size based on number of input files and number
-		  // of records read already
-		  long size_guess = 
-		    (long(nrows)*long(m_inputFiles.size()))/
-		    ((long(infile - m_inputFiles.begin()) + 1L));
-		  //size_guess = std::min(size_guess, nrows*10);
-		  newsize = std::max(newsize, size_guess);
-		}
-#endif
+// #if 0 // AGGERSSIVE RESIZING SCHEME - SHOULD NOT BE USED I THINK
+// 	      if(infile+1 != m_inputFiles.end())
+// 		{
+// 		  // Guess size based on number of input files and number
+// 		  // of records read already
+// 		  long size_guess = 
+// 		    (long(nrows)*long(m_inputFiles.size()))/
+// 		    ((long(infile - m_inputFiles.begin()) + 1L));
+// 		  //size_guess = std::min(size_guess, nrows*10);
+// 		  newsize = std::max(newsize, size_guess);
+// 		}
+// #endif
 	      //std::cerr << "Resizing: " << newsize << '\n';
 	      outputTable->setNumRecords(newsize);
 	      nsize = newsize;

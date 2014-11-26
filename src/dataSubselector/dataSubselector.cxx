@@ -3,7 +3,7 @@
  * @brief Filter FT1 data.
  * @author J. Chiang
  *
- *  $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.44 2012/12/19 16:56:47 sfegan Exp $
+ *  $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/dataSubselector/dataSubselector.cxx,v 1.45 2014/06/27 21:20:27 jchiang Exp $
  */
 
 #include <algorithm>
@@ -127,6 +127,7 @@ void DataFilter::promptForParameters() {
    }
    m_pars.Prompt("emin");
    m_pars.Prompt("emax");
+   m_pars.Prompt("zmin");
    m_pars.Prompt("zmax");
    m_pars.Save();
 }

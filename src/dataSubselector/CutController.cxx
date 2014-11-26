@@ -1,7 +1,7 @@
 /**
  * @file CutController.cxx
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/dataSubselector/CutController.cxx,v 1.29 2014/04/14 20:53:38 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/dataSubselector/CutController.cxx,v 1.30 2014/04/17 20:47:05 jchiang Exp $
  */
 
 #include <sstream>
@@ -84,9 +84,10 @@ CutController::CutController(st_app::AppParGroup & pars,
          }
       }
    }
+   double zmin = pars["zmin"];
    double zmax = pars["zmax"];
-   if (zmax < 180.) {
-      addRangeCut("ZENITH_ANGLE", "deg", 0, pars["zmax"]);
+   if (zmin > 0 || zmax < 180.) {
+      addRangeCut("ZENITH_ANGLE", "deg", zmin, zmax);
    }
    double phasemin = pars["phasemin"];
    double phasemax = pars["phasemax"];

@@ -5,7 +5,7 @@
  * event data file.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/gtmaketime/gtmaketime.cxx,v 1.25 2010/06/16 22:43:16 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/gtmaketime/gtmaketime.cxx,v 1.26 2011/05/25 22:13:50 jchiang Exp $
  */
 
 #include <cstdio>
@@ -189,12 +189,6 @@ void MakeTime::createGti() {
    std::string filter = m_pars["filter"];
 
    filter += roiZenAngleCut();
-
-   std::ostringstream event_time_range;
-   event_time_range << std::setprecision(20);
-   event_time_range << " && (START >= " << m_tmin
-                    << ") && (STOP <= " << m_tmax << ")";
-   filter += event_time_range.str();
 
    st_stream::StreamFormatter formatter("MakeTime", "createGti", 3);
    formatter.info() << "Applying GTI filter:\n" << filter << std::endl;

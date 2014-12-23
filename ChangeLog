@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Dec 22 21:43:41 PST 2014
+ScienceTools-scons/dataSubselector/dataSubselector
+
+Modified Files:
+	BitMaskCut.h Cuts.h 
+Log Message:
+remove bitPosition stuff, try to handle bit masks consistently
+    *
+------------------------------------------------------------
 TAG
 Tag name: dataSubselector-08-07-04, operation: add
 Package: dataSubselector

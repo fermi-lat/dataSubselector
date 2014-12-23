@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Mon Dec 22 21:43:41 PST 2014
+ScienceTools-scons/dataSubselector/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+remove bitPosition stuff, try to handle bit masks consistently
+    *
+------------------------------------------------------------
+User: jchiang  Mon Dec 22 21:43:41 PST 2014
 ScienceTools-scons/dataSubselector/src
 
 Modified Files:

@@ -4,7 +4,7 @@
  * dataSubselector.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/dataSubselector/Cuts.h,v 1.43 2013/08/26 22:56:21 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/dataSubselector/Cuts.h,v 1.44 2014/04/14 20:53:38 jchiang Exp $
  */
 
 #ifndef dataSubselector_Cuts_h
@@ -260,10 +260,13 @@ public:
                          const std::string & extname,
                          const std::string & irfs);
 
-   BitMaskCut * bitMaskCut() const;
-
    RangeCut * conversionTypeCut() const;
+
 #endif
+
+   BitMaskCut * bitMaskCut(const std::string & colname="EVENT_CLASS") const;
+
+   std::vector<BitMaskCut *> bitMaskCuts() const;
 
    const std::string & pass_ver() const {
       return m_pass_ver;

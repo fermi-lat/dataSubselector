@@ -1,10 +1,11 @@
 /** @file release.notes
     @brief package dataSubselector
-    $Id: release.notes,v 1.128 2014/11/26 23:23:11 jchiang Exp $
+    $Id: release.notes,v 1.129 2014/12/09 22:08:25 jchiang Exp $
 
     @verbatim
     * EOH *
 
+ dataSubselector-08-07-05 07-Jan-2015 jchiang make zmin a hidden parameter in gtselect
  dataSubselector-08-07-04 09-Dec-2014 jchiang fix STGEN-142
  dataSubselector-08-07-03 26-Nov-2014 jchiang add zmin parameter to gtselect
  dataSubselector-08-07-02 27-Jun-2014 jchiang enable astroserver P300 data to be processed by gtselect

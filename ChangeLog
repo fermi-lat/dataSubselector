@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: jchiang  Wed Jan  7 12:45:27 PST 2015
+dataSubselector
+
+Modified Files:
+      Tag: ScienceTools-09-35-00-br01
+	SConscript 
+Log Message:
+update version
+    *
+------------------------------------------------------------
 TAG
 Tag name: dataSubselector-08-07-05, operation: add
 Package: dataSubselector

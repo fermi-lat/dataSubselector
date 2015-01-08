@@ -1,5 +1,5 @@
 #
-# $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/pfiles/gtselect.par,v 1.24 2014/04/14 16:12:45 jchiang Exp $
+# $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/pfiles/gtselect.par,v 1.25 2014/11/26 23:22:41 jchiang Exp $
 #
 infile,f,a,"",,,"Input FT1 file"
 outfile,f,a,"",,,"Output FT1 file"
@@ -10,7 +10,7 @@ tmin,r,a,INDEF,0,,start time (MET in s)
 tmax,r,a,INDEF,0,,end time (MET in s)
 emin,r,a,30,0,,lower energy limit (MeV)
 emax,r,a,300000,0,,upper energy limit (MeV)
-zmin,r,a,0,0,180,minimum zenith angle value (degrees)
+zmin,r,h,0,0,180,minimum zenith angle value (degrees)
 zmax,r,a,180,0,180,maximum zenith angle value (degrees)
 evclsmin,i,h,0,0,1000,"Minimum event class ID"
 evclsmax,i,h,10,0,1000,"Maximum event class ID"

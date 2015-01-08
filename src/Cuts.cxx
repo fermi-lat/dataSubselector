@@ -3,7 +3,7 @@
  * @brief Handle data selections and DSS keyword management.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/Cuts.cxx,v 1.59 2014/04/14 20:53:38 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/Cuts.cxx,v 1.60 2014/12/23 05:43:41 jchiang Exp $
  */
 
 #include <cctype>
@@ -646,7 +646,7 @@ std::string Cuts::CALDB_implied_irfs() const {
       for (EventTypeMapping_t::const_iterator it(evtype_mapping.begin());
            it != evtype_mapping.end(); ++it) {
          if (bit == it->second.first && it->second.second != "none") {
-            irfs_name += ('_' + it->second.second);
+            irfs_name += (" (" + it->second.second + ")");
             break;
          }
       }

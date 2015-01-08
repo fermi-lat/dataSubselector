@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Thu Jan  8 08:46:22 PST 2015
+ScienceTools-scons/dataSubselector/src
+
+Modified Files:
+	Cuts.cxx 
+Log Message:
+fix irfs_name in Cuts.cxx and make zmin a hidden parameter
+    *
+------------------------------------------------------------
+User: jchiang  Thu Jan  8 08:46:22 PST 2015
 ScienceTools-scons/dataSubselector/pfiles
 
 Modified Files:

@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Jan 12 10:37:21 PST 2015
+ScienceTools-scons/dataSubselector/src
+
+Modified Files:
+	BitMaskCut.cxx 
+Log Message:
+implement correct BitMaskCut::supercedes behavior for post Pass 7
+    *
+------------------------------------------------------------
 TAG
 Tag name: dataSubselector-09-00-00, operation: add
 Package: dataSubselector

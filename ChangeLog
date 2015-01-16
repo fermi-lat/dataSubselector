@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Thu Jan 15 21:35:42 PST 2015
+ScienceTools-scons/dataSubselector/src
+
+Modified Files:
+	Cuts.cxx 
+Log Message:
+add interface to alter BitMaskCuts to support irfs option in gt-tools
+    *
+------------------------------------------------------------
+User: jchiang  Thu Jan 15 21:35:42 PST 2015
 ScienceTools-scons/dataSubselector/dataSubselector
 
 Modified Files:

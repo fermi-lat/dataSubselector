@@ -4,7 +4,7 @@
  * dataSubselector.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/dataSubselector/Cuts.h,v 1.44 2014/04/14 20:53:38 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/dataSubselector/Cuts.h,v 1.45 2014/12/23 05:43:41 jchiang Exp $
  */
 
 #ifndef dataSubselector_Cuts_h
@@ -275,6 +275,9 @@ public:
    const bool post_P7() const {
       return m_post_P7;
    }
+
+   /// Replace or add an existing BitMaskCut applied to the same column.
+   void setBitMaskCut(BitMaskCut * bitMaskCut);
 
    static void extract_irf_versions(const std::string & irf_name,
                                     std::string & pass_ver,

@@ -1,5 +1,54 @@
 ------------------------------------------------------------
 TAG
+Tag name: ScienceTools-09-35-02, operation: add
+Package: dataSubselector
+User: jchiang  Thu Jan 22 21:11:27 2015
+Files:
+  dataSubselector/.cvsignore  1.3
+  dataSubselector/dataSubselectorLib.py  1.4
+  dataSubselector/ChangeLog  1.947
+  dataSubselector/SConscript  1.58.2.1
+  dataSubselector/cmt/.cvsignore  1.2
+  dataSubselector/cmt/requirements  1.141
+  dataSubselector/data/input_events.fits  1.1
+  dataSubselector/dataSubselector/CutBase.h  1.4
+  dataSubselector/dataSubselector/RangeCut.h  1.6
+  dataSubselector/dataSubselector/Cuts.h  1.44
+  dataSubselector/dataSubselector/BitMaskCut.h  1.5
+  dataSubselector/dataSubselector/Gti.h  1.8
+  dataSubselector/dataSubselector/GtiCut.h  1.4
+  dataSubselector/dataSubselector/VersionCut.h  1.1
+  dataSubselector/dataSubselector/SkyConeCut.h  1.4
+  dataSubselector/doc/.cvsignore  1.1
+  dataSubselector/doc/release.notes  1.129.2.1
+  dataSubselector/pfiles/gtalign.par  1.1
+  dataSubselector/pfiles/gtvcut.par  1.2
+  dataSubselector/pfiles/gtselect.par  1.25.2.1
+  dataSubselector/pfiles/gtmktime.par  1.8
+  dataSubselector/src/VersionCut.cxx  1.1
+  dataSubselector/src/RangeCut.cxx  1.16
+  dataSubselector/src/BitMaskCut.cxx  1.6
+  dataSubselector/src/Gti.cxx  1.16
+  dataSubselector/src/SConstruct  1.5
+  dataSubselector/src/mainpage.h  1.3
+  dataSubselector/src/CutBase.cxx  1.3
+  dataSubselector/src/GtiCut.cxx  1.9
+  dataSubselector/src/Cuts.cxx  1.59
+  dataSubselector/src/SkyConeCut.cxx  1.12
+  dataSubselector/src/buildBase  1.3
+  dataSubselector/src/dataSubselector/dataSubselector.cxx  1.46
+  dataSubselector/src/dataSubselector/CutController.h  1.14
+  dataSubselector/src/dataSubselector/CutController.cxx  1.31
+  dataSubselector/src/gtalign/DefaultAlignment.h  1.1
+  dataSubselector/src/gtalign/gtalign.cxx  1.1
+  dataSubselector/src/gtalign/DefaultAlignment.cxx  1.2
+  dataSubselector/src/gtmaketime/gtmaketime.cxx  1.27
+  dataSubselector/src/test/test.cxx  1.37
+  dataSubselector/src/viewCuts/viewCuts.cxx  1.9
+
+    *
+------------------------------------------------------------
+TAG
 Tag name: dataSubselector-09-00-01, operation: add
 Package: dataSubselector
 User: jchiang  Thu Jan 15 21:41:13 2015

@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Feb 18 09:12:07 PST 2015
+ScienceTools-scons/dataSubselector/src
+
+Modified Files:
+	BitMaskCut.cxx 
+Log Message:
+fix logic error in BitMaskCut::supercedes: pre-pass 8 test being applied in some cases to Pass 8 event selections
+    *
+------------------------------------------------------------
 TAG
 Tag name: ScienceTools-10-00-00, operation: add
 Package: dataSubselector

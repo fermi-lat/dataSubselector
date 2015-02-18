@@ -6,7 +6,7 @@
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/BitMaskCut.cxx,v 1.7 2014/12/23 05:43:41 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/BitMaskCut.cxx,v 1.8 2015/01/12 18:37:20 jchiang Exp $
  */
 
 #include <iomanip>
@@ -64,11 +64,12 @@ bool BitMaskCut::supercedes(const CutBase & cut) const {
       if ((m_mask & bitMaskCut.mask()) == m_mask) {
          return true;
       }
-   }
-   // For P7 and P7REP:
-   // This test assumes the cuts are hierarchical (nested).
-   if (m_mask > bitMaskCut.mask()) {
-      return true;
+   } else {
+      // For P7 and P7REP:
+      // This test assumes the cuts are hierarchical (nested).
+      if (m_mask > bitMaskCut.mask()) {
+         return true;
+      }
    }
    return false;
 }

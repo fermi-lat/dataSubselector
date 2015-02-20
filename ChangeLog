@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Thu Feb 19 16:09:27 PST 2015
+ScienceTools-scons/dataSubselector/src
+
+Modified Files:
+	BitMaskCut.cxx Cuts.cxx 
+Log Message:
+improve P7 handling of event_class bit mask; provide member function to append appropriate irf name suffix for non F/B event class selection
+    *
+------------------------------------------------------------
+User: jchiang  Thu Feb 19 16:09:27 PST 2015
 ScienceTools-scons/dataSubselector/dataSubselector
 
 Modified Files:

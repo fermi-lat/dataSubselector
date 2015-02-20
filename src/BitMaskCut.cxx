@@ -6,7 +6,7 @@
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/BitMaskCut.cxx,v 1.9 2015/02/18 17:12:06 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/BitMaskCut.cxx,v 1.10 2015/02/20 00:09:27 jchiang Exp $
  */
 
 #include <cmath>
@@ -89,7 +89,7 @@ std::string BitMaskCut::filterString() const {
              << octal_rep.str() << ") != o0)";
    } else {
       filter << "((" << m_colname << "/" 
-             << ::bitPosition(m_mask) 
+             << m_mask
              << ")%2 == 1)";
    }
    return filter.str();

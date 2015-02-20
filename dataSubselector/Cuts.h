@@ -4,7 +4,7 @@
  * dataSubselector.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/dataSubselector/Cuts.h,v 1.45 2014/12/23 05:43:41 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/dataSubselector/Cuts.h,v 1.46 2015/01/16 05:35:41 jchiang Exp $
  */
 
 #ifndef dataSubselector_Cuts_h
@@ -239,6 +239,15 @@ public:
    /// the most recent version of the corresponding IRFs in
    /// $CALDB/bcf/irf_index.fits.
    std::string CALDB_implied_irfs() const;
+
+   /// @brief Append the event type partition to the irfs_name.  The
+   /// event type partition is determined from the EVENT_TYPE
+   /// BitMaskCut value. For FB, the result is just the generic irfs
+   /// name, for PSF and EDISP, " (PSF)" and " (EDISP)" are appended.
+   /// The addition of the event type partition info is needed to
+   /// index the desired irfs from irfLoader.
+   /// @param irfs_name The generic irfs name, e.g., P8R2_SOURCE_V6.
+   void append_event_type_partition(std::string & irfs_name) const;
 
 #ifndef SWIG
    /// This will set the BitMaskCut and m_pass_ver value based 

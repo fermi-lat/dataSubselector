@@ -1,10 +1,11 @@
 /** @file release.notes
     @brief package dataSubselector
-    $Id: release.notes,v 1.134 2015/02/20 05:59:49 jchiang Exp $
+    $Id: release.notes,v 1.135 2015/02/20 23:11:41 jchiang Exp $
 
     @verbatim
     * EOH *
 
+ dataSubselector-09-00-06 21-Feb-2015 jchiang check if user-specified irfs name is valid in Cuts::CALDB_implied_irfs
  dataSubselector-09-00-05 20-Feb-2015 jchiang resolve overloaded std::pow issue for rhel5-32 builds
  dataSubselector-09-00-04 19-Feb-2015 jchiang bug-fixes for pre-Pass 8 bit mask handling
  dataSubselector-09-00-03 19-Feb-2015 jchiang improve P7 handling of event_class bit mask; provide member function to append appropriate irf name suffix for non F/B event class selection

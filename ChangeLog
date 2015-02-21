@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Sat Feb 21 12:07:58 PST 2015
+ScienceTools-scons/dataSubselector/src
+
+Modified Files:
+	Cuts.cxx 
+Log Message:
+check if user-specified irfName is valid
+    *
+------------------------------------------------------------
 TAG
 Tag name: dataSubselector-09-00-05, operation: add
 Package: dataSubselector

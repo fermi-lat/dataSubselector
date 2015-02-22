@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Sat Feb 21 17:11:02 PST 2015
+ScienceTools-scons/dataSubselector/src
+
+Modified Files:
+	Cuts.cxx 
+Log Message:
+more fixes for pre-Pass 8 bit mask handling
+    *
+------------------------------------------------------------
 TAG
 Tag name: dataSubselector-09-00-06, operation: add
 Package: dataSubselector

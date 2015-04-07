@@ -1,10 +1,11 @@
 /** @file release.notes
     @brief package dataSubselector
-    $Id: release.notes,v 1.137 2015/02/22 01:16:08 jchiang Exp $
+    $Id: release.notes,v 1.138 2015/02/24 07:14:12 jchiang Exp $
 
     @verbatim
     * EOH *
 
+ dataSubselector-09-00-09 06-Apr-2015 jchiang use irfUtil::EventTypeMapper class
  dataSubselector-09-00-08 23-Feb-2015 jchiang bug-fix for code that checks irf name against EVENT_CLASS column in irf_index.fits
  dataSubselector-09-00-07 21-Feb-2015 jchiang more fixes for pre-Pass 8 bit mask handling
  dataSubselector-09-00-06 21-Feb-2015 jchiang check if user-specified irfs name is valid in Cuts::CALDB_implied_irfs

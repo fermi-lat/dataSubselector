@@ -3,7 +3,7 @@
  * @brief Handle data selections and DSS keyword management.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/Cuts.cxx,v 1.67 2015/02/22 01:11:02 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/Cuts.cxx,v 1.68 2015/02/24 07:13:27 jchiang Exp $
  */
 
 #include <cctype>
@@ -28,6 +28,7 @@
 #include "tip/Image.h"
 #include "tip/Table.h"
 
+#include "irfUtil/EventTypeMapper.h"
 #include "irfUtil/Util.h"
 
 #include "dataSubselector/BitMaskCut.h"
@@ -663,8 +664,9 @@ void Cuts::append_event_type_partition(std::string & irfs_name) const {
    if (event_type_cut) {
       typedef std::map<std::string, std::pair<unsigned int, std::string> > 
          EventTypeMapping_t;
-      EventTypeMapping_t evtype_mapping;
-      irfUtil::Util::get_event_type_mapping(irfs_name, evtype_mapping);
+      const EventTypeMapping_t & evtype_mapping
+         = irfUtil::EventTypeMapper::instance().mapping(irfs_name);
+      
       unsigned int bit(static_cast<int>(std::log(event_type_cut->mask())/
                                         std::log(2)));
       for (EventTypeMapping_t::const_iterator it(evtype_mapping.begin());

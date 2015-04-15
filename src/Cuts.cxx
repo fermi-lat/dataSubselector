@@ -3,7 +3,7 @@
  * @brief Handle data selections and DSS keyword management.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/Cuts.cxx,v 1.68 2015/02/24 07:13:27 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/Cuts.cxx,v 1.69 2015/04/07 06:56:57 jchiang Exp $
  */
 
 #include <cctype>
@@ -637,6 +637,7 @@ std::string Cuts::CALDB_implied_irfs() const {
                                "cannot infer most recent IRFs from CALDB.");
    }
    unsigned int mask(my_bitmask_cut->mask());
+   delete my_bitmask_cut;
    std::map<std::string, unsigned int>::const_iterator it(irfs.begin());
    std::string irfs_name("");
    unsigned int irf_ver_num(0);

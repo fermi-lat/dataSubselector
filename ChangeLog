@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Apr 15 08:16:20 PDT 2015
+ScienceTools-scons/dataSubselector/src
+
+Modified Files:
+	Cuts.cxx 
+Log Message:
+delete BitMaskCut pointer after no longer needed
+    *
+------------------------------------------------------------
 TAG
 Tag name: ScienceTools-10-01-00, operation: add
 Package: dataSubselector

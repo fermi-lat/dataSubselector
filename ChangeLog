@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Tue Apr 21 15:29:38 PDT 2015
+ScienceTools-scons/dataSubselector/src
+
+Modified Files:
+	BitMaskCut.cxx Cuts.cxx 
+Log Message:
+update gtselect behavior to check valid evtype and evclass down-selections; see STGEN-156
+    *
+------------------------------------------------------------
+User: jchiang  Tue Apr 21 15:29:38 PDT 2015
 ScienceTools-scons/dataSubselector/dataSubselector
 
 Modified Files:

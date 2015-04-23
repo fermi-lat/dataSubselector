@@ -3,7 +3,7 @@
  * @brief Handle data selections and DSS keyword management.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/Cuts.cxx,v 1.67 2015/02/22 01:11:02 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/dataSubselector/src/Cuts.cxx,v 1.71 2015/04/21 22:29:38 jchiang Exp $
  */
 
 #include <cctype>
@@ -174,6 +174,23 @@ Cuts::Cuts(const std::string & eventFile, const std::string & extname,
            bool check_columns, bool skipTimeRangeCuts,
            bool skipEventClassCuts) 
    : m_irfName("NONE") {
+   /// Read in validity masks for Pass 8 event type and event class
+   /// selections.
+   if (BitMaskCut::evclassValidityMasks() == 0 ||
+       BitMaskCut::evtypeValidityMasks() == 0) {
+      std::string evclassPath;
+      ::joinPaths("data glast lat bcf valid_evclass_selections.txt",
+                  evclassPath);
+      std::string evtypePath;
+      ::joinPaths("data glast lat bcf valid_evtype_selections.txt",
+                  evtypePath);
+      evclassPath = facilities::commonUtilities::joinPath(
+         st_facilities::Environment::getEnv("CALDB"), evclassPath);
+      evtypePath = facilities::commonUtilities::joinPath(
+         st_facilities::Environment::getEnv("CALDB"), evtypePath);
+      BitMaskCut::setValidityMasks(evclassPath, evtypePath);
+   }
+
    const tip::Extension * ext(0);
    try {
       ext = tip::IFileSvc::instance().readTable(eventFile, extname);
@@ -636,6 +653,7 @@ std::string Cuts::CALDB_implied_irfs() const {
                                "cannot infer most recent IRFs from CALDB.");
    }
    unsigned int mask(my_bitmask_cut->mask());
+   delete my_bitmask_cut;
    std::map<std::string, unsigned int>::const_iterator it(irfs.begin());
    std::string irfs_name("");
    unsigned int irf_ver_num(0);
@@ -665,6 +683,7 @@ void Cuts::append_event_type_partition(std::string & irfs_name) const {
          EventTypeMapping_t;
       EventTypeMapping_t evtype_mapping;
       irfUtil::Util::get_event_type_mapping(irfs_name, evtype_mapping);
+
       unsigned int bit(static_cast<int>(std::log(event_type_cut->mask())/
                                         std::log(2)));
       for (EventTypeMapping_t::const_iterator it(evtype_mapping.begin());

@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: jchiang  Thu Apr 23 13:50:49 PDT 2015
+dataSubselector/pfiles
+
+Modified Files:
+      Tag: ScienceTools-10-00-03-br01
+	gtselect.par 
+Log Message:
+changes for new gtselect functionality in ST-10-00-04 (the FSSC release); STGEN-156
+    *
+------------------------------------------------------------
 User: jchiang  Thu Apr 23 13:50:48 PDT 2015
 dataSubselector/dataSubselector
 

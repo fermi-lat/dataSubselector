@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: jchiang  Thu Apr 23 13:55:40 PDT 2015
+dataSubselector
+
+Modified Files:
+      Tag: ScienceTools-10-00-03-br01
+	SConscript 
+Log Message:
+changes for new gtselect functionality in ST-10-00-04 (the FSSC release); STGEN-156
+    *
+------------------------------------------------------------
 TAG
 Tag name: dataSubselector-09-00-10, operation: add
 Package: dataSubselector

@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: jchiang  Thu Apr 23 13:50:48 PDT 2015
+dataSubselector/dataSubselector
+
+Modified Files:
+      Tag: ScienceTools-10-00-03-br01
+	BitMaskCut.h 
+Log Message:
+changes for new gtselect functionality in ST-10-00-04 (the FSSC release); STGEN-156
+    *
+------------------------------------------------------------
 TAG
 Tag name: ScienceTools-10-00-03-br01, operation: add
 Package: dataSubselector

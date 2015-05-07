@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: jchiang  Thu May  7 08:18:33 PDT 2015
+dataSubselector/pfiles
+
+Modified Files:
+      Tag: ScienceTools-10-00-03-br01
+	gtselect.par 
+Log Message:
+restore evclsm[in,ax] for sane package tests
+    *
+------------------------------------------------------------
 TAG
 Tag name: ScienceTools-10-00-04, operation: add
 Package: dataSubselector

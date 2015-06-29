@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Jun 29 12:34:45 PDT 2015
+ScienceTools-scons/dataSubselector/src/dataSubselector
+
+Modified Files:
+	CutController.cxx 
+Log Message:
+interpret evtype=[12] as convtype=[01] for Pass 7 files
+    *
+------------------------------------------------------------
 TAG
 Tag name: ScienceTools-10-00-05, operation: add
 Package: dataSubselector

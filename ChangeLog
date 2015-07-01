@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Jul  1 12:31:13 PDT 2015
+ScienceTools-scons/dataSubselector/pfiles
+
+Modified Files:
+	gtselect.par 
+Log Message:
+remove evclsm[in,ax] options from gtselect; add exception for FT1 files that lack PASS_VER keyword
+    *
+------------------------------------------------------------
 TAG
 Tag name: dataSubselector-09-01-01, operation: add
 Package: dataSubselector

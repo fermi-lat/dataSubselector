@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Wed Jul  1 12:31:13 PDT 2015
+ScienceTools-scons/dataSubselector/src/dataSubselector
+
+Modified Files:
+	CutController.cxx 
+Log Message:
+remove evclsm[in,ax] options from gtselect; add exception for FT1 files that lack PASS_VER keyword
+    *
+------------------------------------------------------------
+User: jchiang  Wed Jul  1 12:31:13 PDT 2015
 ScienceTools-scons/dataSubselector/pfiles
 
 Modified Files:

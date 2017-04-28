@@ -1,5 +1,34 @@
 ------------------------------------------------------------
 TAG
+Tag name: ScienceTools-11-05-03, operation: add
+Package: dataSubselector
+User: glastrm  Fri Apr 28 16:15:41 2017
+Files:
+  dataSubselector/.cvsignore  1.3
+  dataSubselector/dataSubselectorLib.py  1.4
+  dataSubselector/ChangeLog  1.1053
+  dataSubselector/SConscript  1.71
+  dataSubselector/cmt/.cvsignore  1.2
+  dataSubselector/cmt/requirements  1.154
+  dataSubselector/data/input_events.fits  1.1
+  dataSubselector/dataSubselector/CutBase.h  1.4
+  dataSubselector/dataSubselector/RangeCut.h  1.6
+  dataSubselector/dataSubselector/Cuts.h  1.47
+  dataSubselector/dataSubselector/BitMaskCut.h  1.7
+  dataSubselector/dataSubselector/Gti.h  1.8
+  dataSubselector/dataSubselector/GtiCut.h  1.4
+  dataSubselector/dataSubselector/VersionCut.h  1.1
+  dataSubselector/dataSubselector/SkyConeCut.h  1.4
+  dataSubselector/doc/.cvsignore  1.1
+  dataSubselector/doc/release.notes  1.142
+  dataSubselector/pfiles/gtalign.par  1.1
+  dataSubselector/pfiles/gtvcut.par  1.2
+  dataSubselector/pfiles/gtselect.par  1.27
+  dataSubselector/pfiles/gtmktime.par  1.8
+
+    *
+------------------------------------------------------------
+TAG
 Tag name: ScienceTools-11-05-02, operation: add
 Package: dataSubselector
 User: glastrm  Wed Feb  8 11:35:19 2017

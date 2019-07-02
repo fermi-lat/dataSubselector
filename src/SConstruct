@@ -44,7 +44,7 @@ libraries['pil'][1] += (os.path.sep + 'linux-3.2')
 #cflags = ' -rdynamic -O2 '
 cflags = ' -rdynamic '
 linkflags = ' '
-rootlibs = ['Cint', 'Tree', 'Matrix', 'Physics', 
+rootlibs = ['Cling', 'Tree', 'Matrix', 'Physics', 
             'Hist', 'Graf', 'Graf3d', 'Gpad', 'Rint', 'Postscript', 'Gui']
 Export(['package', 'home', 'apps', 'libraries', 'cflags',
         'linkflags', 'rootlibs'])

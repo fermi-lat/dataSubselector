@@ -194,7 +194,7 @@ void MakeTime::createGti() {
    formatter.info() << "Applying GTI filter:\n" << filter << std::endl;
 
    for (size_t i = 0; i < scfiles.size(); i++) {
-      std::auto_ptr<const tip::Table> 
+      std::unique_ptr<const tip::Table> 
          in_table(tip::IFileSvc::instance().readTable(scfiles.at(i), 
                                                       sctable, filter));
 

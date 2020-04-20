@@ -718,15 +718,15 @@ read_bitmask_mapping(std::map<std::string, unsigned int> & irfs) {
    delete irf_map;
 }
 
-void Cuts::read_pass_ver(const std::string & infile, 
+void Cuts::read_pass_ver(const std::string & infile,
                          const std::string & ext) {
 // Set default value.
-   m_pass_ver == "NONE";
+   m_pass_ver = "NONE";
 
 // Attempt to read m_pass_ver from PASS_VER keyword.
 /// @todo Improve error handling when PASS_VER does not exist or does not
 /// have "P#V#" format.
-   std::auto_ptr<const tip::Extension> 
+   std::unique_ptr<const tip::Extension> 
       events(tip::IFileSvc::instance().readExtension(infile, ext));
    try {
       events->getHeader()["PASS_VER"].get(m_pass_ver);

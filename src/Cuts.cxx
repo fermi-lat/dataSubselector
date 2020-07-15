@@ -391,6 +391,8 @@ unsigned int Cuts::addBitMaskCut(const std::string & colname,
 
 unsigned int Cuts::addVersionCut(const std::string & colname,
                                  const std::string & version) {
+   std::cout<<"Colname: "<<colname<<std::endl;
+   std::cout<<"Version: "<<version<<std::endl;
    return addCut(new VersionCut(colname, version));
 }
 

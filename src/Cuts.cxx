@@ -1,4 +1,4 @@
-/**
+/ ./**
  * @file Cuts.cxx
  * @brief Handle data selections and DSS keyword management.
  * @author J. Chiang
@@ -670,16 +670,19 @@ std::string Cuts::CALDB_implied_irfs() const {
           (irfs_name == "" || candidate_irf_ver_num > irf_ver_num)) {
          irfs_name = it->first;
          irf_ver_num = candidate_irf_ver_num;
-
-		 st_stream::StreamFormatter formatter("dataSubselector::Cuts",
-											  "CALDB_implied_irfs", 2);
-		 formatter.warn() << "\nWARNING:\n"
-						  << "Newer IRF version availible. "
-						  << "Updating IRF selection to: "
-						  << irfs_name 
-						  <<  std::endl;
       }
    }
+
+   if (test_irfName != irfs_name) {
+	 st_stream::StreamFormatter formatter("dataSubselector::Cuts",
+										  "CALDB_implied_irfs", 2);
+	 formatter.warn() << "\nWARNING:\n"
+	                  << "Newer IRF version available. "
+	                  << "Updating IRF selection to: "
+	                  << irfs_name
+	                  << std::endl;
+   }
+   
    append_event_type_partition(irfs_name);
    return irfs_name;
 }

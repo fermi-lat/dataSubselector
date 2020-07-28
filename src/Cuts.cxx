@@ -658,7 +658,8 @@ std::string Cuts::CALDB_implied_irfs() const {
    std::map<std::string, unsigned int>::const_iterator it(irfs.begin());
    std::string irfs_name("");
    unsigned int irf_ver_num(0);
-   std::string initial_irf = it->first;
+   std::string initial_irf;
+   initial_irf = it->first;
    for ( ; it != irfs.end(); ++it) {
       if (it->second != mask) {
          continue;

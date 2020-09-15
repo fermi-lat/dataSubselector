@@ -650,34 +650,35 @@ std::string Cuts::CALDB_implied_irfs() const {
    }
    const BitMaskCut * my_bitmask_cut(bitMaskCut("EVENT_CLASS"));
    if (my_bitmask_cut == 0) {
+      delete my_bitmask_cut;
       throw std::runtime_error("No EVENT_CLASS bitmask cut in input file, so "
                                "cannot infer most recent IRFs from CALDB.");
    }
    unsigned int mask(my_bitmask_cut->mask());
    delete my_bitmask_cut;
    std::map<std::string, unsigned int>::const_iterator it(irfs.begin());
+
    std::string irfs_name("");
-   unsigned int irf_ver_num(0);
-   std::string initial_irf;
-   initial_irf = test_irfName;
+
+   std::string pass_ver;
+   std::string irf_ver;
+   extract_irf_versions(test_irfName, pass_ver, irf_ver);
+   unsigned int const irf_ver_num(std::atoi(irf_ver.substr(1).c_str()));
 
    bool better_irfs_option = false;
-   std::string better_irfs_name("");
+   std::string better_irfs_name = "";
 
    for ( ; it != irfs.end(); ++it) {
       if (it->second != mask) {
          continue;
       }
-      std::string pass_ver;
-      std::string irf_ver;
       extract_irf_versions(it->first, pass_ver, irf_ver);
       unsigned int candidate_irf_ver_num(std::atoi(irf_ver.substr(1).c_str()));
-      if (pass_ver == m_pass_ver &&
-          (irfs_name == "" )) {
+      if (pass_ver == m_pass_ver && (irfs_name == ""
+            || candidate_irf_ver_num == irf_ver_num)) {
          irfs_name = it->first;
-         irf_ver_num = candidate_irf_ver_num;
       }
-      if (candidate_irf_ver_num > irf_ver_num) {
+      if (pass_ver == m_pass_ver && candidate_irf_ver_num > irf_ver_num) {
          better_irfs_option = true;
          better_irfs_name = it->first;
       }
@@ -689,7 +690,7 @@ std::string Cuts::CALDB_implied_irfs() const {
      formatter.warn() << "\n******************************************\n"
                       << "\n\tWARNING:\n"
                       << "\tNewer IRF version available. "
-                      << irfs_name
+                      << better_irfs_name
                       << "\n******************************************\n"
                       << std::endl;
    }

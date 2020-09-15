@@ -668,23 +668,24 @@ std::string Cuts::CALDB_implied_irfs() const {
       std::string irf_ver;
       extract_irf_versions(it->first, pass_ver, irf_ver);
       unsigned int candidate_irf_ver_num(std::atoi(irf_ver.substr(1).c_str()));
-      if (pass_ver == m_pass_ver && 
-          (irfs_name == "" || candidate_irf_ver_num > irf_ver_num)) {
+      if (pass_ver == m_pass_ver &&
+          (irfs_name == "" )) {
          irfs_name = it->first;
          irf_ver_num = candidate_irf_ver_num;
       }
    }
 
-   if (initial_irf != irfs_name) {
+   if (candidate_irf_ver_num > irf_ver_num) {
 	 st_stream::StreamFormatter formatter("dataSubselector::Cuts",
 										  "CALDB_implied_irfs", 2);
-	 formatter.warn() << "\nWARNING:\n"
-	                  << "Newer IRF version available. "
-	                  << "Updating IRF selection to: "
+	 formatter.warn() << "\n******************************************\n"
+                    << "\n\tWARNING:\n"
+	                  << "\tNewer IRF version available. "
 	                  << irfs_name
+                    << "\n******************************************\n"
 	                  << std::endl;
    }
-   
+
    append_event_type_partition(irfs_name);
    return irfs_name;
 }

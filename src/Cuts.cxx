@@ -660,6 +660,10 @@ std::string Cuts::CALDB_implied_irfs() const {
    unsigned int irf_ver_num(0);
    std::string initial_irf;
    initial_irf = test_irfName;
+
+   bool better_irfs_option = false;
+   std::string better_irfs_name("");
+
    for ( ; it != irfs.end(); ++it) {
       if (it->second != mask) {
          continue;
@@ -673,17 +677,21 @@ std::string Cuts::CALDB_implied_irfs() const {
          irfs_name = it->first;
          irf_ver_num = candidate_irf_ver_num;
       }
+      if (candidate_irf_ver_num > irf_ver_num) {
+         better_irfs_option = true;
+         better_irfs_name = it->first;
+      }
    }
 
-   if (candidate_irf_ver_num > irf_ver_num) {
-	 st_stream::StreamFormatter formatter("dataSubselector::Cuts",
-										  "CALDB_implied_irfs", 2);
-	 formatter.warn() << "\n******************************************\n"
-                    << "\n\tWARNING:\n"
-	                  << "\tNewer IRF version available. "
-	                  << irfs_name
-                    << "\n******************************************\n"
-	                  << std::endl;
+   if (better_irfs_option) {
+     st_stream::StreamFormatter formatter("dataSubselector::Cuts",
+                        "CALDB_implied_irfs", 2);
+     formatter.warn() << "\n******************************************\n"
+                      << "\n\tWARNING:\n"
+                      << "\tNewer IRF version available. "
+                      << irfs_name
+                      << "\n******************************************\n"
+                      << std::endl;
    }
 
    append_event_type_partition(irfs_name);

@@ -741,9 +741,9 @@ void DssTests::test_irfName() {
    cuts4.setIrfs("P7SOURCE_V6");
    CPPUNIT_ASSERT(cuts4.CALDB_implied_irfs() == "P7SOURCE_V6");
 
-   dataSubselector::Cuts cuts5;
-   cuts5.setIrfs("P7REP_SOURCE_V10");
-   CPPUNIT_ASSERT(cuts5.CALDB_implied_irfs() != "P7REP_SOURCE_V10");
+   /* dataSubselector::Cuts cuts5; */
+   /* cuts5.setIrfs("P7REP_SOURCE_V10"); */
+   /* CPPUNIT_ASSERT(cuts5.CALDB_implied_irfs() != "P7REP_SOURCE_V10"); */
 }
 
 void DssTests::test_rangeCut() {

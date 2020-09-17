@@ -623,44 +623,63 @@ std::string Cuts::CALDB_implied_irfs() const {
   }
   unsigned int mask(my_bitmask_cut->mask());
   delete my_bitmask_cut;
-  std::map<std::string, unsigned int>::const_iterator it(irfs.begin());
+  /* std::map<std::string, unsigned int>::const_iterator it(irfs.begin()); */
 
+
+  bool        caldb_flag = test_irfName == "NONE";
   std::string irfs_name("");
 
-  std::string pass_ver;
-  std::string irf_ver;
-  extract_irf_versions(test_irfName, pass_ver, irf_ver);
-  unsigned int const irf_ver_num(std::atoi(irf_ver.substr(1).c_str()));
 
-  bool        caldb_flag         = test_irfName == "NONE";
-  bool        better_irfs_option = false;
-  std::string better_irfs_name   = "";
-
-  for (; it != irfs.end(); ++it) {
-    if (it->second != mask) { continue; }
-    extract_irf_versions(it->first, pass_ver, irf_ver);
-    unsigned int candidate_irf_ver_num(std::atoi(irf_ver.substr(1).c_str()));
-    if (pass_ver == m_pass_ver
-        && (irfs_name == "" || candidate_irf_ver_num == irf_ver_num)) {
-      irfs_name = it->first;
+  if (caldb_flag) {
+    unsigned int irf_ver_num(0);
+    for (auto const& irf : irfs) {
+      if (irf.second != mask) { continue; }
+      std::string pass_ver;
+      std::string irf_ver;
+      extract_irf_versions(irf.first, pass_ver, irf_ver);
+      unsigned int candidate_irf_ver_num(std::atoi(irf_ver.substr(1).c_str()));
+      if (pass_ver == m_pass_ver
+          && (irfs_name == "" || candidate_irf_ver_num > irf_ver_num)) {
+        irfs_name   = irf.first;
+        irf_ver_num = candidate_irf_ver_num;
+      }
     }
-    if (!caldb_flag               //
-        && pass_ver == m_pass_ver //
-        && candidate_irf_ver_num > irf_ver_num) {
-      better_irfs_option = true;
-      better_irfs_name   = it->first;
+  } else {
+
+    std::string pass_ver;
+    std::string irf_ver;
+    extract_irf_versions(test_irfName, pass_ver, irf_ver);
+    unsigned int const irf_ver_num(std::atoi(irf_ver.substr(1).c_str()));
+
+    bool        better_irfs_option = false;
+    std::string better_irfs_name   = "";
+
+    for (auto const& irf : irfs) {
+      if (irf.second != mask) { continue; }
+      extract_irf_versions(irf.first, pass_ver, irf_ver);
+      unsigned int candidate_irf_ver_num(std::atoi(irf_ver.substr(1).c_str()));
+      if (pass_ver == m_pass_ver && irfs_name == ""
+          && candidate_irf_ver_num == irf_ver_num) {
+        irfs_name = irf.first;
+      }
+      if (pass_ver == m_pass_ver && candidate_irf_ver_num > irf_ver_num) {
+        better_irfs_option = true;
+        better_irfs_name   = irf.first;
+      }
+    }
+
+    if (better_irfs_option) {
+      st_stream::StreamFormatter formatter(
+          "dataSubselector::Cuts", "CALDB_implied_irfs", 2);
+      formatter.warn() << "\n******************************************\n"
+                       << "    WARNING:\n"
+                       << "    Newer IRF version available. "
+                       << better_irfs_name
+                       << "\n******************************************\n"
+                       << std::endl;
     }
   }
 
-  if (better_irfs_option) {
-    st_stream::StreamFormatter formatter(
-        "dataSubselector::Cuts", "CALDB_implied_irfs", 2);
-    formatter.warn() << "\n******************************************\n"
-                     << "    WARNING:\n"
-                     << "    Newer IRF version available. " << better_irfs_name
-                     << "\n******************************************\n"
-                     << std::endl;
-  }
 
   append_event_type_partition(irfs_name);
   return irfs_name;

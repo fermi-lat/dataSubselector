@@ -41,3 +41,18 @@ target_link_libraries(gtvcut PRIVATE dataSubselector)
 ###### Tests ######
 add_executable(test_dataSubselector src/test/test.cxx)
 target_link_libraries(test_dataSubselector PRIVATE dataSubselector PkgConfig::cppunit)
+
+
+###############################################################
+# Installation
+###############################################################
+install(DIRECTORY dataSubselector DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+
+install(
+  TARGETS dataSubselector gtselect gtmktime gtvcut
+  # EXPORT fermiTargets
+  RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+  LIBRARY DESTINATION lib
+  ARCHIVE DESTINATION lib
+  INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+)

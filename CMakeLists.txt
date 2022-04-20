@@ -46,11 +46,13 @@ target_link_libraries(test_dataSubselector PRIVATE dataSubselector PkgConfig::cp
 ###############################################################
 # Installation
 ###############################################################
-install(DIRECTORY dataSubselector DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+install(DIRECTORY dataSubselector DESTINATION ${FERMI_INSTALL_INCLUDEDIR})
+install(DIRECTORY data/ DESTINATION ${FERMI_INSTALL_DATADIR})
+install(DIRECTORY pfiles/ DESTINATION ${FERMI_INSTALL_PFILESDIR})
 
 install(
-  TARGETS dataSubselector gtselect gtmktime gtvcut
-  # EXPORT fermiTargets
+  TARGETS dataSubselector
+  EXPORT fermiTargets
   RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
   LIBRARY DESTINATION lib
   ARCHIVE DESTINATION lib

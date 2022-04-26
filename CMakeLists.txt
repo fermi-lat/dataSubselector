@@ -12,7 +12,8 @@ add_library(
 )
 target_link_libraries(
   dataSubselector
-  PUBLIC tip astro st_facilities facilities irfLoader evtbin
+  PUBLIC astro evtbin tip 
+  PRIVATE st_facilities facilities irfLoader irfInterface irfUtil
 )
 target_include_directories(
   dataSubselector PUBLIC
@@ -47,7 +48,7 @@ target_link_libraries(test_dataSubselector PRIVATE dataSubselector PkgConfig::cp
 # Installation
 ###############################################################
 install(DIRECTORY dataSubselector DESTINATION ${FERMI_INSTALL_INCLUDEDIR})
-install(DIRECTORY data/ DESTINATION ${FERMI_INSTALL_DATADIR})
+install(DIRECTORY data/ DESTINATION ${FERMI_INSTALL_REFDATADIR}/dataSubselector)
 install(DIRECTORY pfiles/ DESTINATION ${FERMI_INSTALL_PFILESDIR})
 
 install(

@@ -12,7 +12,7 @@ add_library(
 )
 target_link_libraries(
   dataSubselector
-  PUBLIC astro evtbin tip 
+  PUBLIC astro evtbin tip
   PRIVATE st_facilities facilities irfLoader irfInterface irfUtil
 )
 target_include_directories(
@@ -35,13 +35,16 @@ target_include_directories(
 add_executable(gtmktime src/gtmaketime/gtmaketime.cxx)
 add_executable(gtvcut src/viewCuts/viewCuts.cxx)
 
-target_link_libraries(gtselect PRIVATE dataSubselector)
-target_link_libraries(gtmktime PRIVATE dataSubselector)
-target_link_libraries(gtvcut PRIVATE dataSubselector)
+target_link_libraries(gtselect PRIVATE dataSubselector st_facilities)
+target_link_libraries(gtmktime PRIVATE dataSubselector st_facilities)
+target_link_libraries(gtvcut PRIVATE dataSubselector st_facilities)
 
 ###### Tests ######
 add_executable(test_dataSubselector src/test/test.cxx)
-target_link_libraries(test_dataSubselector PRIVATE dataSubselector PkgConfig::cppunit)
+target_link_libraries(
+  test_dataSubselector
+  PRIVATE dataSubselector st_facilities PkgConfig::cppunit
+)
 
 
 ###############################################################

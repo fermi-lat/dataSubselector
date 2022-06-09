@@ -1,6 +1,6 @@
 ##### Library ######
 add_library(
-  dataSubselector STATIC
+  dataSubselector 
   src/BitMaskCut.cxx
   src/CutBase.cxx
   src/Cuts.cxx

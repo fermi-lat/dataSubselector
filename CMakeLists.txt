@@ -43,7 +43,7 @@ target_link_libraries(gtvcut PRIVATE dataSubselector st_facilities)
 add_executable(test_dataSubselector src/test/test.cxx)
 target_link_libraries(
   test_dataSubselector
-  PRIVATE dataSubselector st_facilities PkgConfig::cppunit
+  PRIVATE dataSubselector st_facilities CppUnit::CppUnit
 )
 
 

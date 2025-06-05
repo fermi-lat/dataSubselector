@@ -13,7 +13,7 @@ add_library(
 target_link_libraries(
   dataSubselector
   PUBLIC astro evtbin tip
-  PRIVATE st_facilities facilities irfLoader irfInterface irfUtil
+  PRIVATE st_facilities facilities irfLoader irfInterface irfUtil CLHEP::VectorS
 )
 target_include_directories(
   dataSubselector PUBLIC

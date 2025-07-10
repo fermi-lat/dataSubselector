@@ -22,6 +22,9 @@ target_include_directories(
 )
 
 ###### Executables ######
+set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
+
+
 add_executable(
   gtselect
   src/dataSubselector/CutController.cxx

@@ -13,7 +13,7 @@ add_library(
 target_link_libraries(
   dataSubselector
   PUBLIC astro evtbin tip
-  PRIVATE st_facilities facilities irfLoader irfInterface irfUtil
+  PRIVATE st_facilities facilities irfLoader irfInterface irfUtil CLHEP::VectorS
 )
 target_include_directories(
   dataSubselector PUBLIC
@@ -22,6 +22,9 @@ target_include_directories(
 )
 
 ###### Executables ######
+set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
+
+
 add_executable(
   gtselect
   src/dataSubselector/CutController.cxx

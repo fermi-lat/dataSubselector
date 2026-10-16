@@ -755,7 +755,7 @@ void DssTests::test_rangeCut() {
    CPPUNIT_ASSERT(my_cuts.accept(params));
 }
 
-int main(int iargc, char * argv[]) {
+auto main(int iargc, char * argv[]) -> int {
 
    if (iargc > 1 && std::string(argv[1]) == "-d") {
       DssTests testObj;

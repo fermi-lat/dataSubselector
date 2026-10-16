@@ -22,7 +22,7 @@ VersionCut::VersionCut(const std::string & colname,
                        
    : CutBase("version"), m_colname(colname), m_version(version) {}
 
-bool VersionCut::supercedes(const CutBase & cut) const {
+auto VersionCut::supercedes(const CutBase & cut) const -> bool {
    if (cut.type() != "version") {
       return false;
    }
@@ -34,7 +34,7 @@ bool VersionCut::supercedes(const CutBase & cut) const {
    return false;
 }
 
-bool VersionCut::equals(const CutBase & arg) const {
+auto VersionCut::equals(const CutBase & arg) const -> bool {
    try {
       VersionCut &rhs = dynamic_cast<VersionCut &>(const_cast<CutBase &>(arg));
       bool result = (m_colname == rhs.m_colname && m_version == rhs.m_version);

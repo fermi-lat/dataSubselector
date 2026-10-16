@@ -55,14 +55,14 @@ void SkyConeCut::getArgs(const std::string & value,
    facilities::Util::stringTokenize(tokens.at(1), ",", args);
 }
 
-bool SkyConeCut::accept(tip::ConstTableRecord & row) const {
+auto SkyConeCut::accept(tip::ConstTableRecord & row) const -> bool {
    double ra, dec;
    row["RA"].get(ra);
    row["DEC"].get(dec);
    return accept(ra, dec);
 }
 
-bool SkyConeCut::accept(const std::map<std::string, double> & params) const {
+auto SkyConeCut::accept(const std::map<std::string, double> & params) const -> bool {
    std::map<std::string, double>::const_iterator ra;
    std::map<std::string, double>::const_iterator dec;
    if ( (ra = params.find("RA")) != params.end() &&
@@ -72,7 +72,7 @@ bool SkyConeCut::accept(const std::map<std::string, double> & params) const {
    return true;
 }
 
-bool SkyConeCut::equals(const CutBase & arg) const {
+auto SkyConeCut::equals(const CutBase & arg) const -> bool {
    try {
       SkyConeCut & rhs = 
          dynamic_cast<SkyConeCut &>(const_cast<CutBase &>(arg));
@@ -83,7 +83,7 @@ bool SkyConeCut::equals(const CutBase & arg) const {
    }
 }
 
-bool SkyConeCut::supercedes(const CutBase & cut) const {
+auto SkyConeCut::supercedes(const CutBase & cut) const -> bool {
    if (cut.type() != "SkyCone") {
       return false;
    }
@@ -110,12 +110,12 @@ void SkyConeCut::getKeyValues(std::string & type, std::string & unit,
    value = val.str();
 }
 
-bool SkyConeCut::accept(double ra, double dec) const {
+auto SkyConeCut::accept(double ra, double dec) const -> bool {
    double separation = m_coneCenter.difference(astro::SkyDir(ra, dec));
    return separation*180./M_PI <= m_radius;
 }
 
-std::string SkyConeCut::filterString() const {
+auto SkyConeCut::filterString() const -> std::string {
    double ra(m_coneCenter.ra());
    double dec(m_coneCenter.dec());
    std::ostringstream q;

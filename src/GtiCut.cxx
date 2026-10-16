@@ -12,13 +12,13 @@
 
 namespace dataSubselector {
 
-bool GtiCut::accept(tip::ConstTableRecord & row) const {
+auto GtiCut::accept(tip::ConstTableRecord & row) const -> bool {
    double time;
    row["TIME"].get(time);
    return accept(time);
 }
 
-bool GtiCut::accept(const std::map<std::string, double> & params) const {
+auto GtiCut::accept(const std::map<std::string, double> & params) const -> bool {
    std::map<std::string, double>::const_iterator it;
    if ( (it = params.find("TIME")) != params.end()) {
       return accept(it->second);
@@ -26,7 +26,7 @@ bool GtiCut::accept(const std::map<std::string, double> & params) const {
    return true;
 }
 
-bool GtiCut::equals(const CutBase & arg) const {
+auto GtiCut::equals(const CutBase & arg) const -> bool {
    try {
       GtiCut & rhs = dynamic_cast<GtiCut &>(const_cast<CutBase &>(arg));
       return m_gti == rhs.m_gti;
@@ -43,7 +43,7 @@ void GtiCut::getKeyValues(std::string & type, std::string & unit,
    ref = ":GTI";
 }
 
-bool GtiCut::accept(double time) const {
+auto GtiCut::accept(double time) const -> bool {
 //   return m_gti.accept(time);
    return m_gti.accept2(time);
 }

@@ -79,7 +79,7 @@ private:
 
    void check_outfile();
    void findTimeLims();
-   std::string roiZenAngleCut();
+   auto roiZenAngleCut() -> std::string;
    void createGti();
    void mergeGtis();
    void makeUserGti(std::vector<const dataSubselector::GtiCut*>&gtiCuts) const;
@@ -140,7 +140,7 @@ void MakeTime::findTimeLims() {
    header["TSTOP"].get(m_tmax);
 }
 
-std::string MakeTime::roiZenAngleCut() {
+auto MakeTime::roiZenAngleCut() -> std::string {
    bool apply_roi_cut = m_pars["roicut"];
    if (!apply_roi_cut) {
       return "";

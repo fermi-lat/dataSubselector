@@ -24,7 +24,7 @@
 #include "dataSubselector/BitMaskCut.h"
 
 namespace {
-unsigned int bitPosition(unsigned int mask) {
+auto bitPosition(unsigned int mask) -> unsigned int {
    return static_cast<unsigned int>(std::log(mask)/std::log(2.));
 }
 }
@@ -42,13 +42,13 @@ BitMaskCut::BitMaskCut(const std::string & colname,
      m_pass_ver(pass_ver), m_post_P7(post_P7(pass_ver)) {
 }
 
-bool BitMaskCut::accept(tip::ConstTableRecord & row) const {
+auto BitMaskCut::accept(tip::ConstTableRecord & row) const -> bool {
    unsigned int value;
    row[m_colname].get(value);
    return accept(value);
 }
 
-bool BitMaskCut::accept(const std::map<std::string, double> & params) const {
+auto BitMaskCut::accept(const std::map<std::string, double> & params) const -> bool {
    const std::map<std::string, double>::const_iterator value
       = params.find(m_colname);
    if (value != params.end()) {
@@ -57,12 +57,12 @@ bool BitMaskCut::accept(const std::map<std::string, double> & params) const {
    return true;
 }
 
-bool BitMaskCut::accept(unsigned int value) const {
+auto BitMaskCut::accept(unsigned int value) const -> bool {
    bool result((value & m_mask) != 0);
    return result;
 }
 
-bool BitMaskCut::supercedes(const CutBase & cut) const {
+auto BitMaskCut::supercedes(const CutBase & cut) const -> bool {
    if (cut.type() != "bit_mask") {
       return false;
    }
@@ -110,7 +110,7 @@ bool BitMaskCut::supercedes(const CutBase & cut) const {
    return false;
 }
 
-std::string BitMaskCut::filterString() const {
+auto BitMaskCut::filterString() const -> std::string {
    std::ostringstream filter;
    if (m_post_P7) {
       std::ostringstream octal_rep;
@@ -125,7 +125,7 @@ std::string BitMaskCut::filterString() const {
    return filter.str();
 }
 
-bool BitMaskCut::equals(const CutBase & arg) const {
+auto BitMaskCut::equals(const CutBase & arg) const -> bool {
    try {
       BitMaskCut &rhs = dynamic_cast<BitMaskCut &>(const_cast<CutBase &>(arg));
       bool result = (m_colname == rhs.m_colname && m_mask == rhs.m_mask);
@@ -146,7 +146,7 @@ void BitMaskCut::getKeyValues(std::string & type,
    value = "1:1";
 }
 
-std::string BitMaskCut::dstype() const {
+auto BitMaskCut::dstype() const -> std::string {
    std::ostringstream typ;
    typ << "BIT_MASK(" << m_colname;
    if (m_post_P7) {
@@ -161,7 +161,7 @@ std::string BitMaskCut::dstype() const {
    return typ.str();
 }
 
-bool BitMaskCut::post_P7(const std::string & pass_ver) {
+auto BitMaskCut::post_P7(const std::string & pass_ver) -> bool {
    static size_t nvers(6);
    char * old_pass_vers[] = {const_cast<char *>(""),
                              const_cast<char *>("NONE"),
@@ -190,8 +190,8 @@ BitMaskPrecedence(const std::string & maskFile)
    }
 }
 
-bool BitMaskCut::BitMaskPrecedence::
-validMask(const BitMaskCut & self, unsigned int currentMask) const {
+auto BitMaskCut::BitMaskPrecedence::
+validMask(const BitMaskCut & self, unsigned int currentMask) const -> bool {
    std::map<unsigned int, unsigned int>::const_iterator it
       = m_validityMasks.find(currentMask);
    if (it == m_validityMasks.end()) {
@@ -204,7 +204,7 @@ validMask(const BitMaskCut & self, unsigned int currentMask) const {
    return masked_value == self.mask();
 }
 
-const std::string & BitMaskCut::BitMaskPrecedence::maskFile() const {
+auto BitMaskCut::BitMaskPrecedence::maskFile() const -> const std::string & {
    return m_maskFile;
 }
 

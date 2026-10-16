@@ -47,8 +47,8 @@ void toUpper(std::string& name) {
   }
 }
 
-dataSubselector::RangeCut*
-mergeRangeCuts(const std::vector<dataSubselector::RangeCut*>& cuts) {
+auto
+mergeRangeCuts(const std::vector<dataSubselector::RangeCut*>& cuts) -> dataSubselector::RangeCut* {
   double minValue;
   double maxValue;
   bool   haveMin(false);
@@ -138,7 +138,7 @@ Cuts::Cuts(const std::vector<std::string>& eventFiles,
   set_irfName(eventFiles.at(0), extname);
 }
 
-Cuts Cuts::mergeGtis(std::vector<Cuts>& cuts_vector) {
+auto Cuts::mergeGtis(std::vector<Cuts>& cuts_vector) -> Cuts {
   // Gather non-Gti cuts.
   dataSubselector::Cuts        my_cuts;
   const dataSubselector::Cuts& firstCuts(cuts_vector.front());
@@ -287,8 +287,8 @@ Cuts::Cuts(const std::string& eventFile,
   read_pass_ver(eventFile, extname);
 }
 
-unsigned int
-Cuts::parseColname(const std::string& colname, std::string& col) const {
+auto
+Cuts::parseColname(const std::string& colname, std::string& col) const -> unsigned int {
   if (colname.find("[") == std::string::npos) {
     col = colname;
     return 0;
@@ -299,14 +299,14 @@ Cuts::parseColname(const std::string& colname, std::string& col) const {
   return std::atoi(tokens.at(1).c_str());
 }
 
-unsigned int Cuts::find(const CutBase* cut) const {
+auto Cuts::find(const CutBase* cut) const -> unsigned int {
   for (unsigned int i = 0; i < size(); i++) {
     if (*cut == *m_cuts[i]) { return i; }
   }
   return size();
 }
 
-bool Cuts::hasCut(const CutBase* newCut) const {
+auto Cuts::hasCut(const CutBase* newCut) const -> bool {
   for (unsigned int i = 0; i < size(); i++) {
     if (*newCut == *m_cuts[i]) { return true; }
   }
@@ -325,7 +325,7 @@ Cuts::~Cuts() {
   for (unsigned int i = 0; i < m_cuts.size(); i++) { delete m_cuts[i]; }
 }
 
-Cuts& Cuts::operator=(const Cuts& rhs) {
+auto Cuts::operator=(const Cuts& rhs) -> Cuts& {
   if (*this != rhs) {
     std::vector<CutBase*>::reverse_iterator cut = m_cuts.rbegin();
     for (; cut != m_cuts.rend(); cut++) { delete *cut; }
@@ -337,7 +337,7 @@ Cuts& Cuts::operator=(const Cuts& rhs) {
   return *this;
 }
 
-bool Cuts::accept(tip::ConstTableRecord& row) const {
+auto Cuts::accept(tip::ConstTableRecord& row) const -> bool {
   bool ok(true);
   for (unsigned int i = 0; i < m_cuts.size(); i++) {
     ok = ok && m_cuts[i]->accept(row);
@@ -345,7 +345,7 @@ bool Cuts::accept(tip::ConstTableRecord& row) const {
   return ok;
 }
 
-bool Cuts::accept(const std::map<std::string, double>& params) const {
+auto Cuts::accept(const std::map<std::string, double>& params) const -> bool {
   bool ok(true);
   for (unsigned int i = 0; i < m_cuts.size(); i++) {
     ok = ok && m_cuts[i]->accept(params);
@@ -353,37 +353,37 @@ bool Cuts::accept(const std::map<std::string, double>& params) const {
   return ok;
 }
 
-unsigned int Cuts::addRangeCut(const std::string&     colname,
+auto Cuts::addRangeCut(const std::string&     colname,
                                const std::string&     unit,
                                double                 minVal,
                                double                 maxVal,
                                RangeCut::IntervalType type,
-                               unsigned int           indx) {
+                               unsigned int           indx) -> unsigned int {
   return addCut(new RangeCut(colname, unit, minVal, maxVal, type, indx));
 }
 
-unsigned int Cuts::addGtiCut(const tip::Table& table) {
+auto Cuts::addGtiCut(const tip::Table& table) -> unsigned int {
   return addCut(new GtiCut(table));
 }
 
-unsigned int Cuts::addGtiCut(const Gti& gti) { return addCut(new GtiCut(gti)); }
+auto Cuts::addGtiCut(const Gti& gti) -> unsigned int { return addCut(new GtiCut(gti)); }
 
-unsigned int Cuts::addSkyConeCut(double ra, double dec, double radius) {
+auto Cuts::addSkyConeCut(double ra, double dec, double radius) -> unsigned int {
   return addCut(new SkyConeCut(ra, dec, radius));
 }
 
-unsigned int Cuts::addBitMaskCut(const std::string& colname,
+auto Cuts::addBitMaskCut(const std::string& colname,
                                  unsigned int       mask,
-                                 const std::string& pass_ver) {
+                                 const std::string& pass_ver) -> unsigned int {
   return addCut(new BitMaskCut(colname, mask, pass_ver));
 }
 
-unsigned int
-Cuts::addVersionCut(const std::string& colname, const std::string& version) {
+auto
+Cuts::addVersionCut(const std::string& colname, const std::string& version) -> unsigned int {
   return addCut(new VersionCut(colname, version));
 }
 
-unsigned int Cuts::addCut(CutBase* newCut) {
+auto Cuts::addCut(CutBase* newCut) -> unsigned int {
   if (hasCut(newCut)) {
     delete newCut;
   } else {
@@ -403,7 +403,7 @@ unsigned int Cuts::addCut(CutBase* newCut) {
   return size();
 }
 
-unsigned int Cuts::mergeRangeCuts() {
+auto Cuts::mergeRangeCuts() -> unsigned int {
   std::vector<RangeCut*> rangeCuts;
   for (size_t j = 0; j < m_cuts.size(); j++) {
     if (m_cuts.at(j)->type() == "range") {
@@ -428,7 +428,7 @@ unsigned int Cuts::mergeRangeCuts() {
   return m_cuts.size();
 }
 
-unsigned int Cuts::removeVersionCut(const std::string& colname) {
+auto Cuts::removeVersionCut(const std::string& colname) -> unsigned int {
   std::vector<CutBase*> held_cuts;
   for (size_t i(0); i < m_cuts.size(); i++) {
     if (m_cuts.at(i)->type() == "version") {
@@ -444,8 +444,8 @@ unsigned int Cuts::removeVersionCut(const std::string& colname) {
   return m_cuts.size();
 }
 
-unsigned int Cuts::removeRangeCuts(const std::string&      colname,
-                                   std::vector<RangeCut*>& removedCuts) {
+auto Cuts::removeRangeCuts(const std::string&      colname,
+                                   std::vector<RangeCut*>& removedCuts) -> unsigned int {
   removedCuts.clear();
   for (size_t j = 0; j < m_cuts.size(); j++) {
     if (m_cuts.at(j)->type() == "range") {
@@ -491,7 +491,7 @@ void Cuts::writeDssTimeKeywords(tip::Header& header) const {
   }
 }
 
-bool Cuts::isTimeCut(const CutBase& cut) {
+auto Cuts::isTimeCut(const CutBase& cut) -> bool {
   if (cut.type() == "GTI"
       || (cut.type() == "range"
           && dynamic_cast<RangeCut&>(const_cast<CutBase&>(cut)).colname()
@@ -552,7 +552,7 @@ void Cuts::writeGtiExtension(const std::string& filename) const {
   if (gti) { gti->writeExtension(filename); }
 }
 
-bool Cuts::operator==(const Cuts& rhs) const {
+auto Cuts::operator==(const Cuts& rhs) const -> bool {
   if (size() != rhs.size()) { return false; }
   for (unsigned int i = 0; i < size(); i++) {
     unsigned int place = find(rhs.m_cuts.at(i));
@@ -561,7 +561,7 @@ bool Cuts::operator==(const Cuts& rhs) const {
   return true;
 }
 
-bool Cuts::compareWithoutGtis(const Cuts& rhs) const {
+auto Cuts::compareWithoutGtis(const Cuts& rhs) const -> bool {
   if (size() != rhs.size()) { return false; }
   for (unsigned int i = 0; i < size(); i++) {
     if (rhs.m_cuts.at(i)->type() != "GTI") {
@@ -586,7 +586,7 @@ void Cuts::writeCuts(std::ostream& stream, bool suppressGtis) const {
   }
 }
 
-std::string Cuts::filterString() const {
+auto Cuts::filterString() const -> std::string {
   std::string filter("");
   for (unsigned int i = 0; i < m_cuts.size(); i++) {
     std::string my_filter = m_cuts.at(i)->filterString();
@@ -598,9 +598,9 @@ std::string Cuts::filterString() const {
   return filter;
 }
 
-const std::string& Cuts::irfName() const { return m_irfName; }
+auto Cuts::irfName() const -> const std::string& { return m_irfName; }
 
-std::string Cuts::CALDB_implied_irfs() const {
+auto Cuts::CALDB_implied_irfs() const -> std::string {
   std::map<std::string, unsigned int> irfs;
   read_bitmask_mapping(irfs);
   // Test against names in the EVENT_CLASS column of the
@@ -859,7 +859,7 @@ void Cuts::setIrfs(const std::string& irfName) {
   addVersionCut("IRF_VERSION", irfName);
 }
 
-BitMaskCut* Cuts::bitMaskCut(const std::string& colname) const {
+auto Cuts::bitMaskCut(const std::string& colname) const -> BitMaskCut* {
   for (size_t i(0); i < m_cuts.size(); i++) {
     const BitMaskCut* bit_mask_cut = dynamic_cast<const BitMaskCut*>(m_cuts[i]);
     if (bit_mask_cut && bit_mask_cut->colname() == colname) {
@@ -869,7 +869,7 @@ BitMaskCut* Cuts::bitMaskCut(const std::string& colname) const {
   return 0;
 }
 
-std::vector<BitMaskCut*> Cuts::bitMaskCuts() const {
+auto Cuts::bitMaskCuts() const -> std::vector<BitMaskCut*> {
   std::vector<BitMaskCut*> my_bitMaskCuts;
   for (size_t i(0); i < m_cuts.size(); i++) {
     const BitMaskCut* bit_mask_cut = dynamic_cast<const BitMaskCut*>(m_cuts[i]);
@@ -880,7 +880,7 @@ std::vector<BitMaskCut*> Cuts::bitMaskCuts() const {
   return my_bitMaskCuts;
 }
 
-RangeCut* Cuts::conversionTypeCut() const {
+auto Cuts::conversionTypeCut() const -> RangeCut* {
   for (size_t i(0); i < m_cuts.size(); i++) {
     RangeCut* range_cut
         = dynamic_cast<RangeCut*>(const_cast<CutBase*>(m_cuts[i]));

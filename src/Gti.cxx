@@ -28,8 +28,8 @@ namespace {
                            std::string("cfitsio error."));
       }
    }
-   bool gti_comp(const std::pair<double, double> & a, 
-                 const std::pair<double, double> & b) {
+   auto gti_comp(const std::pair<double, double> & a, 
+                 const std::pair<double, double> & b) -> bool {
       return a.first < b.first;
    }
 }
@@ -51,7 +51,7 @@ Gti::Gti(const tip::Table & gtiTable)
 Gti::Gti(const evtbin::Gti & gti)  
    : evtbin::Gti(gti) {}
 
-bool Gti::accept(double time) const {
+auto Gti::accept(double time) const -> bool {
    for (ConstIterator it = begin(); it != end(); ++it) {
       if (it->first <= time && time <= it->second) {
          return true;
@@ -60,7 +60,7 @@ bool Gti::accept(double time) const {
    return false;
 }
 
-bool Gti::accept2(double time) const {
+auto Gti::accept2(double time) const -> bool {
    std::map<double, double>::const_iterator it = intervals().lower_bound(time);
    if (it == begin()) {
       return false;
@@ -123,13 +123,13 @@ void Gti::writeExtension(const std::string & filename) const {
    header["ONTIME"].set(computeOntime());
 }
 
-Gti Gti::applyTimeRangeCut(double start, double stop) const {
+auto Gti::applyTimeRangeCut(double start, double stop) const -> Gti {
    Gti my_Gti;
    my_Gti.insertInterval(start, stop);
    return Gti(*this & my_Gti);
 }
 
-double Gti::minValue() const {
+auto Gti::minValue() const -> double {
    // double min_val = begin()->first;
    // for (ConstIterator interval = begin(); interval != end(); ++interval) {
    //    if (interval->first < min_val) {
@@ -145,7 +145,7 @@ double Gti::minValue() const {
    return it->first;
 }
 
-double Gti::maxValue() const {
+auto Gti::maxValue() const -> double {
    // double max_val = begin()->first;
    // for (ConstIterator interval = begin(); interval != end(); ++interval) {
    //    if (interval->second > max_val) {

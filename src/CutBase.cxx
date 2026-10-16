@@ -14,7 +14,7 @@
 
 namespace dataSubselector {
 
-bool CutBase::operator==(const CutBase & rhs) const {
+auto CutBase::operator==(const CutBase & rhs) const -> bool {
    return m_type == rhs.m_type && this->equals(rhs);
 }
 

@@ -50,12 +50,12 @@ RangeCut::RangeCut(const std::string & type,
    setFullName();
 }
 
-bool RangeCut::accept(tip::ConstTableRecord & row) const {
+auto RangeCut::accept(tip::ConstTableRecord & row) const -> bool {
    double value = extractValue(row);
    return accept(value);
 }
 
-bool RangeCut::accept(const std::map<std::string, double> & params) const {
+auto RangeCut::accept(const std::map<std::string, double> & params) const -> bool {
    std::map<std::string, double>::const_iterator it;
    if ( (it = params.find(m_fullName)) != params.end()) {
       double value = it->second;
@@ -64,7 +64,7 @@ bool RangeCut::accept(const std::map<std::string, double> & params) const {
    return true;
 }
 
-bool RangeCut::equals(const CutBase & arg) const {
+auto RangeCut::equals(const CutBase & arg) const -> bool {
    try {
       RangeCut & rhs = dynamic_cast<RangeCut &>(const_cast<CutBase &>(arg));
       bool result = (m_colname == rhs.m_colname &&
@@ -85,7 +85,7 @@ bool RangeCut::equals(const CutBase & arg) const {
    }
 }
 
-bool RangeCut::supercedes(const CutBase & cut) const {
+auto RangeCut::supercedes(const CutBase & cut) const -> bool {
    if (cut.type() != "range") {
       return false;
    }
@@ -101,7 +101,7 @@ bool RangeCut::supercedes(const CutBase & cut) const {
    return false;
 }
 
-std::string RangeCut::filterString() const {
+auto RangeCut::filterString() const -> std::string {
    std::ostringstream filter;
    filter << std::setprecision(20);
    if (m_intervalType == MINONLY) {
@@ -139,7 +139,7 @@ void RangeCut::getKeyValues(std::string & type, std::string & unit,
    value = val.str();
 }
 
-bool RangeCut::accept(double value) const {
+auto RangeCut::accept(double value) const -> bool {
    if (m_intervalType == MINONLY) {
       return m_min < value;
    } else if (m_intervalType == MAXONLY) {
@@ -151,7 +151,7 @@ bool RangeCut::accept(double value) const {
    return m_min < value && value <= m_max;
 }
 
-double RangeCut::extractValue(tip::ConstTableRecord & row) const {
+auto RangeCut::extractValue(tip::ConstTableRecord & row) const -> double {
    if (m_index) {
       std::vector<double> tableVector;
       row[m_colname].get(tableVector);

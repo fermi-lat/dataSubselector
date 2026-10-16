@@ -24,10 +24,10 @@ namespace dataSubselector {
 
 CutController * CutController::s_instance(0);
 
-CutController * 
+auto 
 CutController::instance(st_app::AppParGroup & pars, 
                         const std::vector<std::string> & eventFiles,
-                        const std::string & evtable) {
+                        const std::string & evtable) -> CutController * {
    if (!s_instance) {
       s_instance = new CutController(pars, eventFiles, evtable);
    }
@@ -138,7 +138,7 @@ checkPassVersion(const std::vector<std::string> & evfiles) {
    }
 }
 
-bool CutController::accept(tip::ConstTableRecord & row) const {
+auto CutController::accept(tip::ConstTableRecord & row) const -> bool {
    return m_cuts.accept(row);
 }
 
@@ -183,7 +183,7 @@ void CutController::updateGti(const std::string & eventFile) const {
    gti.writeExtension(eventFile);
 }
 
-std::string CutController::filterString() const {
+auto CutController::filterString() const -> std::string {
    std::string filter(m_cuts.filterString());
    if (filter != "") {
       filter += " && ";

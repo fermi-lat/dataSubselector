@@ -65,7 +65,7 @@ source of truth.
 | Used by | `pyLikelihood` | SWIG `%include`s `CutBase.h`, `BitMaskCut.h`, `Cuts.h` (the `#ifndef SWIG` parts are hidden). `UnbinnedAnalysis.py`/`BinnedAnalysis.py` call `pyLike.Cuts(...).CALDB_implied_irfs()`. |
 | Used by | `observationSim` | `obsSim` builds a `Cuts` (energy, cone, `setIrfs`, event type); `EventContainer` filters simulated events with `accept(map)` and writes DSS/GTI into the FT1. |
 | Used by | `rspgen` | Reads the `SkyConeCut` from the PHA `SPECTRUM` header. |
-| Used by | `pyExposure` | `gtexposure` reads cone/energy from a light curve; SWIG exposes `CutBase`, `Gti`, `GtiCut`, `RangeCut`, `SkyConeCut`, `Cuts`. |
+| Used by | `pyExposure` | `gtexposure` reads the cone and energy cuts from a light curve. (`pyExposure.i` would expose `CutBase`, `Gti`, `GtiCut`, `RangeCut`, `SkyConeCut` and `Cuts`, but that SWIG module is not built.) |
 | Used by | `SolarSystemTools` | `Cuts`, `Gti` in `gtltsumsun`, `gtexpcubesun`, `gtexphpsun`. Not linked directly; arrives through `Likelihood`. |
 | Link only | `sane` | `test_sane` links it; no C++ use. `sane/python/gt_apps.py` wraps `gtselect` (`filter`) and `gtmktime` (`maketime`) as tools. |
 | Unbuilt sources | `fitsGen`, `map_tools` | `fitsGen`'s `makeFT1`, `partition`, `convertFT1`, `egret2FT1` and `map_tools`' `exposure_map` include dataSubselector headers, but CMake builds none of them. |

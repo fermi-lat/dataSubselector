@@ -248,7 +248,7 @@ No module of its own. `pyLikelihood` exposes `Cuts` and `BitMaskCut` as
 
 | Variable | Where | Effect |
 |----------|-------|--------|
-| `CALDB` | `Cuts(file, …)` constructor (once per process), `Cuts::read_bitmask_mapping`, and `irfUtil::EventTypeMapper` | Reads `$CALDB/data/glast/lat/bcf/valid_evclass_selections.txt`, `valid_evtype_selections.txt` and `irf_index.fits`. Set by conda activation; see "Runtime environment" in `docs/architecture/README.md`. |
+| `CALDB` | `Cuts(file, …)` constructor (once per process), `Cuts::read_bitmask_mapping`, and `irfUtil::EventTypeMapper` | Reads `$CALDB/data/glast/lat/bcf/valid_evclass_selections.txt`, `valid_evtype_selections.txt` and `irf_index.fits`. Set by conda activation; see "Runtime environment" in ScienceTools' `docs/architecture/README.md`. |
 
 There are no direct `getenv` calls; `CALDB` is read through
 `st_facilities::Environment::getEnv`.
@@ -293,8 +293,19 @@ There are no direct `getenv` calls; `CALDB` is read through
   - Not covered: `gtselect`, `gtmktime`, `gtvcut`, `Gti::writeExtension`,
     multi-file `Cuts`, `CALDB_implied_irfs` for Pass 8, and GTI boundary
     times in `accept2`.
+- **ST-unit-test:** the default run of ScienceTools'
+  `recipe/tests/ST-unit-test` (`unitTestsWithoutRoot`) runs
+  `test_dataSubselector`, then `check_test_dataSubselector_output`, which
+  `ftdiff`s `dss_test1.fits`, `dss_test2.fits`, `filtered_events.fits` and
+  `filtered_events_2.fits` against
+  `share/fermitools/data/dataSubselector/outref/`. That reference data is
+  not in this repo: it ships in the `fermitools-test-scripts-data` conda
+  package, sourced from `outrefFiles/dataSubselector/` in
+  `fermitools-data`. See "Testing" in ScienceTools'
+  `docs/architecture/README.md`.
 - **End-to-end tests** of the tools live in `sane`
-  (`sane/python/tests/dataSubselector_tests.py`).
+  (`sane/python/tests/dataSubselector_tests.py`); `ST-unit-test` does not
+  run them.
 - **Legacy:** `SConscript`, `dataSubselectorLib.py`, `src/SConstruct`,
   `src/buildBase` and `.cvsignore` belong to the old SCons/CVS builds.
 

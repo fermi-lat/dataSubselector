@@ -299,9 +299,10 @@ There are no direct `getenv` calls; `CALDB` is read through
   `ftdiff`s `dss_test1.fits`, `dss_test2.fits`, `filtered_events.fits` and
   `filtered_events_2.fits` against
   `share/fermitools/data/dataSubselector/outref/`. That reference data is
-  not in this repo: it ships in the `fermitools-test-scripts-data` conda
-  package, sourced from `outrefFiles/dataSubselector/` in
-  `fermitools-data`. See "Testing" in ScienceTools'
+  not in this repo: it ships in the runtime `fermitools-data` conda
+  package (sourced from `outrefFiles/dataSubselector/` in the
+  `fermitools-data` repository; `fermitools-test-scripts-data` 0.7 also
+  installs copies). See "Testing" in ScienceTools'
   `docs/architecture/README.md`.
 - **End-to-end tests** of the tools live in `sane`
   (`sane/python/tests/dataSubselector_tests.py`); `ST-unit-test` does not

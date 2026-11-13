@@ -31,9 +31,9 @@ auto bitPosition(unsigned int mask) -> unsigned int {
 
 namespace dataSubselector {
 
-BitMaskCut::BitMaskPrecedence * BitMaskCut::s_evclassPrecedence(0);
+BitMaskCut::BitMaskPrecedence * BitMaskCut::s_evclassPrecedence(nullptr);
 
-BitMaskCut::BitMaskPrecedence * BitMaskCut::s_evtypePrecedence(0);
+BitMaskCut::BitMaskPrecedence * BitMaskCut::s_evtypePrecedence(nullptr);
 
 BitMaskCut::BitMaskCut(const std::string & colname,
                        unsigned int mask,
@@ -49,7 +49,7 @@ auto BitMaskCut::accept(tip::ConstTableRecord & row) const -> bool {
 }
 
 auto BitMaskCut::accept(const std::map<std::string, double> & params) const -> bool {
-   const std::map<std::string, double>::const_iterator value
+   const auto value
       = params.find(m_colname);
    if (value != params.end()) {
       return accept(static_cast<unsigned int>(value->second));
@@ -66,7 +66,7 @@ auto BitMaskCut::supercedes(const CutBase & cut) const -> bool {
    if (cut.type() != "bit_mask") {
       return false;
    }
-   BitMaskCut & bitMaskCut = 
+   auto & bitMaskCut = 
       dynamic_cast<BitMaskCut &>(const_cast<CutBase &>(cut));
    if (bitMaskCut.colname() != m_colname) {
       return false;
@@ -127,7 +127,7 @@ auto BitMaskCut::filterString() const -> std::string {
 
 auto BitMaskCut::equals(const CutBase & arg) const -> bool {
    try {
-      BitMaskCut &rhs = dynamic_cast<BitMaskCut &>(const_cast<CutBase &>(arg));
+      auto &rhs = dynamic_cast<BitMaskCut &>(const_cast<CutBase &>(arg));
       bool result = (m_colname == rhs.m_colname && m_mask == rhs.m_mask);
       return result;
    } catch(...) {
@@ -192,7 +192,7 @@ BitMaskPrecedence(const std::string & maskFile)
 
 auto BitMaskCut::BitMaskPrecedence::
 validMask(const BitMaskCut & self, unsigned int currentMask) const -> bool {
-   std::map<unsigned int, unsigned int>::const_iterator it
+   auto it
       = m_validityMasks.find(currentMask);
    if (it == m_validityMasks.end()) {
       std::ostringstream message;

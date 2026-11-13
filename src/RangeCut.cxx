@@ -66,7 +66,7 @@ auto RangeCut::accept(const std::map<std::string, double> & params) const -> boo
 
 auto RangeCut::equals(const CutBase & arg) const -> bool {
    try {
-      RangeCut & rhs = dynamic_cast<RangeCut &>(const_cast<CutBase &>(arg));
+      auto & rhs = dynamic_cast<RangeCut &>(const_cast<CutBase &>(arg));
       bool result = (m_colname == rhs.m_colname &&
                      m_unit == rhs.m_unit &&
                      m_intervalType == rhs.m_intervalType && 
@@ -89,7 +89,7 @@ auto RangeCut::supercedes(const CutBase & cut) const -> bool {
    if (cut.type() != "range") {
       return false;
    }
-   RangeCut & rangeCut = dynamic_cast<RangeCut &>(const_cast<CutBase &>(cut));
+   auto & rangeCut = dynamic_cast<RangeCut &>(const_cast<CutBase &>(cut));
 /// @todo Need to handle open ranges.
    if (rangeCut.colname() != colname() || 
        rangeCut.m_intervalType != m_intervalType) {

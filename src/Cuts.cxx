@@ -181,8 +181,8 @@ Cuts::Cuts(const std::string& eventFile,
     : m_irfName("NONE") {
   /// Read in validity masks for Pass 8 event type and event class
   /// selections.
-  if (BitMaskCut::evclassValidityMasks() == 0
-      || BitMaskCut::evtypeValidityMasks() == 0) {
+  if (BitMaskCut::evclassValidityMasks() == nullptr
+      || BitMaskCut::evtypeValidityMasks() == nullptr) {
     std::string evclassPath;
     ::joinPaths("data glast lat bcf valid_evclass_selections.txt", evclassPath);
     std::string evtypePath;
@@ -194,7 +194,7 @@ Cuts::Cuts(const std::string& eventFile,
     BitMaskCut::setValidityMasks(evclassPath, evtypePath);
   }
 
-  const tip::Extension* ext(0);
+  const tip::Extension* ext(nullptr);
   try {
     ext = tip::IFileSvc::instance().readTable(eventFile, extname);
   } catch (tip::TipException& eObj) {
@@ -327,7 +327,7 @@ Cuts::~Cuts() {
 
 auto Cuts::operator=(const Cuts& rhs) -> Cuts& {
   if (*this != rhs) {
-    std::vector<CutBase*>::reverse_iterator cut = m_cuts.rbegin();
+    auto cut = m_cuts.rbegin();
     for (; cut != m_cuts.rend(); cut++) { delete *cut; }
     m_cuts.clear();
     for (unsigned int i = 0; i < rhs.size(); i++) {
@@ -407,7 +407,7 @@ auto Cuts::mergeRangeCuts() -> unsigned int {
   std::vector<RangeCut*> rangeCuts;
   for (size_t j = 0; j < m_cuts.size(); j++) {
     if (m_cuts.at(j)->type() == "range") {
-      RangeCut* rangeCut(dynamic_cast<RangeCut*>(m_cuts.at(j)));
+      auto* rangeCut(dynamic_cast<RangeCut*>(m_cuts.at(j)));
       rangeCuts.push_back(rangeCut);
     }
   }
@@ -432,7 +432,7 @@ auto Cuts::removeVersionCut(const std::string& colname) -> unsigned int {
   std::vector<CutBase*> held_cuts;
   for (size_t i(0); i < m_cuts.size(); i++) {
     if (m_cuts.at(i)->type() == "version") {
-      VersionCut* versionCut(dynamic_cast<VersionCut*>(m_cuts.at(i)));
+      auto* versionCut(dynamic_cast<VersionCut*>(m_cuts.at(i)));
       if (versionCut->colname() == colname) {
         delete m_cuts.at(i);
         continue;
@@ -449,7 +449,7 @@ auto Cuts::removeRangeCuts(const std::string&      colname,
   removedCuts.clear();
   for (size_t j = 0; j < m_cuts.size(); j++) {
     if (m_cuts.at(j)->type() == "range") {
-      RangeCut* rangeCut(dynamic_cast<RangeCut*>(m_cuts.at(j)));
+      auto* rangeCut(dynamic_cast<RangeCut*>(m_cuts.at(j)));
       if (rangeCut->colname() == colname) {
         removedCuts.push_back(rangeCut);
         m_cuts.at(j) = 0;
@@ -529,7 +529,7 @@ void Cuts::removeDssKeywords(tip::Header& header) const {
       for (int j = 0; j < 4; j++) {
         std::ostringstream keyname;
         keyname << dskeys[j] << i + 1;
-        tip::Header::Iterator keyword = header.find(keyname.str());
+        auto keyword = header.find(keyname.str());
         if (keyword != header.end()) { header.erase(keyword); }
       }
     }
@@ -542,7 +542,7 @@ void Cuts::removeDssKeywords(tip::Header& header) const {
 }
 
 void Cuts::writeGtiExtension(const std::string& filename) const {
-  const dataSubselector::Gti* gti(0);
+  const dataSubselector::Gti* gti(nullptr);
   for (unsigned int i = 0; i < size(); i++) {
     if (m_cuts[i]->type() == "GTI") {
       gti = &(dynamic_cast<GtiCut*>(m_cuts[i])->gti());
@@ -616,7 +616,7 @@ auto Cuts::CALDB_implied_irfs() const -> std::string {
     throw std::runtime_error("Invalid IRF name: " + test_irfName);
   }
   const BitMaskCut* my_bitmask_cut(bitMaskCut("EVENT_CLASS"));
-  if (my_bitmask_cut == 0) {
+  if (my_bitmask_cut == nullptr) {
     delete my_bitmask_cut;
     throw std::runtime_error("No EVENT_CLASS bitmask cut in input file, so "
                              "cannot infer most recent IRFs from CALDB.");
@@ -689,14 +689,13 @@ void Cuts::append_event_type_partition(std::string& irfs_name) const {
   /// Infer event_type partition.
   const BitMaskCut* event_type_cut(bitMaskCut("EVENT_TYPE"));
   if (event_type_cut) {
-    typedef std::map<std::string, std::pair<unsigned int, std::string>>
-                              EventTypeMapping_t;
+    using EventTypeMapping_t = std::map<std::string, std::pair<unsigned int, std::string>>;
     const EventTypeMapping_t& evtype_mapping
         = irfUtil::EventTypeMapper::instance().mapping(irfs_name);
 
     unsigned int bit(
         static_cast<int>(std::log(event_type_cut->mask()) / std::log(2)));
-    for (EventTypeMapping_t::const_iterator it(evtype_mapping.begin());
+    for (auto it(evtype_mapping.begin());
          it != evtype_mapping.end();
          ++it) {
       if (bit == it->second.first && it->second.second != "none") {
@@ -752,7 +751,7 @@ void Cuts::read_pass_ver(const std::string& infile, const std::string& ext) {
 
 void Cuts::set_irfName(const std::string& infile, const std::string& ext) {
   for (size_t i(0); i < m_cuts.size(); i++) {
-    VersionCut* version_cut
+    auto* version_cut
         = dynamic_cast<VersionCut*>(const_cast<CutBase*>(m_cuts[i]));
     if (version_cut && version_cut->colname() == "IRF_VERSION") {
       m_irfName = version_cut->version();
@@ -812,7 +811,7 @@ void Cuts::setIrfs(const std::string& irfName) {
     // selection.
     std::string section(
         irfName.substr(delim_pos - 1, irfName.length() - delim_pos + 1));
-    RangeCut* convtype_cut(0);
+    RangeCut* convtype_cut(nullptr);
     for (size_t i(0); i < m_cuts.size(); i++) {
       convtype_cut = dynamic_cast<RangeCut*>(const_cast<CutBase*>(m_cuts[i]));
       if (convtype_cut && convtype_cut->colname() == "CONVERSION_TYPE") {
@@ -845,7 +844,7 @@ void Cuts::setIrfs(const std::string& irfName) {
   std::map<std::string, unsigned int> irfs;
   try {
     read_bitmask_mapping(irfs);
-    std::map<std::string, unsigned int>::const_iterator it
+    auto it
         = irfs.find(event_class);
     if (it != irfs.end()) {
       unsigned int mask(it->second);
@@ -861,18 +860,18 @@ void Cuts::setIrfs(const std::string& irfName) {
 
 auto Cuts::bitMaskCut(const std::string& colname) const -> BitMaskCut* {
   for (size_t i(0); i < m_cuts.size(); i++) {
-    const BitMaskCut* bit_mask_cut = dynamic_cast<const BitMaskCut*>(m_cuts[i]);
+    const auto* bit_mask_cut = dynamic_cast<const BitMaskCut*>(m_cuts[i]);
     if (bit_mask_cut && bit_mask_cut->colname() == colname) {
       return new BitMaskCut(*bit_mask_cut);
     }
   }
-  return 0;
+  return nullptr;
 }
 
 auto Cuts::bitMaskCuts() const -> std::vector<BitMaskCut*> {
   std::vector<BitMaskCut*> my_bitMaskCuts;
   for (size_t i(0); i < m_cuts.size(); i++) {
-    const BitMaskCut* bit_mask_cut = dynamic_cast<const BitMaskCut*>(m_cuts[i]);
+    const auto* bit_mask_cut = dynamic_cast<const BitMaskCut*>(m_cuts[i]);
     if (bit_mask_cut) {
       my_bitMaskCuts.push_back(new BitMaskCut(*bit_mask_cut));
     }
@@ -882,13 +881,13 @@ auto Cuts::bitMaskCuts() const -> std::vector<BitMaskCut*> {
 
 auto Cuts::conversionTypeCut() const -> RangeCut* {
   for (size_t i(0); i < m_cuts.size(); i++) {
-    RangeCut* range_cut
+    auto* range_cut
         = dynamic_cast<RangeCut*>(const_cast<CutBase*>(m_cuts[i]));
     if (range_cut && range_cut->colname() == "CONVERSION_TYPE") {
       return range_cut;
     }
   }
-  return 0;
+  return nullptr;
 }
 
 void Cuts::setBitMaskCut(BitMaskCut* candidateCut) {
@@ -899,7 +898,7 @@ void Cuts::setBitMaskCut(BitMaskCut* candidateCut) {
   // Delete any existing BitMaskCuts operating on the same column.
   std::vector<CutBase*> my_cuts;
   for (size_t i(0); i < m_cuts.size(); i++) {
-    BitMaskCut* currentCut(dynamic_cast<BitMaskCut*>(m_cuts[i]));
+    auto* currentCut(dynamic_cast<BitMaskCut*>(m_cuts[i]));
     if (currentCut && (currentCut->colname() == candidateCut->colname())) {
       delete m_cuts[i];
     } else {

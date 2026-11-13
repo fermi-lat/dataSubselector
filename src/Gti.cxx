@@ -52,7 +52,7 @@ Gti::Gti(const evtbin::Gti & gti)
    : evtbin::Gti(gti) {}
 
 auto Gti::accept(double time) const -> bool {
-   for (ConstIterator it = begin(); it != end(); ++it) {
+   for (auto it = begin(); it != end(); ++it) {
       if (it->first <= time && time <= it->second) {
          return true;
       }
@@ -61,7 +61,7 @@ auto Gti::accept(double time) const -> bool {
 }
 
 auto Gti::accept2(double time) const -> bool {
-   std::map<double, double>::const_iterator it = intervals().lower_bound(time);
+   auto it = intervals().lower_bound(time);
    if (it == begin()) {
       return false;
    }
@@ -105,7 +105,7 @@ void Gti::writeExtension(const std::string & filename) const {
    gtiTable->setNumRecords(getNumIntervals());
    tip::Table::Iterator it = gtiTable->begin();
    tip::Table::Record & row = *it;
-   Gti::ConstIterator interval = begin();
+   auto interval = begin();
    double tstart, tstop;
    tstart = interval->first;
    tstop = interval->second;
@@ -141,7 +141,7 @@ auto Gti::minValue() const -> double {
    /// Explicitly declare this iterator using std::map<double, double>
    /// to guard (at compile time) against implementation changes in
    /// evtbin::Gti class.
-   std::map<double, double>::const_iterator it = begin();
+   auto it = begin();
    return it->first;
 }
 
@@ -157,7 +157,7 @@ auto Gti::maxValue() const -> double {
    /// Explicitly declare this iterator using std::map<double, double>
    /// to guard (at compile time) against implementation changes in
    /// evtbin::Gti class.
-   std::map<double, double>::const_iterator it = end();
+   auto it = end();
    --it;
    return it->second;
 }

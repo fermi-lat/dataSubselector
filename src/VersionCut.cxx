@@ -26,7 +26,7 @@ auto VersionCut::supercedes(const CutBase & cut) const -> bool {
    if (cut.type() != "version") {
       return false;
    }
-   VersionCut & versionCut = 
+   auto & versionCut = 
       dynamic_cast<VersionCut &>(const_cast<CutBase &>(cut));
    if (versionCut.colname() == colname()) {
       return true;
@@ -36,7 +36,7 @@ auto VersionCut::supercedes(const CutBase & cut) const -> bool {
 
 auto VersionCut::equals(const CutBase & arg) const -> bool {
    try {
-      VersionCut &rhs = dynamic_cast<VersionCut &>(const_cast<CutBase &>(arg));
+      auto &rhs = dynamic_cast<VersionCut &>(const_cast<CutBase &>(arg));
       bool result = (m_colname == rhs.m_colname && m_version == rhs.m_version);
       return result;
    } catch(...) {

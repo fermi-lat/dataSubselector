@@ -28,7 +28,7 @@ auto GtiCut::accept(const std::map<std::string, double> & params) const -> bool 
 
 auto GtiCut::equals(const CutBase & arg) const -> bool {
    try {
-      GtiCut & rhs = dynamic_cast<GtiCut &>(const_cast<CutBase &>(arg));
+      auto & rhs = dynamic_cast<GtiCut &>(const_cast<CutBase &>(arg));
       return m_gti == rhs.m_gti;
    } catch (...) {
       return false;

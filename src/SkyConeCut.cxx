@@ -74,7 +74,7 @@ auto SkyConeCut::accept(const std::map<std::string, double> & params) const -> b
 
 auto SkyConeCut::equals(const CutBase & arg) const -> bool {
    try {
-      SkyConeCut & rhs = 
+      auto & rhs = 
          dynamic_cast<SkyConeCut &>(const_cast<CutBase &>(arg));
       return (m_ra == rhs.m_ra && m_dec == rhs.m_dec &&
               m_radius == rhs.m_radius);
@@ -87,7 +87,7 @@ auto SkyConeCut::supercedes(const CutBase & cut) const -> bool {
    if (cut.type() != "SkyCone") {
       return false;
    }
-   SkyConeCut & coneCut = 
+   auto & coneCut = 
       dynamic_cast<SkyConeCut &>(const_cast<CutBase &>(cut));
    double separation = m_coneCenter.difference(coneCut.m_coneCenter)*180./M_PI;
    if (m_radius <= coneCut.m_radius - separation) {

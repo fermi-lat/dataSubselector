@@ -69,15 +69,15 @@ public:
 private:
 
    st_app::AppParGroup & m_pars;
-   double m_ra, m_dec, m_rad, m_tmin, m_tmax;
+   double m_ra, m_dec, m_rad, m_tmin{-1}, m_tmax{-1};
 
    std::vector<std::string> m_inputFiles;
    std::string m_outputFile;
 
-   mutable double m_tstart, m_tstop;
+   mutable double m_tstart{0}, m_tstop{0};
 
    void copyTable(const std::string & extension,
-                  CutController * cutController=0) const;
+                  CutController * cutController=nullptr) const;
 
    void copyGtis() const;
 
@@ -227,7 +227,7 @@ void DataFilter::copyTable(const std::string & extension,
       // it as we go along. First file is handled differently from others,
       // using fcopy as above. Others are read using tip.
       
-      std::vector<std::string>::const_iterator infile(m_inputFiles.begin());
+      auto infile(m_inputFiles.begin());
       tip::Index_t nrows(0);
       tip::Index_t nsize(0);
 

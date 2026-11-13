@@ -22,7 +22,7 @@
 
 namespace dataSubselector {
 
-CutController * CutController::s_instance(0);
+CutController * CutController::s_instance(nullptr);
 
 auto 
 CutController::instance(st_app::AppParGroup & pars, 
@@ -36,7 +36,7 @@ CutController::instance(st_app::AppParGroup & pars,
 
 void CutController::delete_instance() {
    delete s_instance;
-   s_instance = 0;
+   s_instance = nullptr;
 }
 
 CutController::CutController(st_app::AppParGroup & pars, 
